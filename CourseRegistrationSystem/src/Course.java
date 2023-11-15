@@ -25,9 +25,9 @@ public class Course{
     //  
     //}
 
-    //public void addEnrolledStudent(Student student){
-    //
-    //}
+    public void addEnrolledStudent(Student student){
+
+    }
 
     public boolean hasPrerequisite(){
         return prerequisite;
