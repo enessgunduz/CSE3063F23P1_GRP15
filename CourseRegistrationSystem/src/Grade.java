@@ -24,7 +24,7 @@ public class Grade {
     @Override
     public String toString() {
         String gradeDatas = String.format("%-10s %-30s %-10s\n",
-                getCourse().getCourseID(),
+                getCourse().getCourseId(),
                 getCourse().getCourseName(),
                 getGradeValue());
         return gradeDatas;
