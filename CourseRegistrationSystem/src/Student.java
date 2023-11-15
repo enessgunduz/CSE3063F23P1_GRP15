@@ -38,5 +38,13 @@ class Student extends User {
     public List<Course> getRequestedCourses() {
         return requestedCourses;
     }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: ").append(getName()).append("\n");
+        sb.append("Surname: ").append(getSurname()).append("\n");
+        sb.append("Student ID: ").append(getStudentId()).append("\n");
+        return sb.toString();
+    }
 
 }
