@@ -6,15 +6,14 @@ public class CourseRegistrationSystem {
     private List<Student> students;
     private List<Course> courses;
 
-    public CourseRegistrationSystem(Student student, List<Student> students, List<Course> courses){
+    public CourseRegistrationSystem(Student student, List<Course> courses){
         this.student = student;
-        this.students = students;
         this.courses = courses;
     }
     public CourseRegistrationSystem(){
 
     }
-    public List<Course>listAvaliableCourses(){
+    public List<Course>listAvailableCourses(){
         List<Course> avaliableCourse = new ArrayList<>();
         for(Course course : courses){
             if((!student.getEnrolledCourses().contains(course)) && (course.hasPrerequisite())) {
