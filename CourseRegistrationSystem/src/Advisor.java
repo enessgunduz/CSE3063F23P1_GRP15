@@ -1,16 +1,18 @@
 import java.util.ArrayList;
 import java.util.List;
 public class Advisor extends User {
-    private String advisorId;
+    private String advisorID;
     private ArrayList<Student> advisedStudent;
     private ArrayList<Student> requestedStudents;
 
-    public Advisor(String username, String name, String surname, String password, String advisorId, ArrayList<Student> advisedStudent) {
+    public Advisor(String username, String name, String surname, String password, String advisorID, ArrayList<Student> advisedStudent) {
         super(username, name, surname, password);
-        this.advisorId = advisorId;
+        this.advisorID = advisorID;
         this.advisedStudent = advisedStudent;
         requestedStudents = new ArrayList<>();
     }
+
+    public Advisor(){}
 
     public  List<Student> listRequestStudents() {
         for(Student st:advisedStudent){

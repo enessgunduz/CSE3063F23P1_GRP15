@@ -1,0 +1,9 @@
+{
+    "advisorID": "1001",
+    "name": "Borahan",
+    "surname": "Tümer",
+    "username": "o2002",
+    "password": "o20021001",
+    "advisedStudents": ["o150120009", "o150120014", "o150120045", "o150120022", "o150120028"],
+    "requestedStudents": []
+}
