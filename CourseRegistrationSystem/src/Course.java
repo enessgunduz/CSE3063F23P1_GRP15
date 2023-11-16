@@ -36,7 +36,7 @@ public class Course{
     //  
     //}
 
-    public void addEnrolledStudent(Student student, Course course){
+    public boolean addEnrolledStudent(Student student, Course course){
         try {
             // Öğrenciye ait JSON dosyasını oku
             File studentJsonFile = new File("src/Students/"+student.getStudentId()+".json");
@@ -78,6 +78,7 @@ public class Course{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return true;
     }
 
     public boolean hasPrerequisite(){

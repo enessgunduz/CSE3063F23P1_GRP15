@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class JSONMethods {
-    public void clearRequestedCourses(Student student) {
+    public boolean clearRequestedCourses(Student student) {
 
         try {
             // JSON file will be read
@@ -32,5 +32,6 @@ public class JSONMethods {
             e.printStackTrace();
         }
         student.getRequestedCourses().clear();
+        return true;
     }
 }
