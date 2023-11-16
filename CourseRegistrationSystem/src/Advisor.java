@@ -53,17 +53,17 @@ public class Advisor extends User {
 
     public String studentsToString() {
         StringBuilder result = new StringBuilder();
-        result.append("Requested Students:\n");
-        result.append("\nRequested Students:\n");
-        if (requestedStudents != null && !requestedStudents.isEmpty()) {
-            for (Student student : requestedStudents) {
+        if (advisedStudent != null && !advisedStudent.isEmpty()) {
+            result.append("Advised Students:\n");
+            for (Student student : advisedStudent) {
                 result.append("Student ID: ").append(student.getStudentId())
                         .append(", Name: ").append(student.getName())
                         .append(", Username: ").append(student.getUsername()).append("\n");
             }
         } else {
-            result.append("No requested students.\n");
+            result.append("No advised students.\n");
         }
+
 
         return result.toString();
     }
