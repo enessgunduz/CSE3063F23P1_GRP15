@@ -1,0 +1,144 @@
+{
+    "courses": [
+        {
+            "courseID": "CSE3045",
+            "courseName": "Digital Logic Design",
+            "credit": 4,
+            "prerequisite": 0.0,
+            "prerequisiteLesson": "None",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Borahan Tümer",
+                "enrollmentCapacity": 5,
+                "enrolledStudents":[],
+                "status": "aktif"
+            }
+        },
+        {
+            "courseID": "CSE2043",
+            "courseName": "Programming 1",
+            "credit": 5,
+            "prerequisite": 0.0,
+            "prerequisiteLesson": "None",
+            "courseSection": {
+                "term": "spring",
+                "instructor": "Mustafa Ağaoğlu",
+                "enrollmentCapacity": 5,
+                "enrolledStudents":[],
+                "status": "aktif"
+            }
+        },
+        {
+            "courseID": "CSE3043",
+            "courseName": "Programming 2",
+            "credit": 5,
+            "prerequisite": 1.0,
+            "prerequisiteLesson": "Programming 1",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Mustafa Ağaoğlu",
+                "enrollmentCapacity": 5,
+                "enrolledStudents":[],
+                "status": "aktif"
+            }
+        },
+        {
+            "courseID": "CSE2028",
+            "courseName": "Electric Circuits",
+            "credit": 4,
+            "prerequisite": 0.0,
+            "prerequisiteLesson": "None",
+            "courseSection": {
+                "term": "spring",
+                "instructor": "Betül Boz",
+                "enrollmentCapacity": 5,
+                "enrolledStudents":[],
+                "status": "aktif"
+            }
+        },
+        {
+            "courseID": "CSE3028",
+            "courseName": "Electronic Devices",
+            "credit": 6,
+            "prerequisite": 1.0,
+            "prerequisiteLesson": "Electric Circuits",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Betül Boz",
+                "enrollmentCapacity": 5,
+                "enrolledStudents":[],
+                "status": "aktif"    
+            }
+        },
+        {
+            "courseID": "CSE3050",
+            "courseName": "Introduction to Machine Learning",
+            "credit": 8,
+            "prerequisite": 0.0,
+            "prerequisiteLesson": "None",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Borahan Tümer",
+                "enrollmentCapacity": 5,
+                "enrolledStudents":[],
+                "status": "aktif"
+            }
+        },
+        {
+            "courseID": "CSE4050",
+            "courseName": "AI and Beyond",
+            "credit": 7,
+            "prerequisite": 1.0,
+            "prerequisiteLesson": "Introduction to Machine Learning",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Borahan Tümer",
+                "enrollmentCapacity": 5,
+                "enrolledStudents":[],
+                "status": "aktif"
+            }
+        },
+        {
+            "courseID": "CSE4017",
+            "courseName": "Computer Systems",
+            "credit": 5,
+            "prerequisite": 0.0,
+            "prerequisiteLesson": "None",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Mustafa Ağaoğlu",
+                "enrollmentCapacity": 5,
+                "enrolledStudents":[],
+                "status": "aktif"
+            }
+        },
+        {
+            "courseID": "CSE3022",
+            "courseName": "Database Systems",
+            "credit": 4,
+            "prerequisite": 0.0,
+            "prerequisiteLesson": "None",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Betül Boz",
+                "enrollmentCapacity": 5,
+                "enrolledStudents":[],
+                "status": "aktif"
+            }
+        },
+        {
+            "courseID": "CSE3049",
+            "courseName": "Operating Systems",
+            "credit": 6,
+            "prerequisite": 0.0,
+            "prerequisiteLesson": "None",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Betül Boz",
+                "enrollmentCapacity": 5,
+                "enrolledStudents":[],
+                "status": "aktif"
+            }
+        }
+    ]
+}
