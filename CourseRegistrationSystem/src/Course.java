@@ -1,4 +1,11 @@
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Course{
 
@@ -29,8 +36,48 @@ public class Course{
     //  
     //}
 
-    public void addEnrolledStudent(Student student){
-        //JSON
+    public void addEnrolledStudent(Student student, Course course){
+        try {
+            // Öğrenciye ait JSON dosyasını oku
+            File studentJsonFile = new File("src/Students/"+student.getStudentId()+".json");
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode studentNode = objectMapper.readTree(studentJsonFile);
+
+            // "requestedCourses" alanını bul
+            JsonNode enrolledCoursesNode = studentNode.get("enrolledCourses");
+
+            // Eğer "requestedCourses" alanı boşsa oluştur
+            if (enrolledCoursesNode == null || !enrolledCoursesNode.isArray()) {
+                enrolledCoursesNode = objectMapper.createArrayNode();
+                ((ObjectNode) studentNode).set("enrolledCourses", enrolledCoursesNode);
+            }
+
+            // Course bilgilerini yeni bir JSON nesnesine ekle
+            ObjectNode newCourseNode = objectMapper.createObjectNode();
+            newCourseNode.put("courseId", course.getCourseId());
+            newCourseNode.put("courseName", course.getCourseName());
+            newCourseNode.put("credit", course.getCredit());
+            newCourseNode.put("prerequisite", course.hasPrerequisite());
+            newCourseNode.put("prerequisiteLessonId", course.getPrerequisiteLessonId());
+
+            // CourseSection bilgilerini ekleyin (bu kısmı kendi ihtiyaçlarınıza göre düzenleyebilirsiniz)
+            ObjectNode courseSectionNode = objectMapper.createObjectNode();
+            courseSectionNode.put("term", course.getCourseSection().getTerm());
+            courseSectionNode.put("instructor", course.getCourseSection().getInstructor());
+            courseSectionNode.put("enrollmentCapacity", course.getCourseSection().getEnrollmentCapacity());
+            courseSectionNode.put("status", course.getCourseSection().getStatus());
+
+            newCourseNode.set("courseSection", courseSectionNode);
+
+            // "requestedCourses" alanına yeni kursu ekle
+            ((ArrayNode) enrolledCoursesNode).add(newCourseNode);
+
+            // Değişiklikleri JSON dosyasına kaydet
+            objectMapper.writeValue(studentJsonFile, studentNode);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean hasPrerequisite(){

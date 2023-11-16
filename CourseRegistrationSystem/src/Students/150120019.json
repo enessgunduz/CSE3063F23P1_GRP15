@@ -7,14 +7,14 @@
     "enrolledCourses": [],
     "requestedCourses": [],
     "transcript": {
-        "grade":[
+        "grades":[
             {
                 "course": {
-                    "courseID": "CSE2043",
+                    "courseId": "CSE2043",
                     "courseName": "Programming 1",
                     "credit": 5,
                     "prerequisite": false,
-                    "prerequisiteLesson": "None",
+                    "prerequisiteLessonId": "None",
                     "courseSection": {
                         "term": "spring",
                         "instructor": "Mustafa Ağaoğlu",
@@ -25,11 +25,11 @@
             },
             {
                 "course": {
-                    "courseID": "CSE2028",
+                    "courseId": "CSE2028",
                     "courseName": "Electric Circuits",
                     "credit": 4,
                     "prerequisite": false,
-                    "prerequisiteLesson": "None",
+                    "prerequisiteLessonId": "None",
                     "courseSection": {
                         "term": "spring",
                         "instructor": "Betül Boz",

@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,35 +13,19 @@ public class SystemController {
 
     Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
         System.out.println("Welcome to the system!");
         SystemController sC = new SystemController();
-        sC.Test();
         sC.login();
     }
 
-    void Test(){
-        CourseSection cS = new CourseSection("mid2","agaoglu2",5,"active");
-        Course c = new Course("CSE2","programming2",4,false," ",cS);
-        Grade g = new Grade(c,"AA");
-        CourseSection cS2 = new CourseSection("mid","agaoglu",5,"active");
-        Course c2 = new Course("CSE1","programming",4,false," ",cS2);
-        List<Grade> gList = new ArrayList<>();
-        gList.add(g);
-        Transcript t=new Transcript(gList);
-        List<Course> eCourses=new ArrayList<>();
-        eCourses.add(c2);
-        Student st = new Student("tolga","albaba","sikicibaba","31","123",eCourses,null,t);
-        studentList=new ArrayList<>();
-        studentList.add(st);
-        courseList=new ArrayList<>();
-        courseList.add(c);
-        courseList.add(c2);
-    }
 
-    private void login(){
+    private void login() throws IOException {
         //JSON Section
+        JSONParser jP = new JSONParser();
+        studentList=jP.parseStudents();
+        courseList=jP.parseCourses();
+        advisorList=jP.parseAdvisor();
 
         System.out.println("1-Student\n2-Advisor");
         int i = scanner.nextInt();
@@ -71,6 +55,7 @@ public class SystemController {
                 }
             }
             System.out.println("User couldn't found");
+            login();
         } else if (i==2){
             for (Advisor value : advisorList) {
                 if (value.getUsername().equals(username)) {
@@ -88,10 +73,11 @@ public class SystemController {
                 }
             }
             System.out.println("User couldn't found");
+            login();
         }
     }
 
-    private void welcomeStudent(){
+    private void welcomeStudent() throws IOException {
         //Maybe need database refresh for student and advisor
         System.out.println("Please choose what you want to do:\n1-View transcript\n2-Course Registration\n3-Log out");
         int i=scanner.nextInt();
@@ -127,10 +113,10 @@ public class SystemController {
             for (Course availableCours : availableCourses) {
                 System.out.println(availableCours.toString());
             }
-            System.out.println("Please write the number of the courses you want to enroll with spaces");
-            String[] selected = scanner.next().split(" ");
+            System.out.println("Please write the number of the courses you want to enroll with commas");
+            String[] selected = scanner.next().split(",");
             for (String s : selected) {
-                crg.requestInCourse(availableCourses.get(Integer.parseInt(s)), student);
+                crg.requestInCourse(availableCourses.get(Integer.parseInt(s)-1), student);
             }
             System.out.println("Selected courses sent to the advisor");
             welcomeStudent();
@@ -142,7 +128,7 @@ public class SystemController {
         }
     }
 
-    private void welcomeAdvisor(){
+    private void welcomeAdvisor() throws IOException {
         System.out.println("Please choose what you want to do:\n1-View advised students\n2-See advised students who" +
                 " wants to enroll classes\n3-Log out");
         int i = scanner.nextInt();
@@ -161,13 +147,19 @@ public class SystemController {
             welcomeAdvisor();
             return;
         } else if(i==2){
+            List<Student> requestStudents = advisor.listRequestStudents();
+            if (requestStudents.size()==0){
+                System.out.println("There is no student who has course request");
+                welcomeAdvisor();
+                return;
+            }
             int a=1;
-            for (Student s: advisor.listRequestStudents()) {
+            for (Student s: requestStudents) {
                 System.out.println(""+(a++) + s.toString());
             }
             System.out.println("Please select which student you want to see: ");
             int k= scanner.nextInt();
-            Student currentStudent=advisor.listRequestStudents().get(a-1);
+            Student currentStudent=requestStudents.get(k-1);
             List<Course> reqCourses = currentStudent.getRequestedCourses();
             int t=1;
             for (Course reqCourse: reqCourses) {
@@ -178,7 +170,8 @@ public class SystemController {
             for (String s : selected) {
                 advisor.approveCourseRegistration(currentStudent, reqCourses.get(Integer.parseInt(s)-1));
             }
-            currentStudent.clearRequestedCourses();
+            JSONMethods jM = new JSONMethods();
+            jM.clearRequestedCourses(currentStudent);
 
             System.out.println("Selected courses are approved, others' rejected");
             welcomeAdvisor();

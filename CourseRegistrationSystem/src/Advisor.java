@@ -1,21 +1,33 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 public class Advisor extends User {
-    private String advisorID;
-    private ArrayList<Student> advisedStudent;
+    @JsonProperty("advisedStudents")
+    private ArrayList<String> advisedStudentIDs;
     private ArrayList<Student> requestedStudents;
+    private ArrayList<Student> advisedStudents;
 
-    public Advisor(String username, String name, String surname, String password, String advisorID, ArrayList<Student> advisedStudent) {
+    public Advisor(String username, String name, String surname, String password, ArrayList<String> advisedStudentIDs) {
         super(username, name, surname, password);
-        this.advisorID = advisorID;
-        this.advisedStudent = advisedStudent;
-        requestedStudents = new ArrayList<>();
+        this.advisedStudentIDs = advisedStudentIDs;
+
     }
 
     public Advisor(){}
 
+    void setAdvisedStudentsInit(List<Student> students){
+        advisedStudents= new ArrayList<>();
+        for (Student s: students ){
+            if (advisedStudentIDs.stream().anyMatch(p -> p.equals(s.getUsername()))){
+                advisedStudents.add(s);
+            }
+        }
+    }
+
     public  List<Student> listRequestStudents() {
-        for(Student st:advisedStudent){
+        requestedStudents = new ArrayList<>();
+        for(Student st: advisedStudents){
             if (st.getRequestedCourses().size()>0){
                 requestedStudents.add(st);
             }
@@ -27,15 +39,15 @@ public class Advisor extends User {
 
     public void approveCourseRegistration(Student student, Course course) {
 
-        course.addEnrolledStudent(student);
+        course.addEnrolledStudent(student,course);
 
     }
 
     public String studentsToString() {
         StringBuilder result = new StringBuilder();
-        if (!advisedStudent.isEmpty()) {
+        if (!(advisedStudents.isEmpty())) {
             result.append("Advised Students:\n");
-            for (Student student : advisedStudent) {
+            for (Student student : advisedStudents) {
                 result.append("Student ID: ").append(student.getStudentId())
                         .append(", Name: ").append(student.getName())
                         .append(", Username: ").append(student.getUsername()).append("\n");

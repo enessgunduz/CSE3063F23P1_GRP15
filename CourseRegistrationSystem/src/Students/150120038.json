@@ -7,41 +7,39 @@
     "enrolledCourses": [],
     "requestedCourses": [],
     "transcript": {
-        "grade":[
+        "grades": [
             {
-                "courseSection": {
-                    "courseID": "CSE2043",
+                "course": {
+                    "courseId": "CSE2043",
                     "courseName": "Programming 1",
                     "credit": 5,
-                    "prerequisite": 0.0,
-                    "prerequisiteLesson": "None",
-                    "course": {
+                    "prerequisite": false,
+                    "prerequisiteLessonId": "None",
+                    "courseSection": {
                         "term": "spring",
                         "instructor": "Mustafa Ağaoğlu",
                         "enrollmentCapacity": 5,
-                        "enrolledStudents":[],
                         "status": "aktif"
-                    }},
+                    }
+                },
                 "gradeValue": "CB"
             },
             {
-                "courseSection": {
-                    "courseID": "CSE2028",
+                "course": {
+                    "courseId": "CSE2028",
                     "courseName": "Electric Circuits",
                     "credit": 4,
-                    "prerequisite": 0.0,
-                    "prerequisiteLesson": "None",
-                    "course": {
+                    "prerequisite": false,
+                    "prerequisiteLessonId": "None",
+                    "courseSection": {
                         "term": "spring",
                         "instructor": "Betül Boz",
                         "enrollmentCapacity": 5,
-                        "enrolledStudents":[],
                         "status": "aktif"
                     }
                 },
                 "gradeValue": "BB"
             }
         ]
-    },
-    "advisorID": 0
+    }
 }

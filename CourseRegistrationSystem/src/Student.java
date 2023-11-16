@@ -39,39 +39,6 @@ class Student extends User {
         return this.transcript;
     }
 
-    public void clearRequestedCourses() {
-
-        try {
-            // JSON file will be read
-            File jsonFile = new File("src/Students/150120001.json");
-
-            // Read JSON data as follows
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode rootNode = objectMapper.readTree(jsonFile);
-
-            // Find the "requestedCourses" field
-            JsonNode requestedCoursesNode = rootNode.get("requestedCourses");
-
-            // If the "requestedCourses" field is not empty, delete the content
-            if (requestedCoursesNode != null && requestedCoursesNode.isArray()) {
-                ArrayNode requestedCoursesArray = (ArrayNode) requestedCoursesNode;
-                requestedCoursesArray.removeAll();
-                System.out.println("requestedCourses content has been deleted.");
-            } else {
-                System.out.println("The requestedCourses field is already empty or not found.");
-            }
-
-            // Write changes to JSON file
-            objectMapper.writeValue(jsonFile, rootNode);
-
-            System.out.println("The changes are saved.");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        this.requestedCourses.clear();
-    }
-
     public String getStudentId() {
         return studentId;
     }
