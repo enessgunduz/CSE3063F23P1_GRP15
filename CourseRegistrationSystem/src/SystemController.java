@@ -27,7 +27,7 @@ public class SystemController {
         courseList=jP.parseCourses();
         advisorList=jP.parseAdvisor();
 
-        System.out.println("1-Student\n2-Advisor");
+        System.out.println("1: Student\n2: Advisor");
         int i = scanner.nextInt();
         if (i<1 || i>2){
             System.out.println("Invalid input, try again!");
@@ -79,7 +79,7 @@ public class SystemController {
 
     private void welcomeStudent() throws IOException {
         //Maybe need database refresh for student and advisor
-        System.out.println("Please choose what you want to do:\n1-View transcript\n2-Course Registration\n3-Log out");
+        System.out.println("Please choose what you want to do:\n1: View transcript\n2: Course Registration\n3: Log out");
         int i=scanner.nextInt();
         if (i<1 || i>3){
             System.out.println("Invalid input, try again!");
@@ -88,7 +88,7 @@ public class SystemController {
         }
         if (i==1){
             System.out.println(student.viewTranscript().toString());
-            System.out.println("\n1-Go back to main menu");
+            System.out.println("\n1: Go back to main menu");
             i=scanner.nextInt();
             if (i!=1){
                 System.out.println("Invalid Input, going main menu");
@@ -110,12 +110,17 @@ public class SystemController {
             }
             CourseRegistrationSystem crg= new CourseRegistrationSystem(student,courseList);
             List<Course> availableCourses= crg.listAvailableCourses();
+            int n=1;
             for (Course availableCours : availableCourses) {
-                System.out.println(availableCours.toString());
+                System.out.println(n++ + ": " + availableCours.toString());
             }
             System.out.println("Please write the number of the courses you want to enroll with commas");
             String[] selected = scanner.next().split(",");
             for (String s : selected) {
+                if (Integer.parseInt(s) > selected.length || Integer.parseInt(s) < 1){
+                    System.out.println("Enter valid numbers 1 to " + availableCourses.size() + "\ntry again");
+                    welcomeStudent();
+                }
                 crg.requestInCourse(availableCourses.get(Integer.parseInt(s)-1), student);
             }
             System.out.println("Selected courses sent to the advisor");
@@ -129,8 +134,8 @@ public class SystemController {
     }
 
     private void welcomeAdvisor() throws IOException {
-        System.out.println("Please choose what you want to do:\n1-View advised students\n2-See advised students who" +
-                " wants to enroll classes\n3-Log out");
+        System.out.println("Please choose what you want to do:\n1: View advised students\n2: See advised students who" +
+                " wants to enroll classes\n3: Log out");
         int i = scanner.nextInt();
         if (i<1 || i>3){
             System.out.println("Invalid input, try again!");
@@ -139,7 +144,7 @@ public class SystemController {
         }
         if (i==1){
             System.out.println(advisor.studentsToString());
-            System.out.println("\n1-Go back to main menu");
+            System.out.println("\n1: Go back to main menu");
             i=scanner.nextInt();
             if (i!=1){
                 System.out.println("Invalid Input, going main menu");
