@@ -5,7 +5,6 @@ import java.util.List;
 
 public class CourseSection {
 
-
     @JsonProperty("term")
 
     private String term;
@@ -35,6 +34,23 @@ public class CourseSection {
     //public List<Student> getEnrolledStudents(){
     //
     //}
+
+
+    public String getTerm() {
+        return term;
+    }
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    public int getEnrollmentCapacity() {
+        return enrollmentCapacity;
+    }
+
+    public String getStatus() {
+        return status;
+    }
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("CourseSection[term=").append(term)
