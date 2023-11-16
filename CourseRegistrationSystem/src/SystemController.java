@@ -100,8 +100,9 @@ public class SystemController {
             if (student.getRequestedCourses().size()>0){
                 System.out.println("You already sent your list. Here is your courses that sent to advisor");
                 List<Course> requested = student.getRequestedCourses();
+                int l = 1;
                 for (Course course : requested) {
-                    System.out.println(course.toString());
+                    System.out.println( (l++)+"- "+course.toString());
                 }
                 //Maybe adding delete request
                 welcomeStudent();
@@ -116,11 +117,14 @@ public class SystemController {
             }
             System.out.println("Please write the number of the courses you want to enroll with commas");
             String[] selected = scanner.next().split(",");
-            for (String s : selected) {
-                if (Integer.parseInt(s) > selected.length || Integer.parseInt(s) < 1){
+            for (String s: selected){
+                if (Integer.parseInt(s) > availableCourses.size() || Integer.parseInt(s) < 1){
                     System.out.println("Enter valid numbers 1 to " + availableCourses.size() + "\ntry again");
                     welcomeStudent();
+                    return;
                 }
+            }
+            for (String s : selected) {
                 crg.requestInCourse(availableCourses.get(Integer.parseInt(s)-1), student);
             }
             System.out.println("Selected courses sent to the advisor");
@@ -160,21 +164,43 @@ public class SystemController {
             }
             int a=1;
             for (Student s: requestStudents) {
-                System.out.println(""+(a++) + s.toString());
+                System.out.println((a++)+": " + s.toString());
             }
             System.out.println("Please select which student you want to see: ");
             int k= scanner.nextInt();
+            if (k>requestStudents.size()){
+                System.out.println("Enter valid number, returning main menu");
+                welcomeAdvisor();
+                return;
+            }
             Student currentStudent=requestStudents.get(k-1);
             List<Course> reqCourses = currentStudent.getRequestedCourses();
             int t=1;
             for (Course reqCourse: reqCourses) {
-                System.out.println(""+(t++) +reqCourse.toString());
+                System.out.println((t++)+": " +reqCourse.toString());
             }
-            System.out.println("Please write the number of the courses you want to approve, with spaces (Others will be rejected");
-            String[] selected = scanner.next().split(" ");
-            for (String s : selected) {
-                advisor.approveCourseRegistration(currentStudent, reqCourses.get(Integer.parseInt(s)-1));
+            System.out.println("Please write the number of the courses you want to approve, with commas (Others will be rejected)\n(For reject all, write 0");
+            String[] selected = scanner.next().split(",");
+            boolean rejectAll=false;
+            for (String s: selected){
+                if (Integer.parseInt(s)==0 && selected.length==1){
+                    rejectAll=true;
+                    break;
+                }
+                if (Integer.parseInt(s) > reqCourses.size() || Integer.parseInt(s) < 1){
+                    System.out.println("Enter valid numbers 1 to " + reqCourses.size() + "\ntry again");
+                    welcomeAdvisor();
+                    return;
+                }
             }
+
+            if (!rejectAll){
+                for (String s : selected) {
+
+                    advisor.approveCourseRegistration(currentStudent, reqCourses.get(Integer.parseInt(s)-1));
+                }
+            }
+
             JSONMethods jM = new JSONMethods();
             jM.clearRequestedCourses(currentStudent);
 
