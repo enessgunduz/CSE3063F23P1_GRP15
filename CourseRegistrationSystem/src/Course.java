@@ -1,22 +1,20 @@
-import java.util.List;
-
 public class Course{
 
     private String CourseId;
     private String CourseName;
     private int credit;
     private boolean prerequisite;
-    private String prerequisiteLesson;
+    private String prerequisiteLessonId;
     private CourseSection courseSection;
     
     
 
-    public Course(String CourseId, String CourseName, int credit, boolean prerequisite, String prerequisiteLesson, CourseSection courseSection){
+    public Course(String CourseId, String CourseName, int credit, boolean prerequisite, String prerequisiteLessonId, CourseSection courseSection){
         this.CourseId = CourseId;
         this.CourseName = CourseName;
         this.credit = credit;
         this.prerequisite = prerequisite;
-        this.prerequisiteLesson = prerequisiteLesson;
+        this.prerequisiteLessonId = prerequisiteLessonId;
         this.courseSection = courseSection;
     }
     
@@ -26,7 +24,7 @@ public class Course{
     //}
 
     public void addEnrolledStudent(Student student){
-
+        //JSON
     }
 
     public boolean hasPrerequisite(){
@@ -39,7 +37,7 @@ public class Course{
           .append(", CourseName=").append(CourseName)
           .append(", credit=").append(credit)
           .append(", prerequisite=").append(prerequisite)
-          .append(", prerequisiteLesson=").append(prerequisiteLesson)
+          .append(", prerequisiteLesson=").append(prerequisiteLessonId)
           .append(", courseSection=").append(courseSection)
           .append("]");
         return sb.toString();
@@ -57,13 +55,10 @@ public class Course{
         return CourseName;
     }
 
-    public String getprerequisiteLesson(){
-        return prerequisiteLesson;
+    public String getPrerequisiteLessonId(){
+        return prerequisiteLessonId;
     }
 
-    public boolean getPrerequisite(){
-        return prerequisite;
-    }
 
     public CourseSection getCourseSection(){
         return courseSection;

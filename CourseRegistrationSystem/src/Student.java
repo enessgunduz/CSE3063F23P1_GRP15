@@ -10,10 +10,10 @@ class Student extends User {
 
     public Student(String name, String surname, String username, String password, String studentId,
             List<Course> enrolledCourses, List<Course> requestedCourses, Transcript transcript) {
-        super(name, surname, username, password);
+        super(username, surname, name, password);
         this.studentId = studentId;
-        this.enrolledCourses = new ArrayList<>();
-        this.requestedCourses = new ArrayList<>();
+        this.enrolledCourses = enrolledCourses;
+        this.requestedCourses = requestedCourses;
         this.transcript = transcript;
     }
 

@@ -9,8 +9,7 @@ public class CourseSection {
     //private List<Student> enrolledStudents;
     private String status;
 
-    public CourseSection(String term, String instructor, int enrollmentCapacity,String status,
-    String CourseId, int capacity, int credit,String CourseName, String prerequisiteLesson,  boolean prerequisite) {
+    public CourseSection(String term, String instructor, int enrollmentCapacity,String status) {
         this.term=term;
         this.instructor = instructor;
         this.status = status;

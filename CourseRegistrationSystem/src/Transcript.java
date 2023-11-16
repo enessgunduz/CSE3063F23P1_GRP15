@@ -2,17 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Transcript {
-    private Student student;
     private List<Grade> grades;
 
-    public Transcript(Student student, List<Grade> grades) {
-        this.student = student;
+    public Transcript(List<Grade> grades) {
         this.grades = grades;
     }
 
-    public Student getStudent() {
-        return student;
-    }
 
     public List<Grade> allGrades() {
 
@@ -22,9 +17,6 @@ public class Transcript {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Student: ").append(getStudent().getName()).append(" ").append(getStudent().getSurname())
-                .append("\n");
-        sb.append("Student ID: ").append(getStudent().getStudentId()).append("\n");
         // Headers
         String header = String.format("%-10s %-30s %-10s\n", "CourseID", "CourseName", "GradeValue");
         sb.append(header);

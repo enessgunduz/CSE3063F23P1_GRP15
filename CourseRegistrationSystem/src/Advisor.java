@@ -5,39 +5,23 @@ public class Advisor extends User {
     private ArrayList<Student> advisedStudent;
     private ArrayList<Student> requestedStudents;
 
-    public Advisor(String username, String name, String surname, String password, String advisorId, ArrayList<Student> advisedStudent, ArrayList<Student> requestedStudents) {
+    public Advisor(String username, String name, String surname, String password, String advisorId, ArrayList<Student> advisedStudent) {
         super(username, name, surname, password);
         this.advisorId = advisorId;
         this.advisedStudent = advisedStudent;
-        this.requestedStudents = requestedStudents;
+        requestedStudents = new ArrayList<>();
     }
 
     public  List<Student> listRequestStudents() {
-        if (requestedStudents != null && !requestedStudents.isEmpty()){
-            return requestedStudents;
+        for(Student st:advisedStudent){
+            if (st.getRequestedCourses().size()>0){
+                requestedStudents.add(st);
+            }
         }
-        else{
-            System.out.println("There is no student requesting");
-            return null;
-        }
+
+        return requestedStudents;
     }
 
-    public List<Course> listStudentRequests(Student student) {
-
-        List<Course> studentRequests = student.getRequestedCourses();
-
-        if (studentRequests != null && !studentRequests.isEmpty()) {
-
-            return studentRequests;
-
-        } else {
-
-            System.out.println("No course requests for Student " + student.getUsername() + ".");
-
-            return null;
-        }
-
-    }
 
     public void approveCourseRegistration(Student student, Course course) {
 
@@ -45,15 +29,9 @@ public class Advisor extends User {
 
     }
 
-    public void rejectCourseRegistration(Student student, Course course) {
-
-        student.clearRequestedCourses();
-
-    }
-
     public String studentsToString() {
         StringBuilder result = new StringBuilder();
-        if (advisedStudent != null && !advisedStudent.isEmpty()) {
+        if (!advisedStudent.isEmpty()) {
             result.append("Advised Students:\n");
             for (Student student : advisedStudent) {
                 result.append("Student ID: ").append(student.getStudentId())
