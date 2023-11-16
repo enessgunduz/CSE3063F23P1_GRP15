@@ -1,0 +1,44 @@
+{
+    "username": "o150120009",
+    "name": "Murat",
+    "surname": "Albayrak",
+    "password": "marmara123004",
+    "studentID": "004",
+    "enrolledCourses": [],
+    "requestedCourses": [],
+    "transcript": {
+        "grade":[
+            {
+                "course": {
+                    "courseID": "CSE2043",
+                    "courseName": "Programming 1",
+                    "credit": 5,
+                    "prerequisite": false,
+                    "prerequisiteLesson": "None",
+                    "courseSection": {
+                        "term": "spring",
+                        "instructor": "Mustafa Ağaoğlu",
+                        "enrollmentCapacity": 5,
+                        "status": "aktif"
+                    }},
+                "gradeValue": "DC"
+            },
+            {
+                "course": {
+                    "courseID": "CSE2028",
+                    "courseName": "Electric Circuits",
+                    "credit": 4,
+                    "prerequisite": false,
+                    "prerequisiteLesson": "None",
+                    "courseSection": {
+                        "term": "spring",
+                        "instructor": "Betül Boz",
+                        "enrollmentCapacity": 5,
+                        "status": "aktif"
+                    }
+                },
+                "gradeValue": "CC"
+            }
+        ]
+    }
+}
