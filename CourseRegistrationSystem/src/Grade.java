@@ -7,6 +7,10 @@ public class Grade {
         this.gradeValue = gradeValue;
     }
 
+    public Grade(){
+
+    }
+
     public Course getCourse() {
         return course;
     }

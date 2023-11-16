@@ -1,14 +1,20 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Transcript {
     private List<Grade> grades;
 
-    public Transcript(List<Grade> grades) {
+    public Transcript(@JsonProperty("grades") List<Grade> grades) {
         this.grades = grades;
     }
 
+    public Transcript(){
 
+    }
+
+    @JsonProperty("grades")
     public List<Grade> allGrades() {
 
         return grades;
@@ -22,7 +28,7 @@ public class Transcript {
         sb.append(header);
         // Grades
         for (Grade grade : allGrades()) {
-            sb.append(grade.toString()).append("\n");
+            sb.append(grade.toString());
         }
 
         return sb.toString();

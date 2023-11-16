@@ -1,8 +1,11 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Course{
 
-    private String CourseId;
-    private String CourseName;
+    private String courseId;
+    private String courseName;
     private int credit;
+    @JsonProperty("prerequisite")
     private boolean prerequisite;
     private String prerequisiteLessonId;
     private CourseSection courseSection;
@@ -10,13 +13,16 @@ public class Course{
     
 
     public Course(String CourseId, String CourseName, int credit, boolean prerequisite, String prerequisiteLessonId, CourseSection courseSection){
-        this.CourseId = CourseId;
-        this.CourseName = CourseName;
+        this.courseId = CourseId;
+        this.courseName = CourseName;
         this.credit = credit;
         this.prerequisite = prerequisite;
         this.prerequisiteLessonId = prerequisiteLessonId;
         this.courseSection = courseSection;
     }
+
+    public Course(){}
+
     
 
     //public List<Student> getEnrolledStudents(){
@@ -33,8 +39,8 @@ public class Course{
 
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Course[CourseId=").append(CourseId)
-          .append(", CourseName=").append(CourseName)
+        sb.append("Course[CourseId=").append(courseId)
+          .append(", CourseName=").append(courseName)
           .append(", credit=").append(credit)
           .append(", prerequisite=").append(prerequisite)
           .append(", prerequisiteLesson=").append(prerequisiteLessonId)
@@ -44,7 +50,7 @@ public class Course{
     }
 
     public String getCourseId(){
-        return CourseId;
+        return courseId;
     }
 
     public int getCredit(){
@@ -52,7 +58,7 @@ public class Course{
     }
 
     public String getCourseName(){
-        return CourseName;
+        return courseName;
     }
 
     public String getPrerequisiteLessonId(){

@@ -1,3 +1,5 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,13 +10,23 @@ class Student extends User {
     private List<Course> requestedCourses;
     private Transcript transcript;
 
-    public Student(String name, String surname, String username, String password, String studentId,
-            List<Course> enrolledCourses, List<Course> requestedCourses, Transcript transcript) {
-        super(username, surname, name, password);
+    public Student(@JsonProperty("username") String username,
+                   @JsonProperty("name") String name,
+                   @JsonProperty("surname") String surname,
+                   @JsonProperty("password") String password,
+                   @JsonProperty("studentID") String studentId,
+                   @JsonProperty("enrolledCourses") List<Course> enrolledCourses,
+                   @JsonProperty("requestedCourses") List<Course> requestedCourses,
+                   @JsonProperty("transcript") Transcript transcript) {
+        super(username, name, surname, password);
         this.studentId = studentId;
         this.enrolledCourses = enrolledCourses;
         this.requestedCourses = requestedCourses;
         this.transcript = transcript;
+    }
+
+    public Student(){
+
     }
 
     public Transcript viewTranscript() {

@@ -1,12 +1,23 @@
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class CourseSection {
-    
+
+
+    @JsonProperty("term")
+
     private String term;
+    @JsonProperty("instructor")
+
     private String instructor;
+    @JsonProperty("enrollmentCapacity")
+
     private int enrollmentCapacity;
     //private List<Student> enrolledStudents;
+    @JsonProperty("status")
+
     private String status;
 
     public CourseSection(String term, String instructor, int enrollmentCapacity,String status) {
@@ -16,6 +27,9 @@ public class CourseSection {
         this.enrollmentCapacity = enrollmentCapacity;
         //this.enrolledStudents = enrolledStudents;
         
+    }
+
+    public CourseSection(){
     }
     
     //public List<Student> getEnrolledStudents(){
