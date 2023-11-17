@@ -52,11 +52,10 @@ class Student extends User {
     }
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Name: ").append(getName()).append("\n");
-        sb.append("Surname: ").append(getSurname()).append("\n");
-        sb.append("Student ID: ").append(getStudentId()).append("\n");
-        return sb.toString();
+
+        String studentInfo = String.format("%-30s %-30s %-8s", getName(), getSurname(), getStudentId());
+
+        return studentInfo;
     }
 
 }

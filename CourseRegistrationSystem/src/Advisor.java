@@ -45,17 +45,23 @@ public class Advisor extends User {
 
     public String studentsToString() {
         StringBuilder result = new StringBuilder();
-        if (!(advisedStudents.isEmpty())) {
+
+        // Headers
+        String headers = String.format("%-15s %-40s %-20s\n", "Student ID", "Full Name", "Username");
+
+
+        if (!advisedStudents.isEmpty()) {
             result.append("Advised Students:\n");
+            result.append(headers);
             for (Student student : advisedStudents) {
-                result.append("Student ID: ").append(student.getStudentId())
-                        .append(", Name: ").append(student.getName())
-                        .append(", Username: ").append(student.getUsername()).append("\n");
+
+                String studentInfo = String.format("%-15s %-40s %-20s\n",
+                        student.getStudentId(), student.getName() + " " + student.getSurname(), student.getUsername());
+                result.append(studentInfo);
             }
         } else {
             result.append("No advised students.\n");
         }
-
 
         return result.toString();
     }

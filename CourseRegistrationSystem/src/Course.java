@@ -85,17 +85,17 @@ public class Course{
         return prerequisite;
     }
 
-    public String toString(){
+    public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Course[CourseId=").append(courseId)
-          .append(", CourseName=").append(courseName)
-          .append(", credit=").append(credit)
-          .append(", prerequisite=").append(prerequisite)
-          .append(", prerequisiteLesson=").append(prerequisiteLessonId)
-          .append(", courseSection=").append(courseSection)
-          .append("]");
+
+         // Course Information
+        String courseInfo = String.format("%-18s %-40s %-8s %-20s %-10s %-20s","   "+
+                courseId, courseName, credit, prerequisiteLessonId, courseSection.getTerm(), courseSection.getInstructor());
+        sb.append(courseInfo);
+
         return sb.toString();
     }
+
 
     public String getCourseId(){
         return courseId;

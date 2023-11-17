@@ -101,6 +101,9 @@ public class SystemController {
                 System.out.println("You already sent your list. Here is your courses that sent to advisor");
                 List<Course> requested = student.getRequestedCourses();
                 int l = 1;
+                String headersRequestedCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-20s",
+                        "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Instructor");
+                System.out.println(headersRequestedCourses);
                 for (Course course : requested) {
                     System.out.println( (l++)+"- "+course.toString());
                 }
@@ -112,11 +115,15 @@ public class SystemController {
             CourseRegistrationSystem crg= new CourseRegistrationSystem(student,courseList);
             List<Course> availableCourses= crg.listAvailableCourses();
             int n=1;
+            String headersavailableCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-20s",
+                    "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Instructor");
+            System.out.println(headersavailableCourses);
             for (Course availableCours : availableCourses) {
                 System.out.println(n++ + ": " + availableCours.toString());
             }
             System.out.println("Please write the number of the courses you want to enroll with commas");
             String[] selected = scanner.next().split(",");
+
             for (String s: selected){
                 if (Integer.parseInt(s) > availableCourses.size() || Integer.parseInt(s) < 1){
                     System.out.println("Enter valid numbers 1 to " + availableCourses.size() + "\ntry again");
@@ -163,6 +170,9 @@ public class SystemController {
                 return;
             }
             int a=1;
+            String headersreqStudents = String.format("   %-30s %-30s %-8s", "Name", "Surname", "Student ID");
+
+            System.out.println(headersreqStudents);
             for (Student s: requestStudents) {
                 System.out.println((a++)+": " + s.toString());
             }
@@ -176,15 +186,19 @@ public class SystemController {
             Student currentStudent=requestStudents.get(k-1);
             List<Course> reqCourses = currentStudent.getRequestedCourses();
             int t=1;
+            String headersreqCourse = String.format("      %-15s %-40s %-8s %-20s %-10s %-20s",
+                    "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Instructor");
+            System.out.println(headersreqCourse);
             for (Course reqCourse: reqCourses) {
                 System.out.println((t++)+": " +reqCourse.toString());
             }
-            System.out.println("Please write the number of the courses you want to approve, with commas (Others will be rejected)\n(For reject all, write 0");
+            System.out.println("Please write the number of the courses you want to approve, with commas (Others will be rejected)\n(For reject all, write 0)");
             String[] selected = scanner.next().split(",");
             boolean rejectAll=false;
             for (String s: selected){
                 if (Integer.parseInt(s)==0 && selected.length==1){
                     rejectAll=true;
+                    System.out.println("All courses are rejected");
                     break;
                 }
                 if (Integer.parseInt(s) > reqCourses.size() || Integer.parseInt(s) < 1){
@@ -199,12 +213,11 @@ public class SystemController {
 
                     advisor.approveCourseRegistration(currentStudent, reqCourses.get(Integer.parseInt(s)-1));
                 }
+                System.out.println("Selected courses are approved, others' rejected");
             }
 
             JSONMethods jM = new JSONMethods();
             jM.clearRequestedCourses(currentStudent);
-
-            System.out.println("Selected courses are approved, others' rejected");
             welcomeAdvisor();
             return;
         } else if (i==3){
