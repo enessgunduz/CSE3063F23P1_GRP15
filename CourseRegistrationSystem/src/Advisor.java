@@ -47,7 +47,7 @@ public class Advisor extends User {
         StringBuilder result = new StringBuilder();
 
         // Headers
-        String headers = String.format("%-15s %-40s %-20s\n", "Student ID", "Full Name", "Username");
+        String headers = String.format("%-15s %-40s\n", "Student ID", "Full Name");
 
 
         if (!advisedStudents.isEmpty()) {
@@ -55,8 +55,8 @@ public class Advisor extends User {
             result.append(headers);
             for (Student student : advisedStudents) {
 
-                String studentInfo = String.format("%-15s %-40s %-20s\n",
-                        student.getStudentId(), student.getName() + " " + student.getSurname(), student.getUsername());
+                String studentInfo = String.format("%-15s %-40s\n",
+                        student.getStudentId(), student.getName() + " " + student.getSurname());
                 result.append(studentInfo);
             }
         } else {

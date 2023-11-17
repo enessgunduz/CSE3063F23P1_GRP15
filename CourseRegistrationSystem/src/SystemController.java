@@ -27,13 +27,18 @@ public class SystemController {
         courseList=jP.parseCourses();
         advisorList=jP.parseAdvisor();
 
-        System.out.println("1: Student\n2: Advisor");
+        System.out.println("1: Student\n2: Advisor\n3: Close System");
         int i = scanner.nextInt();
-        if (i<1 || i>2){
+        if (i<1 || i>3){
             System.out.println("Invalid input, try again!");
             login();
             return;
         }
+        if (i==3) {
+            System.out.println("Exiting...");
+            System.exit(1);
+        }
+
         System.out.print("Username:");
         String username = scanner.next();
         System.out.print("Password:");
@@ -87,7 +92,11 @@ public class SystemController {
             return;
         }
         if (i==1){
-            System.out.println(student.viewTranscript().toString());
+            System.out.print(student.viewTranscript().toString());
+            for (Course c: student.getEnrolledCourses()){
+                Grade g = new Grade(c,"--");
+                System.out.print(g.toString());
+            }
             System.out.println("\n1: Go back to main menu");
             i=scanner.nextInt();
             if (i!=1){
@@ -122,7 +131,7 @@ public class SystemController {
                 System.out.println(n++ + ": " + availableCours.toString());
             }
             System.out.println("Please write the number of the courses you want to enroll with commas");
-            String[] selected = scanner.next().split(",");
+            String[] selected = scanner.next().trim().split(",");
 
             for (String s: selected){
                 if (Integer.parseInt(s) > availableCourses.size() || Integer.parseInt(s) < 1){
@@ -130,6 +139,11 @@ public class SystemController {
                     welcomeStudent();
                     return;
                 }
+            }
+            if (selected.length>5){
+                System.out.println("You can select max 5 courses");
+                welcomeStudent();
+                return;
             }
             for (String s : selected) {
                 crg.requestInCourse(availableCourses.get(Integer.parseInt(s)-1), student);
@@ -193,7 +207,7 @@ public class SystemController {
                 System.out.println((t++)+": " +reqCourse.toString());
             }
             System.out.println("Please write the number of the courses you want to approve, with commas (Others will be rejected)\n(For reject all, write 0)");
-            String[] selected = scanner.next().split(",");
+            String[] selected = scanner.next().trim().split(",");
             boolean rejectAll=false;
             for (String s: selected){
                 if (Integer.parseInt(s)==0 && selected.length==1){
