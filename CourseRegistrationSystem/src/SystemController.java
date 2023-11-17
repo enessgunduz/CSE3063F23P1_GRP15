@@ -140,8 +140,9 @@ public class SystemController {
                     return;
                 }
             }
-            if (selected.length>5){
-                System.out.println("You can select max 5 courses");
+            if (student.getEnrolledCourses().size()+ selected.length>5){
+                System.out.println("You already enrolled "+student.getEnrolledCourses().size() +" courses," +
+                        " you can select max "+(5-(student.getEnrolledCourses().size()))+" courses");
                 welcomeStudent();
                 return;
             }
