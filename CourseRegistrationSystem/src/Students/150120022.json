@@ -8,6 +8,21 @@
     "requestedCourses": [],
     "transcript": {
         "grades":[
+            {
+                "course": {
+                    "courseId": "CSE2043",
+                    "courseName": "Programming 1",
+                    "credit": 5,
+                    "prerequisite": false,
+                    "prerequisiteLessonId": "None",
+                    "courseSection": {
+                        "term": "Spring",
+                        "instructor": "Mustafa Ağaoğlu",
+                        "enrollmentCapacity": 5,
+                        "status": "Active"
+                    }},
+                "gradeValue": "CB"
+            }
         ]
     }
 }
