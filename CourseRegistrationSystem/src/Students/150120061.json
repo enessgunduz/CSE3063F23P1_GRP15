@@ -16,27 +16,11 @@
                     "prerequisite": false,
                     "prerequisiteLessonId": "None",
                     "courseSection": {
-                        "term": "spring",
+                        "term": "Spring",
                         "instructor": "Mustafa Ağaoğlu",
                         "enrollmentCapacity": 5,
-                        "status": "aktif"
+                        "status": "Active"
                     }},
-                "gradeValue": "AA"
-            },
-            {
-                "course": {
-                    "courseId": "CSE2028",
-                    "courseName": "Electric Circuits",
-                    "credit": 4,
-                    "prerequisite": false,
-                    "prerequisiteLessonId": "None",
-                    "courseSection": {
-                        "term": "spring",
-                        "instructor": "Betül Boz",
-                        "enrollmentCapacity": 5,
-                        "status": "aktif"
-                    }
-                },
                 "gradeValue": "AA"
             }
         ]

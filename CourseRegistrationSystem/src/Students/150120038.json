@@ -1,7 +1,7 @@
 {
     "username": "o150120038",
-    "name": "muhammed enes",
-    "surname": "gunduz",
+    "name": "Muhammed Enes",
+    "surname": "Gunduz",
     "password": "marmara123038",
     "studentID": "150120038",
     "enrolledCourses": [],
@@ -16,13 +16,13 @@
                     "prerequisite": false,
                     "prerequisiteLessonId": "None",
                     "courseSection": {
-                        "term": "spring",
+                        "term": "Spring",
                         "instructor": "Mustafa Ağaoğlu",
                         "enrollmentCapacity": 5,
-                        "status": "aktif"
+                        "status": "Active"
                     }
                 },
-                "gradeValue": "CB"
+                "gradeValue": "FD"
             },
             {
                 "course": {
@@ -32,13 +32,13 @@
                     "prerequisite": false,
                     "prerequisiteLessonId": "None",
                     "courseSection": {
-                        "term": "spring",
+                        "term": "Spring",
                         "instructor": "Betül Boz",
                         "enrollmentCapacity": 5,
-                        "status": "aktif"
+                        "status": "Active"
                     }
                 },
-                "gradeValue": "BB"
+                "gradeValue": "DD"
             }
         ]
     }

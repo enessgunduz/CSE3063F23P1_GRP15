@@ -16,12 +16,12 @@
                     "prerequisite": false,
                     "prerequisiteLessonId": "None",
                     "courseSection": {
-                        "term": "spring",
+                        "term": "Spring",
                         "instructor": "Mustafa Ağaoğlu",
                         "enrollmentCapacity": 5,
-                        "status": "aktif"
+                        "status": "Active"
                     }},
-                "gradeValue": "DD"
+                "gradeValue": "FF"
             },
             {
                 "course": {
@@ -31,13 +31,13 @@
                     "prerequisite": false,
                     "prerequisiteLessonId": "None",
                     "courseSection": {
-                        "term": "spring",
+                        "term": "Spring",
                         "instructor": "Betül Boz",
                         "enrollmentCapacity": 5,
-                        "status": "aktif"
+                        "status": "Active"
                     }
                 },
-                "gradeValue": "BA"
+                "gradeValue": "DD"
             }
         ]
     }
