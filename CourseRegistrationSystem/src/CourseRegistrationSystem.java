@@ -48,21 +48,17 @@ public class CourseRegistrationSystem {
         student.getRequestedCourses().add(course);
 
         try {
-            // Öğrenciye ait JSON dosyasını oku
             File studentJsonFile = new File("src/Students/"+student.getStudentId()+".json");
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode studentNode = objectMapper.readTree(studentJsonFile);
 
-            // "requestedCourses" alanını bul
             JsonNode requestedCoursesNode = studentNode.get("requestedCourses");
 
-            // Eğer "requestedCourses" alanı boşsa oluştur
             if (requestedCoursesNode == null || !requestedCoursesNode.isArray()) {
                 requestedCoursesNode = objectMapper.createArrayNode();
                 ((ObjectNode) studentNode).set("requestedCourses", requestedCoursesNode);
             }
 
-            // Course bilgilerini yeni bir JSON nesnesine ekle
             ObjectNode newCourseNode = objectMapper.createObjectNode();
             newCourseNode.put("courseId", course.getCourseId());
             newCourseNode.put("courseName", course.getCourseName());
@@ -70,7 +66,6 @@ public class CourseRegistrationSystem {
             newCourseNode.put("prerequisite", course.hasPrerequisite());
             newCourseNode.put("prerequisiteLessonId", course.getPrerequisiteLessonId());
 
-            // CourseSection bilgilerini ekleyin (bu kısmı kendi ihtiyaçlarınıza göre düzenleyebilirsiniz)
             ObjectNode courseSectionNode = objectMapper.createObjectNode();
             courseSectionNode.put("term", course.getCourseSection().getTerm());
             courseSectionNode.put("instructor", course.getCourseSection().getInstructor());
@@ -79,10 +74,8 @@ public class CourseRegistrationSystem {
 
             newCourseNode.set("courseSection", courseSectionNode);
 
-            // "requestedCourses" alanına yeni kursu ekle
             ((ArrayNode) requestedCoursesNode).add(newCourseNode);
 
-            // Değişiklikleri JSON dosyasına kaydet
             objectMapper.writeValue(studentJsonFile, studentNode);
 
         } catch (IOException e) {
