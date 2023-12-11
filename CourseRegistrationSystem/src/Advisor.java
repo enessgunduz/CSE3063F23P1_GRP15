@@ -47,16 +47,16 @@ public class Advisor extends User {
         StringBuilder result = new StringBuilder();
 
         // Headers
-        String headers = String.format("%-15s %-40s\n", "Student ID", "Full Name");
+        String headers = String.format("  %-15s %-40s\n", " Student ID", " Full Name");
 
 
         if (!advisedStudents.isEmpty()) {
             result.append("Advised Students:\n");
             result.append(headers);
-            for (Student student : advisedStudents) {
-
-                String studentInfo = String.format("%-15s %-40s\n",
-                        student.getStudentId(), student.getName() + " " + student.getSurname());
+            for (int i = 0; i < advisedStudents.size(); i++) {
+                Student student = advisedStudents.get(i);
+                String studentInfo = String.format("%d- %-15s %-40s\n",
+                        i + 1, student.getStudentId(), student.getName() + " " + student.getSurname());
                 result.append(studentInfo);
             }
         } else {
@@ -64,5 +64,8 @@ public class Advisor extends User {
         }
 
         return result.toString();
+    }
+    public List<Student> getAdvisedStudents(){
+        return advisedStudents;
     }
 }

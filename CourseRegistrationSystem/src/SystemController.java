@@ -168,16 +168,11 @@ public class SystemController {
             welcomeAdvisor();
             return;
         }
-        if (i==1){
-            System.out.println(advisor.studentsToString());
-            System.out.println("\n1: Go back to main menu");
-            i=scanner.nextInt();
-            if (i!=1){
-                System.out.println("Invalid Input, going main menu");
-            }
-            welcomeAdvisor();
+        if (i == 1) {
+            viewStudentTranscript();
             return;
-        } else if(i==2){
+        }
+        else if(i==2){
             List<Student> requestStudents = advisor.listRequestStudents();
             if (requestStudents.size()==0){
                 System.out.println("There is no student who has course request");
@@ -238,6 +233,36 @@ public class SystemController {
         } else if (i==3){
             System.out.println("Logging out...");
             login();
+        }
+    }
+    private void viewStudentTranscript() throws IOException {
+        System.out.println(advisor.studentsToString());
+        System.out.println("Enter the index of the student whose transcript you want to see.\n0: Go back to the main menu");
+
+        int studentIndex = scanner.nextInt();
+
+        if (studentIndex > 0 && studentIndex <= advisor.getAdvisedStudents().size()) {
+            Student selectedStudent = advisor.getAdvisedStudents().get(studentIndex - 1);
+            System.out.println("Transcript of the selected student: " + selectedStudent.getName() + " " + selectedStudent.getSurname() + "\n" + selectedStudent.viewTranscript());
+            handleBackOption();
+        } else if (studentIndex == 0) {
+            welcomeAdvisor();
+        } else {
+            System.out.println("Invalid index, returning to the main menu.");
+            welcomeAdvisor();
+        }
+    }
+    private void handleBackOption() throws IOException {
+        System.out.println("1: Back to view advised students\n0: Go back to the main menu");
+        int backOption = scanner.nextInt();
+
+        if (backOption == 1) {
+            viewStudentTranscript();
+        } else if (backOption == 0) {
+            welcomeAdvisor();
+        } else {
+            System.out.println("Invalid option, returning to the main menu.");
+            welcomeAdvisor();
         }
     }
 }
