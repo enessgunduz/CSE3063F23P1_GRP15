@@ -1,0 +1,29 @@
+{
+    "username": "o150120025",
+    "name": "Murat",
+    "surname": "Albayrak",
+    "password": "marmara123025",
+    "studentID": "150120025",
+    "enrolledCourses": [],
+    "requestedCourses": [],
+    "transcript": {
+        "grades":[
+            {
+                "course": {
+                    "courseId": "CSE2028",
+                    "courseName": "Electric Circuits",
+                    "credit": 4,
+                    "prerequisite": false,
+                    "prerequisiteLessonId": "None",
+                    "courseSection": {
+                        "term": "Spring",
+                        "instructor": "Betül Boz",
+                        "enrollmentCapacity": 5,
+                        "status": "Active"
+                    }
+                },
+                "gradeValue": "CC"
+            }
+        ]
+    }
+}

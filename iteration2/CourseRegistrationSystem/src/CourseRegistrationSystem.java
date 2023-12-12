@@ -38,7 +38,7 @@ public class CourseRegistrationSystem {
                         }
                     }
                 } else{
-                    if (student.getGpa()>3){
+                    if (student.getGpa()>=3){
                         availableCourse.add(course);
                     } else if (student.getSemester()==course.getCourseSection().getSemester()){
                         availableCourse.add(course);
@@ -52,40 +52,54 @@ public class CourseRegistrationSystem {
     public void requestInCourse(Course course, Student student) throws IOException {
         student.getRequestedCourses().add(course);
 
-        try {
-            File studentJsonFile = new File("src/Students/"+student.getStudentId()+".json");
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode studentNode = objectMapper.readTree(studentJsonFile);
+        JSONMethods jM = new JSONMethods();
+        jM.addRequestCourse(course,student);
+        jM.updateEnrollmentCapacity(course.getCourseId(),course.getCourseSection().getEnrollmentCapacity()-1);
+    }
 
-            JsonNode requestedCoursesNode = studentNode.get("requestedCourses");
+    public void rejectCourse(Course course) throws IOException {
+        JSONMethods jM = new JSONMethods();
+        jM.updateEnrollmentCapacity(course.getCourseId(),course.getCourseSection().getEnrollmentCapacity()+1);
 
-            if (requestedCoursesNode == null || !requestedCoursesNode.isArray()) {
-                requestedCoursesNode = objectMapper.createArrayNode();
-                ((ObjectNode) studentNode).set("requestedCourses", requestedCoursesNode);
+    }
+
+    public boolean checkForConflicts(List<Course> courses) {
+        System.out.println("\nChecking for schedule conflicts:");
+
+        for (int i = 0; i < courses.size() - 1; i++) {
+            Course course1 = courses.get(i);
+            CourseSection section1 = course1.getCourseSection();
+
+            for (int j = i + 1; j < courses.size(); j++) {
+                Course course2 = courses.get(j);
+                CourseSection section2 = course2.getCourseSection();
+
+                if (section1.getDay().equals(section2.getDay()) &&
+                        doTimeRangesOverlap(section1.getHour(), section2.getHour())) {
+                    System.out.println("Conflict found between:");
+                    System.out.println(course1);
+                    System.out.println(course2);
+                    System.out.println();
+                    return true;
+                } else {
+                    return false;
+                }
             }
-
-            ObjectNode newCourseNode = objectMapper.createObjectNode();
-            newCourseNode.put("courseId", course.getCourseId());
-            newCourseNode.put("courseName", course.getCourseName());
-            newCourseNode.put("credit", course.getCredit());
-            newCourseNode.put("prerequisite", course.hasPrerequisite());
-            newCourseNode.put("prerequisiteLessonId", course.getPrerequisiteLessonId());
-
-            ObjectNode courseSectionNode = objectMapper.createObjectNode();
-            courseSectionNode.put("term", course.getCourseSection().getTerm());
-            courseSectionNode.put("instructor", course.getCourseSection().getInstructor());
-            courseSectionNode.put("enrollmentCapacity", course.getCourseSection().getEnrollmentCapacity());
-            courseSectionNode.put("status", course.getCourseSection().getStatus());
-
-            newCourseNode.set("courseSection", courseSectionNode);
-
-            ((ArrayNode) requestedCoursesNode).add(newCourseNode);
-
-            objectMapper.writeValue(studentJsonFile, studentNode);
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+        return false;
+    }
+
+    private boolean doTimeRangesOverlap(String timeRange1, String timeRange2) {
+        String[] parts1 = timeRange1.split("-");
+        String[] parts2 = timeRange2.split("-");
+
+        String startTime1 = parts1[0];
+        String endTime1 = parts1[1];
+
+        String startTime2 = parts2[0];
+        String endTime2 = parts2[1];
+
+        return !(endTime1.compareTo(startTime2) <= 0 || startTime1.compareTo(endTime2) >= 0);
     }
 
 }

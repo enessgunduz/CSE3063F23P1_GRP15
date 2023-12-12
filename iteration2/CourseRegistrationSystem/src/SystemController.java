@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -84,9 +85,10 @@ public class SystemController {
 
     private void welcomeStudent() throws IOException {
         //Maybe need database refresh for student and advisor
-        System.out.println("Please choose what you want to do:\n1: View transcript\n2: Course Registration\n0: Log out");
+        System.out.println("Please choose what you want to do:\n1: View transcript\n2: Course Registration\n3: Request Final Project\n0: Log out");
+
         int i = scanner.nextInt();
-        if (i < 0 || i > 2) {
+        if (i < 0 || i > 3) {
             System.out.println("Invalid input, try again!");
             welcomeStudent();
             return;
@@ -146,6 +148,29 @@ public class SystemController {
                 welcomeStudent();
                 return;
             }
+
+            List<Course> requestedCourses = new ArrayList<>();
+
+            if (crg.checkForConflicts(requestedCourses)){
+                welcomeStudent();
+                return;
+            }
+
+            for (Course course:requestedCourses){
+                if (course.getCourseSection().getEnrollmentCapacity()==0){
+                    System.out.println("Your course selection "+course.getCourseName()+"'s capacity is full, do not" +
+                            " select it");
+                    welcomeStudent();
+                    return;
+                }
+            }
+
+            for (String s:selected){
+                requestedCourses.add(availableCourses.get(Integer.parseInt(s)-1));
+            }
+
+
+
             for (String s : selected) {
                 crg.requestInCourse(availableCourses.get(Integer.parseInt(s) - 1), student);
             }
@@ -153,7 +178,19 @@ public class SystemController {
             welcomeStudent();
             return;
 
-        } else if (i == 0) {
+        } else if (i==3) {
+            if (student.getTotalCredits()>=180 && student.getSemester()>=7){
+                //okay
+                System.out.println("You now have taken the project");
+                welcomeStudent();
+                return;
+            } else {
+                System.out.println("You cannot take final project because your credit or semester is not satisfied for " +
+                        "our department rules");
+                welcomeStudent();
+                return;
+            }
+        } else {
             System.out.println("Logging out...");
             login();
         }
@@ -161,6 +198,7 @@ public class SystemController {
 
     private void welcomeAdvisor() throws IOException {
         List<Student> requestStudents = advisor.listRequestStudents();
+        CourseRegistrationSystem crg = new CourseRegistrationSystem();
         if (requestStudents.isEmpty()) {
             System.out.println("There is no student who has course request.\n");
             System.out.println("Please choose what you want to do:\n1: View advised students\n0: Log out");
@@ -235,9 +273,17 @@ public class SystemController {
                     for (String s : selected) {
 
                         advisor.approveCourseRegistration(currentStudent, reqCourses.get(Integer.parseInt(s) - 1));
+                        currentStudent.getRequestedCourses().remove(reqCourses.get(Integer.parseInt(s) - 1));
                     }
+
+                    for (Course course:currentStudent.getRequestedCourses())
+                        crg.rejectCourse(course);
+
+
                     System.out.println("Selected courses are approved, others' rejected");
                 }
+
+
 
                 JSONMethods jM = new JSONMethods();
                 jM.clearRequestedCourses(currentStudent);
@@ -281,4 +327,6 @@ public class SystemController {
             welcomeAdvisor();
         }
     }
+
+
 }

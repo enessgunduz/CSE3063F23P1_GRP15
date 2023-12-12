@@ -37,7 +37,6 @@ class Student extends User {
         this.stSemester=stSemester;
         calculateTotalCredits();
     }
-
     public Student(){
         calculateTotalCredits();
     }
@@ -63,7 +62,7 @@ class Student extends User {
     public float getGpa(){
         return gpa;
     }
-    public float getSemester(){
+    public int getSemester(){
         return stSemester;
     }
     public List<Course> getEnrolledCourses() {

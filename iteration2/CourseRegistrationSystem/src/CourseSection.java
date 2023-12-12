@@ -51,6 +51,12 @@ public class CourseSection {
     public String getTerm() {
         return term;
     }
+    public String getDay() {
+        return day;
+    }
+    public String getHour() {
+        return hour;
+    }
     public int getSemester(){return semester;}
 
     public String getInstructor() {
