@@ -1,0 +1,46 @@
+{
+    "username": "o150120077",
+    "name": "Derin",
+    "surname": "Yılmaz",
+    "password": "marmara123077",
+    "studentID": "150120077",
+    "GPA": 2.4,
+    "StSemester" : 4,
+    "enrolledCourses": [],
+    "requestedCourses": [],
+    "transcript": {
+        "grades":[
+            {
+                "course": {
+                    "courseId": "CSE2043",
+                    "courseName": "Programming 1",
+                    "credit": 5,
+                    "prerequisite": false,
+                    "prerequisiteLessonId": "None",
+                    "courseSection": {
+                        "term": "Spring",
+                        "instructor": "Mustafa Ağaoğlu",
+                        "enrollmentCapacity": 5,
+                        "status": "Active"
+                    }},
+                "gradeValue": "CB"
+            },
+            {
+                "course": {
+                    "courseId": "CSE2028",
+                    "courseName": "Electric Circuits",
+                    "credit": 4,
+                    "prerequisite": false,
+                    "prerequisiteLessonId": "None",
+                    "courseSection": {
+                        "term": "Spring",
+                        "instructor": "Betül Boz",
+                        "enrollmentCapacity": 5,
+                        "status": "Active"
+                    }
+                },
+                "gradeValue": "CC"
+            }
+        ]
+    }
+}

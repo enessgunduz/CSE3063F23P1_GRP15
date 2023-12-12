@@ -8,6 +8,12 @@ public class CourseSection {
     @JsonProperty("term")
 
     private String term;
+    @JsonProperty("day")
+
+    private String day;
+    @JsonProperty("hour")
+
+    private String hour;
     @JsonProperty("semester")
 
     private int semester;
@@ -22,12 +28,14 @@ public class CourseSection {
 
     private String status;
 
-    public CourseSection(String term, int semester, String instructor, int enrollmentCapacity,String status) {
+    public CourseSection(String term, String day, String hour, int semester, String instructor, int enrollmentCapacity,String status) {
         this.term=term;
         this.instructor = instructor;
         this.status = status;
         this.enrollmentCapacity = enrollmentCapacity;
         this.semester=semester;
+        this.day=day;
+        this.hour=hour;
         //this.enrolledStudents = enrolledStudents;
         
     }

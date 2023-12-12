@@ -1,0 +1,44 @@
+{
+    "username": "o150120530",
+    "name": "Taha Enes",
+    "surname": "Karaduman",
+    "password": "marmara123530",
+    "studentID": "150120530",
+    "enrolledCourses": [],
+    "requestedCourses": [],
+    "transcript": {
+        "grades":[
+            {
+                "course": {
+                    "courseId": "CSE2043",
+                    "courseName": "Programming 1",
+                    "credit": 5,
+                    "prerequisite": false,
+                    "prerequisiteLessonId": "None",
+                    "courseSection": {
+                        "term": "Spring",
+                        "instructor": "Mustafa Ağaoğlu",
+                        "enrollmentCapacity": 5,
+                        "status": "Active"
+                    }},
+                "gradeValue": "CC"
+            },
+            {
+                "course": {
+                    "courseId": "CSE2028",
+                    "courseName": "Electric Circuits",
+                    "credit": 4,
+                    "prerequisite": false,
+                    "prerequisiteLessonId": "None",
+                    "courseSection": {
+                        "term": "Spring",
+                        "instructor": "Betül Boz",
+                        "enrollmentCapacity": 5,
+                        "status": "Active"
+                    }
+                },
+                "gradeValue": "BA"
+            }
+        ]
+    }
+}
