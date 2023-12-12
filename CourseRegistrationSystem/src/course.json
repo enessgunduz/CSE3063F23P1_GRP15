@@ -7,6 +7,9 @@
             "prerequisiteLessonId": "None",
             "courseSection": {
                 "term": "fall",
+                "day": "Monday",
+                "hour" : "13:00-14:50",
+                "semester" : 5,
                 "instructor": "Borahan Tümer",
                 "enrollmentCapacity": 5,
                 "status": "aktif"
@@ -20,6 +23,7 @@
             "prerequisiteLessonId": "None",
             "courseSection": {
                 "term": "spring",
+                "semester" : 1,
                 "instructor": "Mustafa Ağaoğlu",
                 "enrollmentCapacity": 5,
                 "status": "aktif"

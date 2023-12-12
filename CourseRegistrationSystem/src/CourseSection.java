@@ -8,6 +8,9 @@ public class CourseSection {
     @JsonProperty("term")
 
     private String term;
+    @JsonProperty("semester")
+
+    private int semester;
     @JsonProperty("instructor")
 
     private String instructor;
@@ -19,11 +22,12 @@ public class CourseSection {
 
     private String status;
 
-    public CourseSection(String term, String instructor, int enrollmentCapacity,String status) {
+    public CourseSection(String term, int semester, String instructor, int enrollmentCapacity,String status) {
         this.term=term;
         this.instructor = instructor;
         this.status = status;
         this.enrollmentCapacity = enrollmentCapacity;
+        this.semester=semester;
         //this.enrolledStudents = enrolledStudents;
         
     }
@@ -39,6 +43,7 @@ public class CourseSection {
     public String getTerm() {
         return term;
     }
+    public int getSemester(){return semester;}
 
     public String getInstructor() {
         return instructor;

@@ -4,6 +4,8 @@
     "surname": "Yılmaz",
     "password": "marmara123077",
     "studentID": "150120077",
+    "GPA": 2.4,
+    "StSemester" : 4,
     "enrolledCourses": [],
     "requestedCourses": [],
     "transcript": {

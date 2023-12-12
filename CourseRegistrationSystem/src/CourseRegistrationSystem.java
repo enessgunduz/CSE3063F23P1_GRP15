@@ -38,7 +38,12 @@ public class CourseRegistrationSystem {
                         }
                     }
                 } else{
-                    availableCourse.add(course);
+                    if (student.getGpa()>3){
+                        availableCourse.add(course);
+                    } else if (student.getSemester()==course.getCourseSection().getSemester()){
+                        availableCourse.add(course);
+                    }
+
                 }
             }
         }
