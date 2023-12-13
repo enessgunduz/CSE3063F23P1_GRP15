@@ -1,0 +1,72 @@
+{
+    "username": "o150121070",
+    "name": "Eren",
+    "surname": "Duyuk",
+    "password": "marmara123070",
+    "studentID": "150121070",
+    "GPA": 1.87,
+    "StSemester" : 3,
+    "enrolledCourses": [],
+    "requestedCourses": [],
+    "transcript": {
+      "grades": [
+        {
+          "course": {
+            "courseId": "CSE1005",
+            "courseName": "Introduction to Modern Biology",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Monday",
+                "hour" : "8:00-9:50",
+                "semester" : 1,
+                "instructor": "Beste Turanlı",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "BB"
+        },
+        {
+          "course": {
+            "courseId": "CSE1012",
+            "courseName": "Türk Dili",
+            "credit": 3,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Tuesday",
+                "hour" : "8:00-9:50",
+                "semester" : 1,
+                "instructor": "Ali Yazgan",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "CB"
+        },
+        {
+          "course": {
+            "courseId": "CSE1013",
+            "courseName": "Atatürk İlkeleri ve İnkılap Tarihi",
+            "credit": 3,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Wednesday",
+                "hour" : "8:00-9:50",
+                "semester" : 1,
+                "instructor": "Ali Yazgan",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "AA"
+        }
+      ]
+    }
+  }

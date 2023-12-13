@@ -1,0 +1,110 @@
+{
+    "username": "o150121039",
+    "name": "Emirhan",
+    "surname": "Ünsal",
+    "password": "marmara123039",
+    "studentID": "150121023",
+    "GPA": 2.87,
+    "StSemester" : 3,
+    "enrolledCourses": [],
+    "requestedCourses": [],
+    "transcript": {
+      "grades": [
+        {
+          "course": {
+            "courseId": "CSE2043",
+            "courseName": "Programming 1",
+            "credit": 5,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Tuesday",
+                "hour" : "9:00-11:50",
+                "semester" : 1,
+                "instructor": "Mustafa Ağaoğlu",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "CC"
+        },
+        {
+          "course": {
+            "courseId": "CSE1033",
+            "courseName": "Calculus I",
+            "credit": 7,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Thursday",
+                "hour" : "8:00-9:50",
+                "semester" : 1,
+                "instructor": "Aydın Türkan",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "DC"
+        },
+        {
+          "course": {
+            "courseId": "CSE1005",
+            "courseName": "Introduction to Modern Biology",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Monday",
+                "hour" : "8:00-9:50",
+                "semester" : 1,
+                "instructor": "Beste Turanlı",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "BA"
+        },
+        {
+          "course": {
+            "courseId": "CSE1012",
+            "courseName": "Türk Dili",
+            "credit": 3,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Tuesday",
+                "hour" : "8:00-9:50",
+                "semester" : 1,
+                "instructor": "Ali Yazgan",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "CB"
+        },
+        {
+          "course": {
+            "courseId": "CSE1013",
+            "courseName": "Atatürk İlkeleri ve İnkılap Tarihi",
+            "credit": 3,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Wednesday",
+                "hour" : "8:00-9:50",
+                "semester" : 1,
+                "instructor": "Ali Yazgan",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "BB"
+        }
+      ]
+    }
+  }

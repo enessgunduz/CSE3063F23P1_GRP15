@@ -1,0 +1,133 @@
+[
+        {
+            "courseId": "CSE3045",
+            "courseName": "Digital Logic Design",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Borahan Tümer",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+        {
+            "courseId": "CSE2043",
+            "courseName": "Programming 1",
+            "credit": 5,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "spring",
+                "instructor": "Mustafa Ağaoğlu",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+        {
+            "courseId": "CSE3043",
+            "courseName": "Programming 2",
+            "credit": 5,
+            "prerequisite": true,
+            "prerequisiteLessonId": "CSE2043",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Mustafa Ağaoğlu",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+        {
+            "courseId": "CSE2028",
+            "courseName": "Electric Circuits",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "spring",
+                "instructor": "Betül Boz",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+        {
+            "courseId": "CSE3028",
+            "courseName": "Electronic Devices",
+            "credit": 6,
+            "prerequisite": true,
+            "prerequisiteLessonId": "CSE2028",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Betül Boz",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+        {
+            "courseId": "CSE3050",
+            "courseName": "Introduction to Machine Learning",
+            "credit": 8,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Borahan Tümer",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+        {
+            "courseId": "CSE4050",
+            "courseName": "AI and Beyond",
+            "credit": 7,
+            "prerequisite": true,
+            "prerequisiteLessonId": "CSE3050",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Borahan Tümer",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+        {
+            "courseId": "CSE4017",
+            "courseName": "Computer Systems",
+            "credit": 5,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Mustafa Ağaoğlu",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+        {
+            "courseId": "CSE3022",
+            "courseName": "Database Systems",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Betül Boz",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+        {
+            "courseId": "CSE3049",
+            "courseName": "Operating Systems",
+            "credit": 6,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "instructor": "Betül Boz",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        }
+    ]
+

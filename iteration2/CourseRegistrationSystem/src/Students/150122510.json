@@ -1,0 +1,91 @@
+{
+    "username": "o150122510",
+    "name": "Efe",
+    "surname": "Yalım",
+    "password": "marmara123510",
+    "studentID": "150122510",
+    "GPA": 2.94,
+    "StSemester" : 3,
+    "enrolledCourses": [],
+    "requestedCourses": [],
+    "transcript": {
+      "grades": [
+        {
+          "course": {
+            "courseId": "CSE2043",
+            "courseName": "Programming 1",
+            "credit": 5,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Tuesday",
+                "hour" : "9:00-11:50",
+                "semester" : 1,
+                "instructor": "Mustafa Ağaoğlu",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "CB"
+        },
+        {
+          "course": {
+            "courseId": "CSE1033",
+            "courseName": "Calculus I",
+            "credit": 7,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Thursday",
+                "hour" : "8:00-9:50",
+                "semester" : 1,
+                "instructor": "Aydın Türkan",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "CC"
+        },
+        {
+          "course": {
+            "courseId": "CSE1012",
+            "courseName": "Türk Dili",
+            "credit": 3,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Tuesday",
+                "hour" : "8:00-9:50",
+                "semester" : 1,
+                "instructor": "Ali Yazgan",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "AA"
+        },
+        {
+          "course": {
+            "courseId": "CSE1013",
+            "courseName": "Atatürk İlkeleri ve İnkılap Tarihi",
+            "credit": 3,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "fall",
+                "day": "Wednesday",
+                "hour" : "8:00-9:50",
+                "semester" : 1,
+                "instructor": "Ali Yazgan",
+                "enrollmentCapacity": 5,
+                "status": "aktif"
+            }
+        },
+          "gradeValue": "BA"
+        }
+      ]
+    }
+  }
