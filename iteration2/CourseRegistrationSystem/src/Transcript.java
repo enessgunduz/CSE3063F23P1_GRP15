@@ -24,7 +24,7 @@ public class Transcript {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         // Headers
-        String header = String.format("%-10s %-30s %-10s\n", "Course ID", "Course Name", "Grade Value");
+        String header = String.format("%-10s %-35s %-10s\n", "Course ID", "Course Name", "Grade Value");
         sb.append(header);
         // Grades
         for (Grade grade : allGrades()) {

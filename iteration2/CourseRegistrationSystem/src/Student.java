@@ -52,7 +52,8 @@ class Student extends User {
         return totalCredits;
     }
     public Transcript viewTranscript() {
-
+        System.out.println(getStudentInfo());
+        System.out.println("-------------------------------------------------------------------");
         return this.transcript;
     }
 
@@ -78,6 +79,15 @@ class Student extends User {
         String studentInfo = String.format("%-30s %-30s %-8s", getName(), getSurname(), getStudentId());
 
         return studentInfo;
+    }
+    public String getStudentInfo() {
+        StringBuilder sbnames = new StringBuilder();
+        String header = String.format("%-45s %-35s\n", "Name: " + getName(), "GPA: " + getGpa());
+        String lowerheader = String.format("%-45s %-35s", "Surname: " + getSurname(), "Completed Credit: " + getTotalCredits());
+        sbnames.toString();
+        sbnames.append(header);
+        sbnames.append(lowerheader);
+        return  sbnames.toString();
     }
 
 }
