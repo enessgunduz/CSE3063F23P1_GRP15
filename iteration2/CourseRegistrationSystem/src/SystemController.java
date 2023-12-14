@@ -126,8 +126,8 @@ public class SystemController {
             CourseRegistrationSystem crg = new CourseRegistrationSystem(student, courseList);
             List<Course> availableCourses = crg.listAvailableCourses();
             int n = 1;
-            String headersavailableCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-20s",
-                    "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Instructor");
+            String headersavailableCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-23s %-20s",
+                    "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term","Day-Hour", "Instructor");
             System.out.println(headersavailableCourses);
             for (Course availableCours : availableCourses) {
                 System.out.println(n++ + ": " + availableCours.toString());

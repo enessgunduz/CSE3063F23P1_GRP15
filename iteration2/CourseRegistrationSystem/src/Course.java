@@ -49,8 +49,8 @@ public class Course{
         StringBuilder sb = new StringBuilder();
 
          // Course Information
-        String courseInfo = String.format("%-18s %-40s %-8s %-20s %-10s %-20s","   "+
-                courseId, courseName, credit, prerequisiteLessonId, courseSection.getTerm(), courseSection.getInstructor());
+        String courseInfo = String.format("%-18s %-40s %-8s %-20s %-10s %-23s %-20s","   "+
+                courseId, courseName, credit, prerequisiteLessonId, courseSection.getTerm(),courseSection.getDay()+"-"+ courseSection.getHour(),courseSection.getInstructor());
         sb.append(courseInfo);
 
         return sb.toString();
