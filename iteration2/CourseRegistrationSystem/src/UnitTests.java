@@ -22,7 +22,7 @@ public class UnitTests {
     void testViewTranscript() {
         // Create a sample student and transcript
         Transcript transcript = new Transcript();
-        Student student = new Student("username", "John", "Doe", "password", "123",2 ,4,null, null, transcript);
+        Student student = new Student("username", "John", "Doe", "password", "123",2 ,4,null, null, transcript, "");
 
         // Test the viewTranscript method
         assertEquals(transcript, student.viewTranscript());
@@ -31,7 +31,7 @@ public class UnitTests {
     @Test
     public void testStudentClearCourses() {
         // Create a sample student with requested courses
-        Student student = new Student("o150120038", "muhammed enes", "gunduz", "marmara123038", "150120038",3,4, new ArrayList<>(),new ArrayList<>(),new Transcript());
+        Student student = new Student("o150120038", "muhammed enes", "gunduz", "marmara123038", "150120038",3,4, new ArrayList<>(),new ArrayList<>(),new Transcript(), "");
         JSONMethods jsonMethods = new JSONMethods();
 
         // Add a requested course to the student
@@ -46,7 +46,7 @@ public class UnitTests {
     @Test
     void testListAvailableCourses() {
         // Create a student and a list of available courses
-        Student student = new Student("student1", "John", "Doe", "password", "123",3,4, new ArrayList<>(), new ArrayList<>(), new Transcript(new ArrayList<>()));
+        Student student = new Student("student1", "John", "Doe", "password", "123",3,4, new ArrayList<>(), new ArrayList<>(), new Transcript(new ArrayList<>()), "");
         List<Course> courses = new ArrayList<>();
         courses.add(new Course("CS101", "Introduction to Computer Science", 3, false, "", null));
         courses.add(new Course("MATH101", "Introduction to Mathematics", 3, false, "", null));

@@ -18,6 +18,8 @@ class Student extends User {
     private Transcript transcript;
     private int totalCredits;
 
+    private String projectAssistant;
+
     public Student(@JsonProperty("username") String username,
                    @JsonProperty("name") String name,
                    @JsonProperty("surname") String surname,
@@ -27,7 +29,8 @@ class Student extends User {
                    @JsonProperty("StSemester") int stSemester,
                    @JsonProperty("enrolledCourses") List<Course> enrolledCourses,
                    @JsonProperty("requestedCourses") List<Course> requestedCourses,
-                   @JsonProperty("transcript") Transcript transcript) {
+                   @JsonProperty("transcript") Transcript transcript,
+                   @JsonProperty("projectAssistant") String projectAssistant) {
         super(username, name, surname, password);
         this.studentId = studentId;
         this.enrolledCourses = enrolledCourses;
@@ -35,6 +38,7 @@ class Student extends User {
         this.transcript = transcript;
         this.gpa=gpa;
         this.stSemester=stSemester;
+        this.projectAssistant=projectAssistant;
         calculateTotalCredits();
     }
     public Student(){
@@ -59,6 +63,9 @@ class Student extends User {
 
     public String getStudentId() {
         return studentId;
+    }
+    public String getProjectAssistant() {
+        return projectAssistant;
     }
     public float getGpa(){
         return gpa;

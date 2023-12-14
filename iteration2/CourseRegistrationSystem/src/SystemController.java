@@ -195,8 +195,35 @@ public class SystemController {
 
         } else if (i==3) {
             if (student.getTotalCredits()>=165 && student.getSemester()>=7){
-                //okay
-                System.out.println("You now have taken the project");
+                if (student.getProjectAssistant().isEmpty()){
+                    //selection
+                    System.out.println("Select your project assistant:\n1: Betül Boz\n2: Borahan Tümer\n3: Beste Turanlı\n4: Çiğdem Eroğlu");
+                    int selected_ass = scanner.nextInt();
+                    JSONMethods jM = new JSONMethods();
+                    if (selected_ass>=1 && selected_ass<=4){
+                        switch (selected_ass) {
+                            case 1:
+                                System.out.println("You now have taken the project\nProject Assistant: Betül Boz");
+                                jM.updateProjectAssistant(student, "Betül Boz");
+                                break;
+                            case 2:
+                                System.out.println("You now have taken the project\nProject Assistant: Borahan Tümer");
+                                jM.updateProjectAssistant(student, "Borahan Tümer");
+                                break;
+                            case 3:
+                                System.out.println("You now have taken the project\nProject Assistant: Beste Turanlı");
+                                jM.updateProjectAssistant(student, "Beste Turanlı");
+                                break;
+                            case 4:
+                                System.out.println("You now have taken the project\nProject Assistant: Çiğdem Eroğlu");
+                                jM.updateProjectAssistant(student, "Çiğdem Eroğlu");
+                                break;
+                        }
+                    }
+                }
+                else {
+                    System.out.println("You already selected your project assistant\nYour project assistant is " + student.getProjectAssistant());
+                }
                 welcomeStudent();
                 return;
             } else {

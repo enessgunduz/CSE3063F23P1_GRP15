@@ -1,14 +1,15 @@
 {
-    "username": "o15019050",
-    "name": "Mehmet Emir",
-    "surname": "Akbaba",
-    "password": "marmara123050",
-    "studentID": "150119050",
-    "GPA": 3.42,
-    "StSemester" : 5,
-    "enrolledCourses": [],
-    "requestedCourses": [],
-    "transcript": {
+  "username": "o150119050",
+  "name": "Mehmet Emir",
+  "surname": "Akbaba",
+  "password": "marmara123050",
+  "studentID": "150119050",
+  "GPA": 3.42,
+  "StSemester" : 7,
+  "enrolledCourses": [],
+  "requestedCourses": [],
+  "projectAssistant": "",
+  "transcript": {
       "grades": [
         {
           "course": {
@@ -18,13 +19,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Tuesday",
                 "hour" : "9:00-11:50",
                 "semester" : 1,
                 "instructor": "Mustafa Ağaoğlu",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "AA"
@@ -37,13 +38,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Wednesday",
                 "hour" : "10:00-11:50",
                 "semester" : 3,
                 "instructor": "Betül Boz",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "BA"
@@ -56,13 +57,13 @@
             "prerequisite": true,
             "prerequisiteLessonId": "CSE2043",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Tuesday",
                 "hour" : "13:00-15:50",
                 "semester" : 3,
                 "instructor": "Mustafa Ağaoğlu",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "BA"
@@ -75,13 +76,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Thursday",
                 "hour" : "8:00-9:50",
                 "semester" : 1,
                 "instructor": "Aydın Türkan",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "BA"
@@ -94,13 +95,13 @@
             "prerequisite": true,
             "prerequisiteLessonId": "Calculus I",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Thursday",
                 "hour" : "10:00-11:50",
                 "semester" : 3,
                 "instructor": "Aydın Türkan",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "AA"
@@ -113,13 +114,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Friday",
                 "hour" : "15:00-16:50",
                 "semester" : 3,
                 "instructor": "Ayşe Bengü Özlüsu Hamarat",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "CB"
@@ -132,13 +133,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Monday",
                 "hour" : "13:00-14:50",
                 "semester" : 3,
                 "instructor": "Betül Boz",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "BA"
@@ -151,13 +152,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Thursday",
                 "hour" : "9:00-10:50",
                 "semester" : 3,
                 "instructor": "Betül Boz",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "AA"
@@ -170,13 +171,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Monday",
                 "hour" : "8:00-9:50",
                 "semester" : 1,
                 "instructor": "Beste Turanlı",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "CC"
@@ -189,13 +190,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Tuesday",
                 "hour" : "8:00-9:50",
                 "semester" : 1,
                 "instructor": "Ali Yazgan",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "CB"
@@ -208,13 +209,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Wednesday",
                 "hour" : "8:00-9:50",
                 "semester" : 1,
                 "instructor": "Ali Yazgan",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "AA"
@@ -227,13 +228,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Monday",
                 "hour" : "14:00-15:50",
                 "semester" : 3,
                 "instructor": "Çiğdem Eroğlu",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "DC"
@@ -246,13 +247,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Wednesday",
                 "hour" : "10:00-11:50",
                 "semester" : 5,
                 "instructor": "Mustafa Ağaoğlu",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "BA"
@@ -265,13 +266,13 @@
             "prerequisite": true,
             "prerequisiteLessonId": "Calculus II",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Tuesday",
                 "hour" : "10:00-11:50",
                 "semester" : 5,
                 "instructor": "Murat Can Ganiz",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "CB"
@@ -284,13 +285,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Tuesday",
                 "hour" : "16:00-17:50",
                 "semester" : 5,
                 "instructor": "Borahan Tümer",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "AA"
@@ -303,32 +304,32 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Friday",
                 "hour" : "9:00-10:50",
                 "semester" : 5,
                 "instructor": "Betül Boz",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "AA"
         },
         {
           "course": {
-            "courseId": "CSE3022",
+            "courseId": "CSE3055",
             "courseName": "Database Systems",
             "credit": 4,
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Monday",
                 "hour" : "9:00-10:50",
                 "semester" : 5,
                 "instructor": "Betül Boz",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "CB"
@@ -341,13 +342,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Monday",
                 "hour" : "9:00-10:50",
                 "semester" : 5,
                 "instructor": "Borahan Tümer",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "CC"
@@ -360,13 +361,13 @@
             "prerequisite": true,
             "prerequisiteLessonId": "CSE2028",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Wednesday",
                 "hour" : "13:00-14:50",
                 "semester" : 5,
                 "instructor": "Betül Boz",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "BB"
@@ -379,13 +380,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Tuesday",
                 "hour" : "16:00-17:50",
                 "semester" : 5,
                 "instructor": "Borahan",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "AA"

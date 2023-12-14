@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -5,6 +6,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLOutput;
 
 public class JSONMethods {
     public boolean clearRequestedCourses(Student student) {
@@ -106,7 +108,7 @@ public class JSONMethods {
             courseSectionNode.put("status", course.getCourseSection().getStatus());
             courseSectionNode.put("semester", course.getCourseSection().getSemester());
             courseSectionNode.put("instructor", course.getCourseSection().getInstructor());
-            courseSectionNode.put("enrollmentCapacity", course.getCourseSection().getEnrollmentCapacity()-1);
+            courseSectionNode.put("enrollmentCapacity", course.getCourseSection().getEnrollmentCapacity() - 1);
             courseSectionNode.put("status", course.getCourseSection().getStatus());
 
             newCourseNode.set("courseSection", courseSectionNode);
@@ -150,6 +152,23 @@ public class JSONMethods {
         return null;
     }
 
+    public void updateProjectAssistant(Student student, String projectAssistant) {
+        try {
+            File studentJsonFile = new File("src/Students/" + student.getStudentId() + ".json");
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode studentNode = objectMapper.readTree(studentJsonFile);
+
+            ((ObjectNode)studentNode).put("projectAssistant", projectAssistant);
+
+            objectMapper.writeValue(studentJsonFile, studentNode);
+
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
 
 

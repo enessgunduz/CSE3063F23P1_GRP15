@@ -8,6 +8,7 @@
     "StSemester" : 1,
     "enrolledCourses": [],
     "requestedCourses": [],
+    "projectAssistant": "",
     "transcript": {
       "grades": []
     }

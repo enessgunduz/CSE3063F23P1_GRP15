@@ -8,6 +8,7 @@
     "StSemester" : 3,
     "enrolledCourses": [],
     "requestedCourses": [],
+  "projectAssistant": "",
     "transcript": {
       "grades": [
         {
@@ -18,13 +19,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Tuesday",
                 "hour" : "9:00-11:50",
                 "semester" : 1,
                 "instructor": "Mustafa Ağaoğlu",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "BA"
@@ -37,13 +38,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Thursday",
                 "hour" : "8:00-9:50",
                 "semester" : 1,
                 "instructor": "Aydın Türkan",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "CB"
@@ -56,13 +57,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Monday",
                 "hour" : "8:00-9:50",
                 "semester" : 1,
                 "instructor": "Beste Turanlı",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "BB"
@@ -75,13 +76,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Tuesday",
                 "hour" : "8:00-9:50",
                 "semester" : 1,
                 "instructor": "Ali Yazgan",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "BA"
@@ -94,13 +95,13 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "fall",
+                "term": "Fall",
                 "day": "Wednesday",
                 "hour" : "8:00-9:50",
                 "semester" : 1,
                 "instructor": "Ali Yazgan",
                 "enrollmentCapacity": 5,
-                "status": "aktif"
+                "status": "Active"
             }
         },
           "gradeValue": "BA"
