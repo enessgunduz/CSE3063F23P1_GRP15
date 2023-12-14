@@ -106,7 +106,7 @@ public class JSONMethods {
             courseSectionNode.put("status", course.getCourseSection().getStatus());
             courseSectionNode.put("semester", course.getCourseSection().getSemester());
             courseSectionNode.put("instructor", course.getCourseSection().getInstructor());
-            courseSectionNode.put("enrollmentCapacity", course.getCourseSection().getEnrollmentCapacity());
+            courseSectionNode.put("enrollmentCapacity", course.getCourseSection().getEnrollmentCapacity()-1);
             courseSectionNode.put("status", course.getCourseSection().getStatus());
 
             newCourseNode.set("courseSection", courseSectionNode);
@@ -135,6 +135,8 @@ public class JSONMethods {
         } else {
             System.out.println("Course not found.");
         }
+
+
     }
 
     private JsonNode findCourseNode(JsonNode rootNode, String courseId) {

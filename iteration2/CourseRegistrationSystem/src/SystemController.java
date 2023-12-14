@@ -123,6 +123,21 @@ public class SystemController {
                 return;
 
             }
+            if (student.getEnrolledCourses().size()>0){
+                System.out.println("You have already registered for courses. Here is your courses:");
+                List<Course> enrolled = student.getEnrolledCourses();
+                int l = 1;
+                String headersEnrolledCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-20s",
+                        "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Instructor");
+                System.out.println(headersEnrolledCourses);
+                for (Course course : enrolled) {
+                    System.out.println((l++) + "- " + course.toString());
+                }
+                //Maybe adding delete request
+                welcomeStudent();
+                return;
+            }
+
             CourseRegistrationSystem crg = new CourseRegistrationSystem(student, courseList);
             List<Course> availableCourses = crg.listAvailableCourses();
             int n = 1;
@@ -151,9 +166,8 @@ public class SystemController {
 
             List<Course> requestedCourses = new ArrayList<>();
 
-            if (crg.checkForConflicts(requestedCourses)){
-                welcomeStudent();
-                return;
+            for (String s:selected){
+                requestedCourses.add(availableCourses.get(Integer.parseInt(s)-1));
             }
 
             for (Course course:requestedCourses){
@@ -165,8 +179,9 @@ public class SystemController {
                 }
             }
 
-            for (String s:selected){
-                requestedCourses.add(availableCourses.get(Integer.parseInt(s)-1));
+            if (crg.checkForConflicts(requestedCourses)){
+                welcomeStudent();
+                return;
             }
 
 
@@ -179,7 +194,7 @@ public class SystemController {
             return;
 
         } else if (i==3) {
-            if (student.getTotalCredits()>=180 && student.getSemester()>=7){
+            if (student.getTotalCredits()>=165 && student.getSemester()>=7){
                 //okay
                 System.out.println("You now have taken the project");
                 welcomeStudent();
@@ -193,6 +208,7 @@ public class SystemController {
         } else {
             System.out.println("Logging out...");
             login();
+            return;
         }
     }
 
@@ -269,11 +285,12 @@ public class SystemController {
                     }
                 }
 
+                List<Course> dummyReqCourses = new ArrayList<>(currentStudent.getRequestedCourses());
                 if (!rejectAll) {
                     for (String s : selected) {
 
-                        advisor.approveCourseRegistration(currentStudent, reqCourses.get(Integer.parseInt(s) - 1));
-                        currentStudent.getRequestedCourses().remove(reqCourses.get(Integer.parseInt(s) - 1));
+                        advisor.approveCourseRegistration(currentStudent, dummyReqCourses.get(Integer.parseInt(s) - 1));
+                        currentStudent.getRequestedCourses().remove(dummyReqCourses.get(Integer.parseInt(s) - 1));
                     }
 
                     for (Course course:currentStudent.getRequestedCourses())
@@ -281,6 +298,10 @@ public class SystemController {
 
 
                     System.out.println("Selected courses are approved, others' rejected");
+                } else {
+                    for (Course course: currentStudent.getRequestedCourses()){
+                        crg.rejectCourse(course);
+                    }
                 }
 
 

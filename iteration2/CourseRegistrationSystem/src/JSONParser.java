@@ -54,9 +54,22 @@ public class JSONParser {
     public List<Course> parseCourses() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         File file = new File("src/course.json");
+        String jsonText = "";
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            while((line=br.readLine()) != null){
+                jsonText += line + "\n";
+            }
+            br.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
 
         // Use TypeReference to specify that you're expecting a List<Course>
-        return objectMapper.readValue(file, new TypeReference<List<Course>>() {});
+        return objectMapper.readValue(jsonText, new TypeReference<List<Course>>() {});
 
     }
 

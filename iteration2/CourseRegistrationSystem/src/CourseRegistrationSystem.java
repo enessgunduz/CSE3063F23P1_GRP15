@@ -40,7 +40,7 @@ public class CourseRegistrationSystem {
                 } else{
                     if (student.getGpa()>=3){
                         availableCourse.add(course);
-                    } else if (student.getSemester()==course.getCourseSection().getSemester()){
+                    } else if (student.getSemester()>=course.getCourseSection().getSemester()){
                         availableCourse.add(course);
                     }
 
@@ -79,10 +79,8 @@ public class CourseRegistrationSystem {
                     System.out.println("Conflict found between:");
                     System.out.println(course1);
                     System.out.println(course2);
-                    System.out.println();
+                    System.out.println("Please select only one of them");
                     return true;
-                } else {
-                    return false;
                 }
             }
         }
@@ -93,13 +91,13 @@ public class CourseRegistrationSystem {
         String[] parts1 = timeRange1.split("-");
         String[] parts2 = timeRange2.split("-");
 
-        String startTime1 = parts1[0];
-        String endTime1 = parts1[1];
+        String startHour = (parts1[0].split(":"))[0];
+        String endHour = (parts1[1].split(":"))[0];
 
-        String startTime2 = parts2[0];
-        String endTime2 = parts2[1];
+        String startHour2 = (parts2[0].split(":"))[0];
 
-        return !(endTime1.compareTo(startTime2) <= 0 || startTime1.compareTo(endTime2) >= 0);
+
+        return (Integer.parseInt(startHour2)>=Integer.parseInt(startHour) && Integer.parseInt(startHour2)<=Integer.parseInt(endHour));
     }
 
 }
