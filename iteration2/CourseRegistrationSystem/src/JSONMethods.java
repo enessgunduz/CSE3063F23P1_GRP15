@@ -133,7 +133,6 @@ public class JSONMethods {
             ((ObjectNode) courseNode.get("courseSection")).put("enrollmentCapacity", newCapacity);
 
             objectMapper.writeValue(courseJsonFile, rootNode);
-            System.out.println("enrollmentCapacity updated successfully.");
         } else {
             System.out.println("Course not found.");
         }

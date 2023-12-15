@@ -108,91 +108,7 @@ public class SystemController {
             return;
 
         } else if (i == 2) {
-            if (student.getRequestedCourses().size() > 0) {
-                System.out.println("You already sent your list. Here is your courses that sent to advisor");
-                List<Course> requested = student.getRequestedCourses();
-                int l = 1;
-                String headersRequestedCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-20s",
-                        "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Instructor");
-                System.out.println(headersRequestedCourses);
-                for (Course course : requested) {
-                    System.out.println((l++) + "- " + course.toString());
-                }
-                //Maybe adding delete request
-                welcomeStudent();
-                return;
-
-            }
-            if (student.getEnrolledCourses().size()>0){
-                System.out.println("You have already registered for courses. Here is your courses:");
-                List<Course> enrolled = student.getEnrolledCourses();
-                int l = 1;
-                String headersEnrolledCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-20s",
-                        "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Instructor");
-                System.out.println(headersEnrolledCourses);
-                for (Course course : enrolled) {
-                    System.out.println((l++) + "- " + course.toString());
-                }
-                //Maybe adding delete request
-                welcomeStudent();
-                return;
-            }
-
-            CourseRegistrationSystem crg = new CourseRegistrationSystem(student, courseList);
-            List<Course> availableCourses = crg.listAvailableCourses();
-            int n = 1;
-            String headersavailableCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-23s %-20s",
-                    "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term","Day-Hour", "Instructor");
-            System.out.println(headersavailableCourses);
-            for (Course availableCours : availableCourses) {
-                System.out.println(n++ + ": " + availableCours.toString());
-            }
-            System.out.println("Please write the number of the courses you want to enroll with commas");
-            String[] selected = scanner.next().trim().split(",");
-
-            for (String s : selected) {
-                if (Integer.parseInt(s) > availableCourses.size() || Integer.parseInt(s) < 1) {
-                    System.out.println("Enter valid numbers 1 to " + availableCourses.size() + "\ntry again");
-                    welcomeStudent();
-                    return;
-                }
-            }
-            if (student.getEnrolledCourses().size() + selected.length > 5) {
-                System.out.println("You already enrolled " + student.getEnrolledCourses().size() + " courses," +
-                        " you can select max " + (5 - (student.getEnrolledCourses().size())) + " courses");
-                welcomeStudent();
-                return;
-            }
-
-            List<Course> requestedCourses = new ArrayList<>();
-
-            for (String s:selected){
-                requestedCourses.add(availableCourses.get(Integer.parseInt(s)-1));
-            }
-
-            for (Course course:requestedCourses){
-                if (course.getCourseSection().getEnrollmentCapacity()==0){
-                    System.out.println("Your course selection "+course.getCourseName()+"'s capacity is full, do not" +
-                            " select it");
-                    welcomeStudent();
-                    return;
-                }
-            }
-
-            if (crg.checkForConflicts(requestedCourses)){
-                welcomeStudent();
-                return;
-            }
-
-
-
-            for (String s : selected) {
-                crg.requestInCourse(availableCourses.get(Integer.parseInt(s) - 1), student);
-            }
-            System.out.println("Selected courses sent to the advisor");
-            welcomeStudent();
-            return;
-
+            CourseRegistrationScreen();
         } else if (i==3) {
             if (student.getTotalCredits()>=165 && student.getSemester()>=7){
                 if (student.getProjectAssistant().isEmpty()){
@@ -290,8 +206,8 @@ public class SystemController {
                 Student currentStudent = requestStudents.get(k - 1);
                 List<Course> reqCourses = currentStudent.getRequestedCourses();
                 int t = 1;
-                String headersreqCourse = String.format("      %-15s %-40s %-8s %-20s %-10s %-20s",
-                        "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Instructor");
+                String headersreqCourse = String.format("      %-15s %-40s %-8s %-20s %-10s %-23s %-20s",
+                        "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term","Day-Hour", "Instructor");
                 System.out.println(headersreqCourse);
                 for (Course reqCourse : reqCourses) {
                     System.out.println((t++) + ": " + reqCourse.toString());
@@ -330,8 +246,6 @@ public class SystemController {
                         crg.rejectCourse(course);
                     }
                 }
-
-
 
                 JSONMethods jM = new JSONMethods();
                 jM.clearRequestedCourses(currentStudent);
@@ -375,6 +289,94 @@ public class SystemController {
             welcomeAdvisor();
         }
     }
+
+    public void CourseRegistrationScreen() throws IOException {
+        if (!student.getRequestedCourses().isEmpty()) {
+            System.out.println("You already sent your list. Here is your courses that sent to advisor");
+            List<Course> requested = student.getRequestedCourses();
+            int l = 1;
+            String headersRequestedCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-20s",
+                    "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Instructor");
+            System.out.println(headersRequestedCourses);
+            for (Course course : requested) {
+                System.out.println((l++) + "- " + course.toString());
+            }
+            //Maybe adding delete request
+            welcomeStudent();
+            return;
+
+        }
+        if (!student.getEnrolledCourses().isEmpty()){
+            System.out.println("You have already registered for courses. Here is your courses:");
+            List<Course> enrolled = student.getEnrolledCourses();
+            int l = 1;
+            String headersEnrolledCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-23s %-20s",
+                    "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term","Day-Hour", "Instructor");
+            System.out.println(headersEnrolledCourses);
+            for (Course course : enrolled) {
+                System.out.println((l++) + "- " + course.toString());
+            }
+            //Maybe adding delete request
+            welcomeStudent();
+            return;
+        }
+
+        CourseRegistrationSystem crg = new CourseRegistrationSystem(student, courseList);
+        List<Course> availableCourses = crg.listAvailableCourses();
+        int n = 1;
+        String headersavailableCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-23s %-20s",
+                "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term","Day-Hour", "Instructor");
+        System.out.println(headersavailableCourses);
+        for (Course availableCours : availableCourses) {
+            System.out.println(n++ + ": " + availableCours.toString());
+        }
+        System.out.println("Please write the number of the courses you want to enroll with commas");
+        String[] selected = scanner.next().trim().split(",");
+
+        for (String s : selected) {
+            if (Integer.parseInt(s) > availableCourses.size() || Integer.parseInt(s) < 1) {
+                System.out.println("Enter valid numbers 1 to " + availableCourses.size() + "\ntry again");
+                welcomeStudent();
+                return;
+            }
+        }
+        if (student.getEnrolledCourses().size() + selected.length > 5) {
+            System.out.println("You already enrolled " + student.getEnrolledCourses().size() + " courses," +
+                    " you can select max " + (5 - (student.getEnrolledCourses().size())) + " courses");
+            welcomeStudent();
+            return;
+        }
+
+        List<Course> requestedCourses = new ArrayList<>();
+
+        for (String s:selected){
+            requestedCourses.add(availableCourses.get(Integer.parseInt(s)-1));
+        }
+
+        for (Course course:requestedCourses){
+            if (course.getCourseSection().getEnrollmentCapacity()==0){
+                System.out.println("Your course selection "+course.getCourseName()+"'s capacity is full, do not" +
+                        " select it");
+                CourseRegistrationScreen();
+                return;
+            }
+        }
+
+        if (crg.checkForConflicts(requestedCourses)){
+            CourseRegistrationScreen();
+            return;
+        }
+
+
+
+        for (String s : selected) {
+            crg.requestInCourse(availableCourses.get(Integer.parseInt(s) - 1), student);
+        }
+        System.out.println("Selected courses sent to the advisor");
+        welcomeStudent();
+        return;
+    }
+
 
 
 }

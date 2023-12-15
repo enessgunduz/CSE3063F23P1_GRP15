@@ -64,8 +64,6 @@ public class CourseRegistrationSystem {
     }
 
     public boolean checkForConflicts(List<Course> courses) {
-        System.out.println("\nChecking for schedule conflicts:");
-
         for (int i = 0; i < courses.size() - 1; i++) {
             Course course1 = courses.get(i);
             CourseSection section1 = course1.getCourseSection();
