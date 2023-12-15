@@ -1,7 +1,6 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SystemController {
 
@@ -85,10 +84,10 @@ public class SystemController {
 
     private void welcomeStudent() throws IOException {
         //Maybe need database refresh for student and advisor
-        System.out.println("Please choose what you want to do:\n1: View transcript\n2: Course Registration\n3: Request Final Project\n0: Log out");
+        System.out.println("Please choose what you want to do:\n1: View transcript\n2: Course Registration\n3: Request Final Project\n4: View course schedule\n0: Log out");
 
         int i = scanner.nextInt();
-        if (i < 0 || i > 3) {
+        if (i < 0 || i > 4) {
             System.out.println("Invalid input, try again!");
             welcomeStudent();
             return;
@@ -109,14 +108,14 @@ public class SystemController {
 
         } else if (i == 2) {
             CourseRegistrationScreen();
-        } else if (i==3) {
-            if (student.getTotalCredits()>=165 && student.getSemester()>=7){
-                if (student.getProjectAssistant().isEmpty()){
+        } else if (i == 3) {
+            if (student.getTotalCredits() >= 165 && student.getSemester() >= 7) {
+                if (student.getProjectAssistant().isEmpty()) {
                     //selection
                     System.out.println("Select your project assistant:\n1: Betül Boz\n2: Borahan Tümer\n3: Beste Turanlı\n4: Çiğdem Eroğlu");
                     int selected_ass = scanner.nextInt();
                     JSONMethods jM = new JSONMethods();
-                    if (selected_ass>=1 && selected_ass<=4){
+                    if (selected_ass >= 1 && selected_ass <= 4) {
                         switch (selected_ass) {
                             case 1:
                                 System.out.println("You now have taken the project\nProject Assistant: Betül Boz");
@@ -136,8 +135,7 @@ public class SystemController {
                                 break;
                         }
                     }
-                }
-                else {
+                } else {
                     System.out.println("You already selected your project assistant\nYour project assistant is " + student.getProjectAssistant());
                 }
                 welcomeStudent();
@@ -148,6 +146,16 @@ public class SystemController {
                 welcomeStudent();
                 return;
             }
+        }
+        if (i == 4) {
+            if (!student.getEnrolledCourses().isEmpty()) {
+                showStudentSchedule();
+
+            } else {
+                System.out.println("Your course schedule cannot be viewed because you are not registered for the courses.Going main menu...");
+                welcomeStudent();
+            }
+
         } else {
             System.out.println("Logging out...");
             login();
@@ -207,7 +215,7 @@ public class SystemController {
                 List<Course> reqCourses = currentStudent.getRequestedCourses();
                 int t = 1;
                 String headersreqCourse = String.format("      %-15s %-40s %-8s %-20s %-10s %-23s %-20s",
-                        "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term","Day-Hour", "Instructor");
+                        "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Day-Hour", "Instructor");
                 System.out.println(headersreqCourse);
                 for (Course reqCourse : reqCourses) {
                     System.out.println((t++) + ": " + reqCourse.toString());
@@ -236,13 +244,13 @@ public class SystemController {
                         currentStudent.getRequestedCourses().remove(dummyReqCourses.get(Integer.parseInt(s) - 1));
                     }
 
-                    for (Course course:currentStudent.getRequestedCourses())
+                    for (Course course : currentStudent.getRequestedCourses())
                         crg.rejectCourse(course);
 
 
                     System.out.println("Selected courses are approved, others' rejected");
                 } else {
-                    for (Course course: currentStudent.getRequestedCourses()){
+                    for (Course course : currentStudent.getRequestedCourses()) {
                         crg.rejectCourse(course);
                     }
                 }
@@ -306,12 +314,12 @@ public class SystemController {
             return;
 
         }
-        if (!student.getEnrolledCourses().isEmpty()){
+        if (!student.getEnrolledCourses().isEmpty()) {
             System.out.println("You have already registered for courses. Here is your courses:");
             List<Course> enrolled = student.getEnrolledCourses();
             int l = 1;
             String headersEnrolledCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-23s %-20s",
-                    "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term","Day-Hour", "Instructor");
+                    "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Day-Hour", "Instructor");
             System.out.println(headersEnrolledCourses);
             for (Course course : enrolled) {
                 System.out.println((l++) + "- " + course.toString());
@@ -325,7 +333,7 @@ public class SystemController {
         List<Course> availableCourses = crg.listAvailableCourses();
         int n = 1;
         String headersavailableCourses = String.format("      %-15s %-40s %-8s %-20s %-10s %-23s %-20s",
-                "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term","Day-Hour", "Instructor");
+                "Course ID", "Course Name", "Credit", "Prerequisite Lesson", "Term", "Day-Hour", "Instructor");
         System.out.println(headersavailableCourses);
         for (Course availableCours : availableCourses) {
             System.out.println(n++ + ": " + availableCours.toString());
@@ -343,30 +351,29 @@ public class SystemController {
         if (student.getEnrolledCourses().size() + selected.length > 5) {
             System.out.println("You already enrolled " + student.getEnrolledCourses().size() + " courses," +
                     " you can select max " + (5 - (student.getEnrolledCourses().size())) + " courses");
-            welcomeStudent();
+            CourseRegistrationScreen();
             return;
         }
 
         List<Course> requestedCourses = new ArrayList<>();
 
-        for (String s:selected){
-            requestedCourses.add(availableCourses.get(Integer.parseInt(s)-1));
+        for (String s : selected) {
+            requestedCourses.add(availableCourses.get(Integer.parseInt(s) - 1));
         }
 
-        for (Course course:requestedCourses){
-            if (course.getCourseSection().getEnrollmentCapacity()==0){
-                System.out.println("Your course selection "+course.getCourseName()+"'s capacity is full, do not" +
+        for (Course course : requestedCourses) {
+            if (course.getCourseSection().getEnrollmentCapacity() == 0) {
+                System.out.println("Your course selection " + course.getCourseName() + "'s capacity is full, do not" +
                         " select it");
                 CourseRegistrationScreen();
                 return;
             }
         }
 
-        if (crg.checkForConflicts(requestedCourses)){
+        if (crg.checkForConflicts(requestedCourses)) {
             CourseRegistrationScreen();
             return;
         }
-
 
 
         for (String s : selected) {
@@ -377,6 +384,66 @@ public class SystemController {
         return;
     }
 
+    public void showStudentSchedule() throws IOException {
+        List<Course> enrolledCourses = student.getEnrolledCourses();
+
+        String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+        for (String day : days) {
+            System.out.println(day + ":");
+
+            List<String> hours = getHourFromCourseSections(day);
+            sortHours(hours);
+            System.out.println("|     Time      | Course ID |               Course Name                |          Instructor        |");
+            System.out.println("|---------------|-----------|------------------------------------------|----------------------------|");
+
+            for (String hour : hours) {
+                for (Course course : enrolledCourses) {
+                    CourseSection courseSection = course.getCourseSection();
+                    if (courseSection.getDay().equalsIgnoreCase(day) && courseSection.getHour().equalsIgnoreCase(hour)) {
+                        System.out.printf("| %-13s | %-9s | %-40s | %-27s|\n",
+                                hour, course.getCourseId(), course.getCourseName(), courseSection.getInstructor());
+                    }
+                }
+            }
+
+            System.out.println();
+
+        }
+        System.out.println("0: Back to the main menu");
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+        if (choice == 0) {
+            // Ana menüye dön
+            welcomeStudent();
+        } else {
+            System.out.println("Invalid Input, going main menu");
+        }
+    }
+
+
+    private List<String> getHourFromCourseSections(String day) {
+        List<CourseSection> courseSections = getCourseSectionsForDay(day);
+        return courseSections.stream().map(CourseSection::getHour).collect(Collectors.toList());
+    }
+
+    private List<CourseSection> getCourseSectionsForDay(String day) {
+        List<Course> enrolledCourses = student.getEnrolledCourses();
+        return enrolledCourses.stream()
+                .map(Course::getCourseSection)
+                .filter(cs -> cs.getDay().equalsIgnoreCase(day))
+                .collect(Collectors.toList());
+    }
+
+    private void sortHours(List<String> hours) {
+        hours.sort(this::compareHours);
+    }
+
+    private int compareHours(String hour1, String hour2) {
+        int hour1Int = Integer.parseInt(hour1.split(":")[0]);
+        int hour2Int = Integer.parseInt(hour2.split(":")[0]);
+
+        return Integer.compare(hour1Int, hour2Int);
+    }
 
 
 }
