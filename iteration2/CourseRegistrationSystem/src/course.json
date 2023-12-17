@@ -91,7 +91,7 @@
             "hour": "9:00-10:50",
             "semester": 5,
             "instructor": "Borahan Tümer",
-            "enrollmentCapacity": 5,
+            "enrollmentCapacity": 4,
             "status": "Active"
         }
     },
@@ -379,7 +379,7 @@
             "hour": "8:00-9:50",
             "semester": 2,
             "instructor": "Hector Marίa GONZALEZ LÓPEZ",
-            "enrollmentCapacity": 5,
+            "enrollmentCapacity": 4,
             "status": "Active"
         }
     },
@@ -443,6 +443,102 @@
             "hour": "13:00-14:50",
             "semester": 2,
             "instructor": "Bahar Candan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "FTE1001",
+        "courseName": "Design of Experiments",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "13:00-14:50",
+            "semester": 4,
+            "instructor": "Bahar Candan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "FTE1002",
+        "courseName": "Project Management for Engineers",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "13:00-14:50",
+            "semester": 4,
+            "instructor": "Bahar Candan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "FTE1003",
+        "courseName": "Introduction to Robotics",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "13:00-14:50",
+            "semester": 4,
+            "instructor": "Bahar Candan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "TE1001",
+        "courseName": "Introduction to Cryptography",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "11:00-12:50",
+            "semester": 4,
+            "instructor": "Zübeyir Sarı",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "TE1002",
+        "courseName": "Microprocessors",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "9:00-10:50",
+            "semester": 4,
+            "instructor": "Onur Aydoğdu",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "TE1003",
+        "courseName": "Information Systems Security",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "8:00-9:50",
+            "semester": 4,
+            "instructor": "Gönül Acar",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
