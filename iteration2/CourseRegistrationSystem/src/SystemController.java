@@ -245,7 +245,28 @@ public class SystemController {
         }
         System.out.println("Please write the number of the courses you want to enroll with commas");
         String[] selected = scanner.next().trim().split(",");
+        int numberOfNTE = 0;
+        int numberOfFTE = 0;
+        int numberOfTE = 0;
 
+        for (String s : selected) {
+            Course selectedCourse = availableCourses.get(Integer.parseInt(s) - 1);
+            String courseCode = selectedCourse.getCourseId();
+
+            if (courseCode.startsWith("NTE")) {
+                numberOfNTE++;
+            } else if (courseCode.startsWith("FTE")) {
+                numberOfFTE++;
+            } else if (courseCode.startsWith("TE")) {
+                numberOfTE++;
+            }
+        }
+
+        if (numberOfNTE > 1 || numberOfFTE > 1 || numberOfTE > 1) {
+            System.out.println("You can't select more than 1 NTE,1 FTE and 1 TE courses.");
+            CourseRegistrationScreen();
+            return;
+        }
         for (String s : selected) {
             if (Integer.parseInt(s) > availableCourses.size() || Integer.parseInt(s) < 1) {
                 System.out.println("Enter valid numbers 1 to " + availableCourses.size() + "\ntry again");
