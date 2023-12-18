@@ -25,6 +25,7 @@ public class SystemController {
         studentList = jP.parseStudents();
         courseList = jP.parseCourses();
         advisorList = jP.parseAdvisor();
+    try {
 
         System.out.println("1: Student\n2: Advisor\n0: Close System");
         int userType = scanner.nextInt();
@@ -39,40 +40,44 @@ public class SystemController {
             System.out.println("Exiting...");
             System.exit(1);
         }
-/*
-        System.out.print("Username:");
-        String username = scanner.next();
-        System.out.print("Password:");
-        String password = scanner.next();
-*/
-        if (userType == 1) {
+    if (userType == 1) {
             loginAsStudent();
         } else if (userType == 2) {
             loginAsAdvisor();
         }
+    }catch (InputMismatchException e){
+        System.out.println("Invalid input, try again!");
+        scanner.nextLine();
+        login();
+    }
     }
 
     private void welcomeStudent() throws IOException {
-        System.out.println("Please choose what you want to do:\n1: View transcript\n2: Course Registration\n3: Request Final Project\n4: View course schedule\n0: Log out");
-
-        int i = scanner.nextInt();
-        if (i < 0 || i > 4) {
+        try {
+            System.out.println("Please choose what you want to do:\n1: View transcript\n2: Course Registration\n3: Request Final Project\n4: View course schedule\n0: Log out");
+            int i = scanner.nextInt();
+            if (i < 0 || i > 4) {
+                System.out.println("Invalid input, try again!");
+                welcomeStudent();
+                return;
+            }
+            if (i == 1) {
+                ShowTranscriptScreen();
+            } else if (i == 2) {
+                CourseRegistrationScreen();
+            } else if (i == 3) {
+                ShowFinalRequest();
+            } else if (i == 4) {
+                ShowScheduleScreen();
+            } else {
+                System.out.println("Logging out...");
+                login();
+                return;
+            }
+        } catch (InputMismatchException e) {
             System.out.println("Invalid input, try again!");
+            scanner.nextLine();
             welcomeStudent();
-            return;
-        }
-        if (i == 1) {
-            ShowTranscriptScreen();
-        } else if (i == 2) {
-            CourseRegistrationScreen();
-        } else if (i == 3) {
-            ShowFinalRequest();
-        } else if (i == 4) {
-            ShowScheduleScreen();
-        } else {
-            System.out.println("Logging out...");
-            login();
-            return;
         }
     }
 
@@ -90,7 +95,6 @@ public class SystemController {
     private void loginAsStudent(String username, String password) throws IOException {
         Student student = findStudent(username);
         if (student != null && student.getPassword().equals(password)) {
-            // Login successful
             this.student = student;
             System.out.println("Welcome " + student.getName());
             welcomeStudent();
@@ -100,11 +104,17 @@ public class SystemController {
         }
     }
     private void loginAsStudent() throws IOException {
+    try {
         System.out.print("Username:");
         String username = scanner.next();
         System.out.print("Password:");
         String password = scanner.next();
         loginAsStudent(username, password);
+    }catch(InputMismatchException e){
+        System.out.println("Username or password is incorrect!");
+        scanner.nextLine();
+        loginAsStudent();
+    }
     }
 
     private void loginAsAdvisor(String username, String password) throws IOException {
@@ -122,11 +132,17 @@ public class SystemController {
     }
 
     private void loginAsAdvisor() throws IOException {
-        System.out.print("Username:");
-        String username = scanner.next();
-        System.out.print("Password:");
-        String password = scanner.next();
-        loginAsAdvisor(username, password);
+        try {
+            System.out.print("Username:");
+            String username = scanner.next();
+            System.out.print("Password:");
+            String password = scanner.next();
+            loginAsAdvisor(username, password);
+        } catch (InputMismatchException e) {
+            System.out.println("Username or password is incorrect!");
+            scanner.nextLine();
+            loginAsAdvisor();
+        }
     }
 
     private Student findStudent(String username) {
@@ -148,33 +164,45 @@ public class SystemController {
     }
 
     private void viewStudentTranscript() throws IOException {
-        System.out.println(advisor.studentsToString());
-        System.out.println("X: Enter the index of the student whose transcript you want to see.\n0: Go back to the main menu");
+        try {
+            System.out.println(advisor.studentsToString());
+            System.out.println("X: Enter the index of the student whose transcript you want to see.\n0: Go back to the main menu");
 
-        int studentIndex = scanner.nextInt();
+            int studentIndex = scanner.nextInt();
 
-        if (studentIndex > 0 && studentIndex <= advisor.getAdvisedStudents().size()) {
-            Student selectedStudent = advisor.getAdvisedStudents().get(studentIndex - 1);
-            System.out.println("Transcript of the selected student: " + selectedStudent.getName() + " " + selectedStudent.getSurname() + "\n" + selectedStudent.viewTranscript());
-            handleBackOption();
-        } else if (studentIndex == 0) {
-            welcomeAdvisor();
-        } else {
+            if (studentIndex > 0 && studentIndex <= advisor.getAdvisedStudents().size()) {
+                Student selectedStudent = advisor.getAdvisedStudents().get(studentIndex - 1);
+                System.out.println("Transcript of the selected student: " + selectedStudent.getName() + " " + selectedStudent.getSurname() + "\n" + selectedStudent.viewTranscript());
+                handleBackOption();
+            } else if (studentIndex == 0) {
+                welcomeAdvisor();
+            } else {
+                System.out.println("Invalid index, returning to the main menu.");
+                welcomeAdvisor();
+            }
+        }catch (InputMismatchException e){
             System.out.println("Invalid index, returning to the main menu.");
+            scanner.nextLine();
             welcomeAdvisor();
         }
     }
 
     private void handleBackOption() throws IOException {
-        System.out.println("1: Back to view advised students\n0: Go back to the main menu");
-        int backOption = scanner.nextInt();
+        try {
+            System.out.println("1: Back to view advised students\n0: Go back to the main menu");
+            int backOption = scanner.nextInt();
 
-        if (backOption == 1) {
-            viewStudentTranscript();
-        } else if (backOption == 0) {
-            welcomeAdvisor();
-        } else {
+            if (backOption == 1) {
+                viewStudentTranscript();
+            } else if (backOption == 0) {
+                welcomeAdvisor();
+            } else {
+                System.out.println("Invalid option, returning to the main menu.");
+                welcomeAdvisor();
+            }
+        }catch (InputMismatchException e){
             System.out.println("Invalid option, returning to the main menu.");
+            scanner.nextLine();
             welcomeAdvisor();
         }
     }
@@ -189,6 +217,7 @@ public class SystemController {
     }
 
     public void ShowTranscriptScreen() throws IOException {
+    try {
         System.out.print(student.viewTranscript().toString());
         for (Course c : student.getEnrolledCourses()) {
             Grade g = new Grade(c, "--");
@@ -201,6 +230,11 @@ public class SystemController {
         }
         welcomeStudent();
         return;
+    } catch (InputMismatchException e) {
+        System.out.println("Invalid Input, going main menu");
+        scanner.nextLine();
+        welcomeStudent();
+    }
     }
 
     public void CourseRegistrationScreen() throws IOException {
@@ -243,6 +277,7 @@ public class SystemController {
         for (Course availableCours : availableCourses) {
             System.out.println(n++ + ": " + availableCours.toString());
         }
+    try {
         System.out.println("Please write the number of the courses you want to enroll with commas");
         String[] selected = scanner.next().trim().split(",");
         int numberOfNTE = 0;
@@ -274,9 +309,9 @@ public class SystemController {
                 return;
             }
         }
-        if (student.getEnrolledCourses().size() + selected.length > 5) {
+        if (student.getEnrolledCourses().size() + selected.length > 8) {
             System.out.println("You already enrolled " + student.getEnrolledCourses().size() + " courses," +
-                    " you can select max " + (5 - (student.getEnrolledCourses().size())) + " courses");
+                    " you can select max " + (8 - (student.getEnrolledCourses().size())) + " courses");
             CourseRegistrationScreen();
             return;
         }
@@ -308,49 +343,69 @@ public class SystemController {
         System.out.println("Selected courses sent to the advisor");
         welcomeStudent();
         return;
+    }catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException e) {
+        System.out.println("Invalid input. Please enter valid course numbers.");
+        scanner.nextLine();
+        CourseRegistrationScreen();
+    }
+
     }
 
     public void ShowFinalRequest() throws IOException {
-        if (student.getTotalCredits() >= 165 && student.getSemester() >= 7) {
-            if (student.getProjectAssistant().isEmpty()) {
-                //selection
-                System.out.println("Select your project assistant:\n1: Betül Boz\n2: Borahan Tümer\n3: Beste Turanlı\n4: Çiğdem Eroğlu");
-                int selected_ass = scanner.nextInt();
-                JSONMethods jM = new JSONMethods();
-                if (selected_ass >= 1 && selected_ass <= 4) {
-                    switch (selected_ass) {
-                        case 1:
-                            System.out.println("You now have taken the project\nProject Assistant: Betül Boz");
-                            jM.updateProjectAssistant(student, "Betül Boz");
-                            break;
-                        case 2:
-                            System.out.println("You now have taken the project\nProject Assistant: Borahan Tümer");
-                            jM.updateProjectAssistant(student, "Borahan Tümer");
-                            break;
-                        case 3:
-                            System.out.println("You now have taken the project\nProject Assistant: Beste Turanlı");
-                            jM.updateProjectAssistant(student, "Beste Turanlı");
-                            break;
-                        case 4:
-                            System.out.println("You now have taken the project\nProject Assistant: Çiğdem Eroğlu");
-                            jM.updateProjectAssistant(student, "Çiğdem Eroğlu");
-                            break;
-                    }
-                }
-            } else {
-                System.out.println("You already selected your project assistant\nYour project assistant is " + student.getProjectAssistant());
-            }
-            welcomeStudent();
-            return;
-        } else {
-            System.out.println("You cannot take final project because your credit or semester is not satisfied for " +
-                    "our department rules");
-            welcomeStudent();
-            return;
-        }
+       try {
+           if (student.getTotalCredits() >= 165 && student.getSemester() >= 7) {
+               if (student.getProjectAssistant().isEmpty()) {
+                   //selection
+                   System.out.println("Select your project assistant:\n1: Betül Boz\n2: Borahan Tümer\n3: Beste Turanlı\n4: Çiğdem Eroğlu");
+                   int selected_ass = scanner.nextInt();
+                   JSONMethods jM = new JSONMethods();
+                   if (selected_ass >= 1 && selected_ass <= 4) {
+                       switch (selected_ass) {
+                           case 1:
+                               System.out.println("You now have taken the project\nProject Assistant: Betül Boz");
+                               jM.updateProjectAssistant(student, "Betül Boz");
+                               break;
+                           case 2:
+                               System.out.println("You now have taken the project\nProject Assistant: Borahan Tümer");
+                               jM.updateProjectAssistant(student, "Borahan Tümer");
+                               break;
+                           case 3:
+                               System.out.println("You now have taken the project\nProject Assistant: Beste Turanlı");
+                               jM.updateProjectAssistant(student, "Beste Turanlı");
+                               break;
+                           case 4:                                              //Instructor
+                               System.out.println("You now have taken the project\nProject Assistant: Çiğdem Eroğlu");
+                               jM.updateProjectAssistant(student, "Çiğdem Eroğlu");
+                               break;
+                           default:
+                               System.out.println("Invalid input. Please enter a number.");
+                               ShowFinalRequest();
+                       }
+                   }else{
+                       System.out.println("Invalid index. Please enter valid assistant number.");
+                       ShowFinalRequest();
+                   }
+               } else {
+                   System.out.println("You already selected your project assistant\nYour project assistant is " + student.getProjectAssistant());
+               }
+               welcomeStudent();
+               return;
+           } else {
+               System.out.println("You cannot take final project because your credit or semester is not satisfied for " +
+                       "our department rules");
+               welcomeStudent();
+               return;
+           }
+       }catch (InputMismatchException e){
+           System.out.println("Invalid input. Please enter a number.");
+           scanner.nextLine(); // consume the invalid input
+           ShowFinalRequest();
+           return;
+       }
     }
 
     public void showStudentSchedule() throws IOException {
+    try {
         List<Course> enrolledCourses = student.getEnrolledCourses();
 
         String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
@@ -384,6 +439,11 @@ public class SystemController {
             System.out.println("Invalid Input, return main menu..");
             welcomeStudent();
         }
+    }catch (InputMismatchException e){
+        System.out.println("Invalid Input, return main menu..");
+        scanner.nextLine();
+        welcomeStudent();
+    }
     }
 
 
@@ -411,25 +471,34 @@ public class SystemController {
         return Integer.compare(hour1Int, hour2Int);
     }
     private void handleNoCourseRequests() throws IOException {
-        System.out.println("There is no student who has course requests.\n");
-        System.out.println("Please choose what you want to do:\n1: View advised students\n0: Log out");
 
-        int choice = scanner.nextInt();
+        try {
+            System.out.println("There is no student who has course requests.\n");
+            System.out.println("Please choose what you want to do:\n1: View advised students\n0: Log out");
 
-        if (choice == 1) {
-            viewStudentTranscript();
-        } else if (choice == 0) {
-            System.out.println("Logging out...");
-            login();
-        } else {
+            int choice = scanner.nextInt();
+
+            if (choice == 1) {
+                viewStudentTranscript();
+            } else if (choice == 0) {
+                System.out.println("Logging out...");
+                login();
+            } else {
+                System.out.println("Invalid input, try again!");
+                welcomeAdvisor();
+                return;
+            }
+        }catch (InputMismatchException e){
             System.out.println("Invalid input, try again!");
+            scanner.nextLine();
             welcomeAdvisor();
+
         }
     }
-
     private void handleCourseRequests(List<Student> requestStudents, CourseRegistrationSystem crg) throws IOException {
-        System.out.println("There are student(s) who want to enroll in the course...\n");
-        System.out.println("Please choose what you want to do:\n1: View advised students\n2: See advised students who " +
+    try {
+            System.out.println("There are student(s) who want to enroll in the course...\n");
+            System.out.println("Please choose what you want to do:\n1: View advised students\n2: See advised students who " +
                 "wants to enroll classes\n0: Log out");
 
         int choice = scanner.nextInt();
@@ -444,13 +513,19 @@ public class SystemController {
         } else {
             System.out.println("Invalid input, try again!");
             welcomeAdvisor();
+            return;
+        }
+    }catch (InputMismatchException e){
+            System.out.println("Invalid input, try again!");
+            scanner.nextLine();
+            welcomeAdvisor();
         }
     }
     private void viewAndApproveCourses(List<Student> requestStudents, CourseRegistrationSystem crg) throws IOException {
         int studentIndex = displayRequestedStudents(requestStudents);
 
         if (studentIndex == -1) {
-            System.out.println("Enter valid number, returning to the main menu");
+            System.out.println("Invalid input, returning to the main menu");
             welcomeAdvisor();
             return;
         }
@@ -460,19 +535,40 @@ public class SystemController {
 
         displayRequestedCourses(reqCourses);
 
-        System.out.println("Please write the number of the courses you want to approve, with commas (Others will be rejected)\n(For reject all, write 0)");
-        String[] selected = scanner.next().trim().split(",");
+        try {
+            System.out.println("Please write the number of the courses you want to approve, with commas (Others will be rejected)\n(For reject all, write 0)");
+            String input = scanner.next().trim();
 
-        if (shouldRejectAll(selected, reqCourses)) {
-            rejectAllCourses(reqCourses, crg);
-        } else {
-            approveSelectedCourses(selected, currentStudent, reqCourses, crg);
+            if (input.equals("0")) {
+                rejectAllCourses(reqCourses, crg);
+            } else {
+                String[] selected = input.split(",");
+
+                for (String s : selected) {
+                    try {
+                        int courseIndex = Integer.parseInt(s);
+                        if (courseIndex <= 0 || courseIndex > reqCourses.size()) {
+                            throw new NumberFormatException();
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid course number. Returning to the student list.");
+                        viewAndApproveCourses(requestStudents, crg);
+                        return;
+                    }
+                }
+
+                approveSelectedCourses(selected, currentStudent, reqCourses, crg);
+            }
+
+            JSONMethods jM = new JSONMethods();
+            jM.clearRequestedCourses(currentStudent);
+
+            welcomeAdvisor();
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter valid course numbers.");
+            scanner.nextLine();
+            viewAndApproveCourses(requestStudents, crg);
         }
-
-        JSONMethods jM = new JSONMethods();
-        jM.clearRequestedCourses(currentStudent);
-
-        welcomeAdvisor();
     }
 
     private int displayRequestedStudents(List<Student> requestStudents) {
@@ -484,11 +580,16 @@ public class SystemController {
         for (Student s : requestStudents) {
             System.out.println((a++) + ": " + s.toString());
         }
-
+    try {
         System.out.println("Please select which student you want to see: ");
         int studentIndex = scanner.nextInt();
 
         return (studentIndex > 0 && studentIndex <= requestStudents.size()) ? studentIndex : -1;
+    }catch(InputMismatchException e){
+     //   System.out.println("Invalid input. Please enter a valid number.");
+        scanner.nextLine();
+        return -1;
+    }
     }
 
     private void displayRequestedCourses(List<Course> reqCourses) {
