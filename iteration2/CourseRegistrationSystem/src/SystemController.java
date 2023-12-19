@@ -331,7 +331,9 @@ public class SystemController {
             }
         }
 
-        if (crg.checkForConflicts(requestedCourses)) {
+        String sConflict = crg.checkForConflicts(requestedCourses);
+        if (!sConflict.equals("")) {
+            System.out.println(sConflict);
             CourseRegistrationScreen();
             return;
         }

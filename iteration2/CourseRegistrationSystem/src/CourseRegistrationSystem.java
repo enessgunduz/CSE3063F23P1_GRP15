@@ -63,7 +63,8 @@ public class CourseRegistrationSystem {
 
     }
 
-    public boolean checkForConflicts(List<Course> courses) {
+    public String checkForConflicts(List<Course> courses) {
+        StringBuilder s = new StringBuilder();
         for (int i = 0; i < courses.size() - 1; i++) {
             Course course1 = courses.get(i);
             CourseSection section1 = course1.getCourseSection();
@@ -74,15 +75,17 @@ public class CourseRegistrationSystem {
 
                 if (section1.getDay().equals(section2.getDay()) &&
                         doTimeRangesOverlap(section1.getHour(), section2.getHour())) {
-                    System.out.println("Conflict found between:");
-                    System.out.println(course1);
-                    System.out.println(course2);
-                    System.out.println("Please select only one of them");
-                    return true;
+                    s.append("Conflict found between:\n");
+                    s.append(course1);
+                    s.append("\n");
+                    s.append(course2);
+                    s.append("\n");
+                    s.append("Please select only one of them");
+                    return s.toString();
                 }
             }
         }
-        return false;
+        return s.toString();
     }
 
     private boolean doTimeRangesOverlap(String timeRange1, String timeRange2) {

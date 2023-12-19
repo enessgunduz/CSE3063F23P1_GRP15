@@ -134,7 +134,6 @@ public class JSONMethods {
 
             objectMapper.writeValue(courseJsonFile, rootNode);
         } else {
-            System.out.println("Course not found.");
         }
 
 
