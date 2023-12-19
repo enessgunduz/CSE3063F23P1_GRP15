@@ -1,0 +1,396 @@
+{
+  "username": "o150119032",
+  "name": "Hasan",
+  "surname": "Özlü",
+  "password": "marmara123032",
+  "studentID": "150119032",
+  "GPA": 2.35,
+  "StSemester" : 7,
+  "enrolledCourses": [],
+  "requestedCourses": [],
+  "projectAssistant": "",
+  "transcript": {
+    "grades": [
+      {
+        "course": {
+          "courseId": "CSE2043",
+          "courseName": "Programming 1",
+          "credit": 5,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour" : "9:00-11:50",
+            "semester" : 1,
+            "instructor": "Mustafa Ağaoğlu",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "CC"
+      },
+      {
+        "course": {
+          "courseId": "CSE2028",
+          "courseName": "Electric Circuits",
+          "credit": 4,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour" : "10:00-11:50",
+            "semester" : 3,
+            "instructor": "Betül Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "BB"
+      },
+      {
+        "course": {
+          "courseId": "CSE3043",
+          "courseName": "Programming 2",
+          "credit": 5,
+          "prerequisite": true,
+          "prerequisiteLessonId": "CSE2043",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour" : "13:00-15:50",
+            "semester" : 3,
+            "instructor": "Mustafa Ağaoğlu",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "CC"
+      },
+      {
+        "course": {
+          "courseId": "CSE1033",
+          "courseName": "Calculus I",
+          "credit": 7,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour" : "8:00-9:50",
+            "semester" : 1,
+            "instructor": "Aydın Türkan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "AA"
+      },
+      {
+        "course": {
+          "courseId": "CSE1034",
+          "courseName": "Calculus II",
+          "credit": 5,
+          "prerequisite": true,
+          "prerequisiteLessonId": "Calculus I",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour" : "10:00-11:50",
+            "semester" : 3,
+            "instructor": "Aydın Türkan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "DC"
+      },
+      {
+        "course": {
+          "courseId": "CSE2088",
+          "courseName": "Engineering Economy",
+          "credit": 4,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Friday",
+            "hour" : "15:00-16:50",
+            "semester" : 3,
+            "instructor": "Ayşe Bengü Özlüsu Hamarat",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "CB"
+      },
+      {
+        "course": {
+          "courseId": "CSE2148",
+          "courseName": "Systems Programming",
+          "credit": 7,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour" : "13:00-14:50",
+            "semester" : 3,
+            "instructor": "Betül Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "CB"
+      },
+      {
+        "course": {
+          "courseId": "CSE2246",
+          "courseName": "Analysis of Algorithms",
+          "credit": 4,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour" : "9:00-10:50",
+            "semester" : 3,
+            "instructor": "Betül Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "DC"
+      },
+      {
+        "course": {
+          "courseId": "CSE1005",
+          "courseName": "Introduction to Modern Biology",
+          "credit": 4,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour" : "8:00-9:50",
+            "semester" : 1,
+            "instructor": "Beste Turanlı",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "CC"
+      },
+      {
+        "course": {
+          "courseId": "CSE1012",
+          "courseName": "Türk Dili",
+          "credit": 3,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour" : "8:00-9:50",
+            "semester" : 1,
+            "instructor": "Ali Yazgan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "AA"
+      },
+      {
+        "course": {
+          "courseId": "CSE1013",
+          "courseName": "Atatürk İlkeleri ve İnkılap Tarihi",
+          "credit": 3,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour" : "8:00-9:50",
+            "semester" : 1,
+            "instructor": "Ali Yazgan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "AA"
+      },
+      {
+        "course": {
+          "courseId": "CSE2001",
+          "courseName": "Numerical Methods",
+          "credit": 5,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour" : "14:00-15:50",
+            "semester" : 3,
+            "instructor": "Çiğdem Eroğlu",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "DC"
+      },
+      {
+        "course": {
+          "courseId": "CSE3063",
+          "courseName": "Object-Oriented Software Design",
+          "credit": 5,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour" : "10:00-11:50",
+            "semester" : 5,
+            "instructor": "Mustafa Ağaoğlu",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "BA"
+      },
+      {
+        "course": {
+          "courseId": "CSE3154",
+          "courseName": "Modeling and Discrete Simulation",
+          "credit":4,
+          "prerequisite": true,
+          "prerequisiteLessonId": "Calculus II",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour" : "10:00-11:50",
+            "semester" : 5,
+            "instructor": "Murat Can Ganiz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "AA"
+      },
+      {
+        "course": {
+          "courseId": "CSE2004",
+          "courseName": "Data Structures",
+          "credit": 7,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour" : "16:00-17:50",
+            "semester" : 5,
+            "instructor": "Borahan Tümer",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "DD"
+      },
+      {
+        "course": {
+          "courseId": "CSE3049",
+          "courseName": "Operating Systems",
+          "credit": 6,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Friday",
+            "hour" : "9:00-10:50",
+            "semester" : 5,
+            "instructor": "Betül Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "DC"
+      },
+      {
+        "course": {
+          "courseId": "CSE3055",
+          "courseName": "Database Systems",
+          "credit": 4,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour" : "9:00-10:50",
+            "semester" : 5,
+            "instructor": "Betül Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "CC"
+      },
+      {
+        "course": {
+          "courseId": "CSE3050",
+          "courseName": "Introduction to Machine Learning",
+          "credit": 8,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour" : "9:00-10:50",
+            "semester" : 5,
+            "instructor": "Borahan Tümer",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "CC"
+      },
+      {
+        "course": {
+          "courseId": "CSE3028",
+          "courseName": "Electronic Devices",
+          "credit": 6,
+          "prerequisite": true,
+          "prerequisiteLessonId": "CSE2028",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour" : "13:00-14:50",
+            "semester" : 5,
+            "instructor": "Betül Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "CB"
+      },
+      {
+        "course": {
+          "courseId": "CSE2004",
+          "courseName": "Data Structures",
+          "credit": 7,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour" : "16:00-17:50",
+            "semester" : 5,
+            "instructor": "Borahan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+          }
+        },
+        "gradeValue": "BB"
+      }
+    ]
+  }
+}
