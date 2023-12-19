@@ -440,7 +440,7 @@
         "courseSection": {
             "term": "Fall",
             "day": "Thursday",
-            "hour": "13:00-14:50",
+            "hour": "15:00-16:50",
             "semester": 2,
             "instructor": "Bahar Candan",
             "enrollmentCapacity": 5,
@@ -456,9 +456,9 @@
         "courseSection": {
             "term": "Fall",
             "day": "Thursday",
-            "hour": "13:00-14:50",
+            "hour": "8:00-9:50",
             "semester": 4,
-            "instructor": "Bahar Candan",
+            "instructor": "Fatih Terim",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -472,9 +472,9 @@
         "courseSection": {
             "term": "Fall",
             "day": "Thursday",
-            "hour": "13:00-14:50",
+            "hour": "10:00-11:50",
             "semester": 4,
-            "instructor": "Bahar Candan",
+            "instructor": "Arda Kural",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -490,7 +490,7 @@
             "day": "Thursday",
             "hour": "13:00-14:50",
             "semester": 4,
-            "instructor": "Bahar Candan",
+            "instructor": "Burak Yılmaz",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -539,6 +539,86 @@
             "hour": "8:00-9:50",
             "semester": 4,
             "instructor": "Gönül Acar",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "TE1003",
+        "courseName": "Information Systems Security",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour": "8:00-9:50",
+            "semester": 4,
+            "instructor": "Gönül Acar",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "TE1002",
+        "courseName": "Microprocessors",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "13:00-14:50",
+            "semester": 4,
+            "instructor": "Onur Aydoğdu",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "FTE1002",
+        "courseName": "Project Management for Engineers",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "15:00-16:50",
+            "semester": 4,
+            "instructor": "Bahar Candan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "FTE1001",
+        "courseName": "Design of Experiments",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "13:00-14:50",
+            "semester": 4,
+            "instructor": "Bahar Candan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "NTE1003",
+        "courseName": "Positive Thinking",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour": "8:00-9:50",
+            "semester": 2,
+            "instructor": "Larry Weiner",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
