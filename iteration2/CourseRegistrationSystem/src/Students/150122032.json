@@ -3,7 +3,7 @@
   "name": "Selim",
   "surname": "Ünsal",
   "password": "marmara123032",
-  "studentID": "150123032",
+  "studentID": "150122032",
   "GPA": 3.03,
   "StSemester": 3,
   "enrolledCourses": [],
@@ -14,7 +14,7 @@
       {
         "course": {
           "courseId": "CSE2043",
-          "courseName": "Programming 1",
+          "courseName": "Programming I",
           "credit": 5,
           "prerequisite": false,
           "prerequisiteLessonId": "None",
@@ -143,6 +143,25 @@
           }
         },
         "gradeValue": "AA"
+      },
+      {
+        "course": {
+          "courseId": "NTE1002",
+          "courseName": "German Communication",
+          "credit": 4,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+              "term": "Fall",
+              "day": "Friday",
+              "hour": "8:00-9:50",
+              "semester": 2,
+              "instructor": "Hans Neimann",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+          }
+      },
+        "gradeValue": "CB"
       }
     ]
   }

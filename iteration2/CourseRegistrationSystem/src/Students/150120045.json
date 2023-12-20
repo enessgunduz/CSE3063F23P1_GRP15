@@ -5,7 +5,7 @@
     "password": "marmara123045",
     "studentID": "150120045",
     "GPA": 2.6,
-    "StSemester" : 4,
+    "StSemester" : 5,
     "enrolledCourses": [],
     "requestedCourses": [],
   "projectAssistant": "",
@@ -14,7 +14,7 @@
           {
             "course": {
               "courseId": "CSE2043",
-              "courseName": "Programming 1",
+              "courseName": "Programming I",
               "credit": 5,
               "prerequisite": false,
               "prerequisiteLessonId": "None",
@@ -52,7 +52,7 @@
           {
             "course": {
               "courseId": "CSE3043",
-              "courseName": "Programming 2",
+              "courseName": "Programming II",
               "credit": 5,
               "prerequisite": true,
               "prerequisiteLessonId": "CSE2043",
@@ -238,6 +238,63 @@
               }
           },
             "gradeValue": "CC"
+          },
+          {
+            "course": {
+              "courseId": "NTE1005",
+              "courseName": "Strategic Entrepreneurship",
+              "credit": 4,
+              "prerequisite": false,
+              "prerequisiteLessonId": "None",
+              "courseSection": {
+                  "term": "Fall",
+                  "day": "Thursday",
+                  "hour": "15:00-16:50",
+                  "semester": 2,
+                  "instructor": "Bahar Candan",
+                  "enrollmentCapacity": 5,
+                  "status": "Active"
+              }
+          },
+            "gradeValue": "BA"
+          },
+          {
+            "course": {
+              "courseId": "FTE1003",
+              "courseName": "Introduction to Robotics",
+              "credit": 4,
+              "prerequisite": false,
+              "prerequisiteLessonId": "None",
+              "courseSection": {
+                  "term": "Fall",
+                  "day": "Thursday",
+                  "hour": "13:00-14:50",
+                  "semester": 4,
+                  "instructor": "Burak Yılmaz",
+                  "enrollmentCapacity": 5,
+                  "status": "Active"
+              }
+          },
+            "gradeValue": "CC"
+          },
+          {
+            "course": {
+              "courseId": "TE1003",
+              "courseName": "Information Systems Security",
+              "credit": 4,
+              "prerequisite": false,
+              "prerequisiteLessonId": "None",
+              "courseSection": {
+                  "term": "Fall",
+                  "day": "Thursday",
+                  "hour": "8:00-9:50",
+                  "semester": 4,
+                  "instructor": "Gönül Acar",
+                  "enrollmentCapacity": 5,
+                  "status": "Active"
+              }
+          },
+            "gradeValue": "AA"
           }
         ]
       }

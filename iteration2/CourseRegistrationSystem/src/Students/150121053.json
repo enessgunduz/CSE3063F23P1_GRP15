@@ -1,10 +1,10 @@
 {
-    "username": "o150122017",
-    "name": "Duygu",
-    "surname": "Büyükbakkal",
-    "password": "marmara123017",
-    "studentID": "150122017",
-    "GPA": 3.14,
+    "username": "o150121053",
+    "name": "Baran",
+    "surname": "Tüzel",
+    "password": "marmara122053",
+    "studentID": "150121053",
+    "GPA": 3.16,
     "StSemester": 3,
     "enrolledCourses": [],
     "requestedCourses": [],
@@ -28,7 +28,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "DD"
+          "gradeValue": "BB"
         },
         {
           "course": {
@@ -47,7 +47,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "BA"
+          "gradeValue": "CB"
         },
         {
           "course": {
@@ -66,7 +66,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CC"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -104,7 +104,7 @@
                 "status": "Active"
             }
         },
-          "gradeValue": "AA"
+          "gradeValue": "BB"
         },
         {
           "course": {
@@ -123,7 +123,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CC"
+          "gradeValue": "BA"
         },
         {
           "course": {
@@ -142,26 +142,26 @@
               "status": "Active"
             }
           },
-          "gradeValue": "AA"
+          "gradeValue": "CB"
         },
         {
           "course": {
-            "courseId": "NTE1001",
-            "courseName": "Spanish for Beginners",
+            "courseId": "NTE1003",
+            "courseName": "Positive Thinking",
             "credit": 4,
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
                 "term": "Fall",
                 "day": "Friday",
-                "hour": "8:00-9:50",
+                "hour": "15:00-16:50",
                 "semester": 2,
-                "instructor": "Hector Marίa GONZALEZ LÓPEZ",
-                "enrollmentCapacity": 4,
+                "instructor": "Larry Weiner",
+                "enrollmentCapacity": 5,
                 "status": "Active"
             }
         },
-          "gradeValue": "BA"
+          "gradeValue": "CB"
         }
       ]
     }
