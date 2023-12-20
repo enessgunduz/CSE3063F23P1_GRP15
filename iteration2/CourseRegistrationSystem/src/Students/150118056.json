@@ -1,10 +1,10 @@
 {
-    "username": "o150119509",
-    "name": "Kerem",
-    "surname": "Aktürkoğlu",
-    "password": "marmara123509",
-    "studentID": "150119509",
-    "GPA": 2.4,
+    "username": "o150118056",
+    "name": "Kıvanç",
+    "surname": "Tatlıtuğ",
+    "password": "marmara123024",
+    "studentID": "150118024",
+    "GPA": 1.64,
     "StSemester" : 7,
     "enrolledCourses": [],
     "requestedCourses": [],
@@ -47,7 +47,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "FF"
         },
         {
           "course": {
@@ -66,7 +66,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CC"
+          "gradeValue": "FD"
         },
         {
           "course": {
@@ -85,26 +85,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "BA"
-        },
-        {
-          "course": {
-            "courseId": "CSE1034",
-            "courseName": "Calculus II",
-            "credit": 5,
-            "prerequisite": true,
-            "prerequisiteLessonId": "Calculus I",
-            "courseSection": {
-              "term": "Fall",
-              "day": "Thursday",
-              "hour" : "10:00-11:50",
-              "semester" : 3,
-              "instructor": "Aydın Türkan",
-              "enrollmentCapacity": 5,
-              "status": "Active"
-            }
-          },
-          "gradeValue": "BB"
+          "gradeValue": "DZ"
         },
         {
           "course": {
@@ -142,7 +123,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "AA"
+          "gradeValue": "DC"
         },
         {
           "course": {
@@ -161,7 +142,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "BA"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -180,7 +161,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "DD"
         },
         {
           "course": {
@@ -199,7 +180,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "AA"
+          "gradeValue": "DC"
         },
         {
           "course": {
@@ -218,7 +199,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "AA"
+          "gradeValue": "CC"
         },
         {
           "course": {
@@ -256,7 +237,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "DC"
+          "gradeValue": "DD"
         },
         {
           "course": {
@@ -294,7 +275,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CC"
+          "gradeValue": "DC"
         },
         {
           "course": {
@@ -313,7 +294,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "FD"
         },
         {
           "course": {
@@ -332,7 +313,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "DD"
+          "gradeValue": "CC"
         },
         {
           "course": {
@@ -393,22 +374,22 @@
         },
         {
           "course": {
-            "courseId": "NTE1003",
-            "courseName": "Positive Thinking",
+            "courseId": "NTE1001",
+            "courseName": "Spanish for Beginners",
             "credit": 4,
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
                 "term": "Fall",
                 "day": "Friday",
-                "hour": "15:00-16:50",
+                "hour": "8:00-9:50",
                 "semester": 2,
-                "instructor": "Larry Weiner",
-                "enrollmentCapacity": 5,
+                "instructor": "Hector Marίa GONZALEZ LÓPEZ",
+                "enrollmentCapacity": 4,
                 "status": "Active"
             }
         },
-          "gradeValue": "BB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -431,22 +412,22 @@
         },
         {
           "course": {
-            "courseId": "TE1001",
-            "courseName": "Introduction to Cryptography",
+            "courseId": "TE1002",
+            "courseName": "Microprocessors",
             "credit": 4,
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
                 "term": "Fall",
                 "day": "Thursday",
-                "hour": "11:00-12:50",
+                "hour": "9:00-10:50",
                 "semester": 4,
-                "instructor": "Zübeyir Sarı",
+                "instructor": "Onur Aydoğdu",
                 "enrollmentCapacity": 5,
                 "status": "Active"
             }
         },
-          "gradeValue": "AA"
+          "gradeValue": "CC"
         }
       ]
     }

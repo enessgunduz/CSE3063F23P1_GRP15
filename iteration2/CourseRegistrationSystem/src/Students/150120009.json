@@ -1,10 +1,10 @@
 {
-    "username": "o150120001",
-    "name": "Mustafa Tolga",
-    "surname": "Akbaba",
-    "password": "marmara123001",
-    "studentID": "150120001",
-    "GPA": 3.8,
+    "username": "o150120009",
+    "name": "Mauro",
+    "surname": "Icardi",
+    "password": "marmara123009",
+    "studentID": "150120009",
+    "GPA": 3.58,
     "StSemester": 5,
     "enrolledCourses": [],
     "requestedCourses": [],
@@ -47,7 +47,7 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "BA"
+                "gradeValue": "BB"
             },
             {
                 "course": {
@@ -66,7 +66,7 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "BA"
+                "gradeValue": "AA"
             },
             {
                 "course": {
@@ -85,7 +85,7 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "CB"
+                "gradeValue": "BB"
             },
             {
                 "course": {
@@ -104,7 +104,7 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "BB"
+                "gradeValue": "BA"
             },
             {
                 "course": {
@@ -123,7 +123,7 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "AA"
+                "gradeValue": "BB"
             },
             {
                 "course": {
@@ -142,7 +142,7 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "BA"
+                "gradeValue": "AA"
             },
             {
                 "course": {
@@ -161,7 +161,7 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "BB"
+                "gradeValue": "CB"
             },
             {
                 "course": {
@@ -180,7 +180,7 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "BA"
+                "gradeValue": "BB"
             },
             {
                 "course": {
@@ -199,7 +199,7 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "CB"
+                "gradeValue": "AA"
             },
             {
                 "course": {
@@ -237,45 +237,7 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "BA"
-            },
-            {
-                "course": {
-                    "courseId": "TE1001",
-                    "courseName": "Introduction to Cryptography",
-                    "credit": 4,
-                    "prerequisite": false,
-                    "prerequisiteLessonId": "None",
-                    "courseSection": {
-                        "term": "Fall",
-                        "day": "Thursday",
-                        "hour": "11:00-12:50",
-                        "semester": 4,
-                        "instructor": "Zübeyir Sarı",
-                        "enrollmentCapacity": 5,
-                        "status": "Active"
-                    }
-                },
                 "gradeValue": "AA"
-            },
-            {
-                "course": {
-                    "courseId": "FTE1003",
-                    "courseName": "Introduction to Robotics",
-                    "credit": 4,
-                    "prerequisite": false,
-                    "prerequisiteLessonId": "None",
-                    "courseSection": {
-                        "term": "Fall",
-                        "day": "Thursday",
-                        "hour": "13:00-14:50",
-                        "semester": 4,
-                        "instructor": "Burak Yılmaz",
-                        "enrollmentCapacity": 5,
-                        "status": "Active"
-                    }
-                },
-                "gradeValue": "BB"
             },
             {
                 "course": {
@@ -294,7 +256,45 @@
                         "status": "Active"
                     }
                 },
-                "gradeValue": "CB"
+                "gradeValue": "BA"
+            },
+            {
+                "course": {
+                    "courseId": "FTE1002",
+                    "courseName": "Project Management for Engineers",
+                    "credit": 4,
+                    "prerequisite": false,
+                    "prerequisiteLessonId": "None",
+                    "courseSection": {
+                        "term": "Fall",
+                        "day": "Thursday",
+                        "hour": "10:00-11:50",
+                        "semester": 4,
+                        "instructor": "Arda Kural",
+                        "enrollmentCapacity": 5,
+                        "status": "Active"
+                    }
+                },
+                "gradeValue": "AA"
+            },
+            {
+                "course": {
+                    "courseId": "TE1002",
+                    "courseName": "Microprocessors",
+                    "credit": 4,
+                    "prerequisite": false,
+                    "prerequisiteLessonId": "None",
+                    "courseSection": {
+                        "term": "Fall",
+                        "day": "Thursday",
+                        "hour": "9:00-10:50",
+                        "semester": 4,
+                        "instructor": "Onur Aydoğdu",
+                        "enrollmentCapacity": 5,
+                        "status": "Active"
+                    }
+                },
+                "gradeValue": "AA"
             }
         ]
     }

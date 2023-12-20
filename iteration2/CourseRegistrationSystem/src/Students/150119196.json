@@ -14,7 +14,7 @@
       {
         "course": {
           "courseId": "CSE2043",
-          "courseName": "Programming 1",
+          "courseName": "Programming I",
           "credit": 5,
           "prerequisite": false,
           "prerequisiteLessonId": "None",
@@ -52,7 +52,7 @@
       {
         "course": {
           "courseId": "CSE3043",
-          "courseName": "Programming 2",
+          "courseName": "Programming II",
           "credit": 5,
           "prerequisite": true,
           "prerequisiteLessonId": "CSE2043",
@@ -352,6 +352,63 @@
           }
         },
         "gradeValue": "CC"
+      },
+      {
+        "course": {
+          "courseId": "TE1001",
+          "courseName": "Introduction to Cryptography",
+          "credit": 4,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+              "term": "Fall",
+              "day": "Thursday",
+              "hour": "11:00-12:50",
+              "semester": 4,
+              "instructor": "Zübeyir Sarı",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+          }
+      },
+        "gradeValue": "BB"
+      },
+      {
+        "course": {
+          "courseId": "NTE1003",
+          "courseName": "Positive Thinking",
+          "credit": 4,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+              "term": "Fall",
+              "day": "Friday",
+              "hour": "15:00-16:50",
+              "semester": 2,
+              "instructor": "Larry Weiner",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+          }
+      },
+        "gradeValue": "BB"
+      },
+      {
+        "course": {
+          "courseId": "FTE1001",
+          "courseName": "Design of Experiments",
+          "credit": 4,
+          "prerequisite": false,
+          "prerequisiteLessonId": "None",
+          "courseSection": {
+              "term": "Fall",
+              "day": "Thursday",
+              "hour": "8:00-9:50",
+              "semester": 4,
+              "instructor": "Okan Buruk",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+          }
+      },
+        "gradeValue": "BA"
       }
     ]
   }

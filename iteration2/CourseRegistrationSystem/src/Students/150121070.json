@@ -67,6 +67,25 @@
             }
         },
           "gradeValue": "AA"
+        },
+        {
+          "course": {
+            "courseId": "NTE1001",
+            "courseName": "Spanish for Beginners",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "Fall",
+                "day": "Friday",
+                "hour": "8:00-9:50",
+                "semester": 2,
+                "instructor": "Hector Marίa GONZALEZ LÓPEZ",
+                "enrollmentCapacity": 4,
+                "status": "Active"
+            }
+        },
+          "gradeValue": "BB"
         }
       ]
     }
