@@ -355,7 +355,7 @@ public class SystemController {
 
     public void ShowFinalRequest() throws IOException {
        try {
-           if (student.getTotalCredits() >= 165 && student.getSemester() >= 7) {
+           if (student.getTotalCredits() >= 105 && student.getSemester() >= 7) {
                if (student.getProjectAssistant().isEmpty()) {
                    //selection
                    System.out.println("Select your project assistant:\n1: Betül Boz\n2: Borahan Tümer\n3: Beste Turanlı\n4: Çiğdem Eroğlu");
