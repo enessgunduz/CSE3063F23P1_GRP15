@@ -17,7 +17,7 @@
   },
   {
     "courseId": "CSE2043",
-    "courseName": "Programming 1",
+    "courseName": "Programming I",
     "credit": 5,
     "prerequisite": false,
     "prerequisiteLessonId": "None",
@@ -33,7 +33,7 @@
   },
   {
     "courseId": "CSE3043",
-    "courseName": "Programming 2",
+    "courseName": "Programming II",
     "credit": 5,
     "prerequisite": true,
     "prerequisiteLessonId": "CSE2043",
@@ -83,8 +83,8 @@
     "courseId": "CSE3050",
     "courseName": "Introduction to Machine Learning",
     "credit": 8,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
+    "prerequisite": true,
+    "prerequisiteLessonId": "CSE1034",
     "courseSection": {
       "term": "Fall",
       "day": "Monday",
@@ -115,8 +115,8 @@
     "courseId": "CSE4017",
     "courseName": "Computer Systems",
     "credit": 5,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
+    "prerequisite": true,
+    "prerequisiteLessonId": "CSE3154",
     "courseSection": {
       "term": "Fall",
       "day": "Wednesday",
@@ -131,8 +131,8 @@
     "courseId": "CSE3055",
     "courseName": "Database Systems",
     "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
+    "prerequisite": true,
+    "prerequisiteLessonId": "CSE2004",
     "courseSection": {
       "term": "Fall",
       "day": "Monday",
@@ -147,8 +147,8 @@
     "courseId": "CSE3049",
     "courseName": "Operating Systems",
     "credit": 6,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
+    "prerequisite": true,
+    "prerequisiteLessonId": "CSE2004",
     "courseSection": {
       "term": "Fall",
       "day": "Friday",
@@ -164,7 +164,7 @@
     "courseName": "Microservices",
     "credit": 5,
     "prerequisite": true,
-    "prerequisiteLessonId": "Computer Systems",
+    "prerequisiteLessonId": "CSE4017",
     "courseSection": {
       "term": "Fall",
       "day": "Wednesday",
@@ -196,7 +196,7 @@
     "courseName": "Calculus II",
     "credit": 5,
     "prerequisite": true,
-    "prerequisiteLessonId": "Calculus I",
+    "prerequisiteLessonId": "CSE1033",
     "courseSection": {
       "term": "Fall",
       "day": "Thursday",
@@ -243,13 +243,13 @@
     "courseId": "CSE2246",
     "courseName": "Analysis of Algorithms",
     "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
+    "prerequisite": true,
+    "prerequisiteLessonId": "CSE3055",
     "courseSection": {
       "term": "Fall",
       "day": "Thursday",
       "hour": "9:00-10:50",
-      "semester": 3,
+      "semester": 5,
       "instructor": "Betül Boz",
       "enrollmentCapacity": 5,
       "status": "Active"
@@ -308,7 +308,7 @@
     "courseName": "Numerical Methods",
     "credit": 5,
     "prerequisite": false,
-    "prerequisiteLessonId": "None",
+    "prerequisiteLessonId": "CSE1033",
     "courseSection": {
       "term": "Fall",
       "day": "Monday",
@@ -329,9 +329,9 @@
       "term": "Fall",
       "day": "Tuesday",
       "hour": "16:00-17:50",
-      "semester": 5,
+      "semester": 3,
       "instructor": "Borahan Tümer",
-      "enrollmentCapacity": 5,
+      "enrollmentCapacity": 4,
       "status": "Active"
     }
   },
@@ -340,7 +340,7 @@
     "courseName": "Modeling and Discrete Simulation",
     "credit": 4,
     "prerequisite": true,
-    "prerequisiteLessonId": "Calculus II",
+    "prerequisiteLessonId": "CSE1034",
     "courseSection": {
       "term": "Fall",
       "day": "Tuesday",
@@ -355,8 +355,8 @@
     "courseId": "CSE3063",
     "courseName": "Object-Oriented Software Design",
     "credit": 5,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
+    "prerequisite": true,
+    "prerequisiteLessonId": "CSE3043",
     "courseSection": {
       "term": "Fall",
       "day": "Wednesday",
