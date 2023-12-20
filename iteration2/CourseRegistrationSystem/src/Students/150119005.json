@@ -1,10 +1,10 @@
 {
-    "username": "o150119509",
-    "name": "Kerem",
-    "surname": "Aktürkoğlu",
-    "password": "marmara123509",
-    "studentID": "150119509",
-    "GPA": 2.4,
+    "username": "o150119005",
+    "name": "Fatih",
+    "surname": "Terim",
+    "password": "marmara123005",
+    "studentID": "150119005",
+    "GPA": 4,
     "StSemester" : 7,
     "enrolledCourses": [],
     "requestedCourses": [],
@@ -28,7 +28,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "DD"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -47,7 +47,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -66,7 +66,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CC"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -85,7 +85,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "BA"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -104,7 +104,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "BB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -123,7 +123,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -161,7 +161,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "BA"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -180,7 +180,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -237,7 +237,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -256,7 +256,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "DC"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -275,7 +275,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -294,7 +294,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CC"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -313,7 +313,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -332,7 +332,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "DD"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -351,7 +351,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -370,7 +370,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -389,26 +389,7 @@
               "status": "Active"
             }
           },
-          "gradeValue": "CC"
-        },
-        {
-          "course": {
-            "courseId": "NTE1003",
-            "courseName": "Positive Thinking",
-            "credit": 4,
-            "prerequisite": false,
-            "prerequisiteLessonId": "None",
-            "courseSection": {
-                "term": "Fall",
-                "day": "Friday",
-                "hour": "15:00-16:50",
-                "semester": 2,
-                "instructor": "Larry Weiner",
-                "enrollmentCapacity": 5,
-                "status": "Active"
-            }
-        },
-          "gradeValue": "BB"
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -427,21 +408,40 @@
                 "status": "Active"
             }
         },
-          "gradeValue": "BA"
+          "gradeValue": "AA"
         },
         {
           "course": {
-            "courseId": "TE1001",
-            "courseName": "Introduction to Cryptography",
+            "courseId": "TE1003",
+            "courseName": "Information Systems Security",
             "credit": 4,
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
                 "term": "Fall",
                 "day": "Thursday",
-                "hour": "11:00-12:50",
+                "hour": "8:00-9:50",
                 "semester": 4,
-                "instructor": "Zübeyir Sarı",
+                "instructor": "Gönül Acar",
+                "enrollmentCapacity": 5,
+                "status": "Active"
+            }
+        },
+          "gradeValue": "AA"
+        },
+        {
+          "course": {
+            "courseId": "NTE1004",
+            "courseName": "Brand Creation/Branding",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "Fall",
+                "day": "Thursday",
+                "hour": "13:00-14:50",
+                "semester": 2,
+                "instructor": "Neslihan Açık",
                 "enrollmentCapacity": 5,
                 "status": "Active"
             }

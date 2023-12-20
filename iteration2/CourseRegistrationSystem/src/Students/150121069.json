@@ -5,7 +5,7 @@
     "password": "marmara123069",
     "studentID": "150120069",
     "GPA": 2.4,
-    "StSemester" : 4,
+    "StSemester" : 5,
     "enrolledCourses": [],
     "requestedCourses": [],
   "projectAssistant": "",
@@ -14,7 +14,7 @@
           {
             "course": {
               "courseId": "CSE2043",
-              "courseName": "Programming 1",
+              "courseName": "Programming I",
               "credit": 5,
               "prerequisite": false,
               "prerequisiteLessonId": "None",
@@ -52,7 +52,7 @@
           {
             "course": {
               "courseId": "CSE3043",
-              "courseName": "Programming 2",
+              "courseName": "Programming II",
               "credit": 5,
               "prerequisite": true,
               "prerequisiteLessonId": "CSE2043",
@@ -219,6 +219,63 @@
               }
           },
             "gradeValue": "BB"
+          },
+          {
+            "course": {
+              "courseId": "NTE1003",
+              "courseName": "Positive Thinking",
+              "credit": 4,
+              "prerequisite": false,
+              "prerequisiteLessonId": "None",
+              "courseSection": {
+                  "term": "Fall",
+                  "day": "Friday",
+                  "hour": "15:00-16:50",
+                  "semester": 2,
+                  "instructor": "Larry Weiner",
+                  "enrollmentCapacity": 5,
+                  "status": "Active"
+              }
+          },
+            "gradeValue": "AA"
+          },
+          {
+            "course": {
+              "courseId": "FTE1001",
+              "courseName": "Design of Experiments",
+              "credit": 4,
+              "prerequisite": false,
+              "prerequisiteLessonId": "None",
+              "courseSection": {
+                  "term": "Fall",
+                  "day": "Thursday",
+                  "hour": "8:00-9:50",
+                  "semester": 4,
+                  "instructor": "Okan Buruk",
+                  "enrollmentCapacity": 5,
+                  "status": "Active"
+              }
+          },
+            "gradeValue": "BA"
+          },
+          {
+            "course": {
+              "courseId": "TE1002",
+              "courseName": "Microprocessors",
+              "credit": 4,
+              "prerequisite": false,
+              "prerequisiteLessonId": "None",
+              "courseSection": {
+                  "term": "Fall",
+                  "day": "Thursday",
+                  "hour": "9:00-10:50",
+                  "semester": 4,
+                  "instructor": "Onur Aydoğdu",
+                  "enrollmentCapacity": 5,
+                  "status": "Active"
+              }
+          },
+            "gradeValue": "AA"
           }
         ]
       }

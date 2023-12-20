@@ -14,7 +14,7 @@
         {
           "course": {
             "courseId": "CSE2043",
-            "courseName": "Programming 1",
+            "courseName": "Programming I",
             "credit": 5,
             "prerequisite": false,
             "prerequisiteLessonId": "None",
@@ -105,6 +105,25 @@
             }
         },
           "gradeValue": "BA"
+        },
+        {
+          "course": {
+            "courseId": "NTE1003",
+            "courseName": "Positive Thinking",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "Fall",
+                "day": "Friday",
+                "hour": "15:00-16:50",
+                "semester": 2,
+                "instructor": "Larry Weiner",
+                "enrollmentCapacity": 5,
+                "status": "Active"
+            }
+        },
+          "gradeValue": "AA"
         }
       ]
     }

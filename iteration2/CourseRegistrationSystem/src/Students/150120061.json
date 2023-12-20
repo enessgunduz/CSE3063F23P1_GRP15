@@ -5,7 +5,7 @@
     "password": "marmara123061",
     "studentID": "150120061",
     "GPA": 3.7,
-    "StSemester" : 4,
+    "StSemester" : 5,
     "enrolledCourses": [],
     "requestedCourses": [],
   "projectAssistant": "",
@@ -14,7 +14,7 @@
           {
             "course": {
               "courseId": "CSE2043",
-              "courseName": "Programming 1",
+              "courseName": "Programming I",
               "credit": 5,
               "prerequisite": false,
               "prerequisiteLessonId": "None",
@@ -52,7 +52,7 @@
           {
             "course": {
               "courseId": "CSE3043",
-              "courseName": "Programming 2",
+              "courseName": "Programming II",
               "credit": 5,
               "prerequisite": true,
               "prerequisiteLessonId": "CSE2043",
@@ -214,6 +214,63 @@
                   "hour" : "14:00-15:50",
                   "semester" : 3,
                   "instructor": "Çiğdem Eroğlu",
+                  "enrollmentCapacity": 5,
+                  "status": "Active"
+              }
+          },
+            "gradeValue": "BA"
+          },
+          {
+            "course": {
+              "courseId": "NTE1004",
+              "courseName": "Brand Creation/Branding",
+              "credit": 4,
+              "prerequisite": false,
+              "prerequisiteLessonId": "None",
+              "courseSection": {
+                  "term": "Fall",
+                  "day": "Thursday",
+                  "hour": "13:00-14:50",
+                  "semester": 2,
+                  "instructor": "Neslihan Açık",
+                  "enrollmentCapacity": 5,
+                  "status": "Active"
+              }
+          },
+            "gradeValue": "CB"
+          },
+          {
+            "course": {
+              "courseId": "FTE1001",
+              "courseName": "Design of Experiments",
+              "credit": 4,
+              "prerequisite": false,
+              "prerequisiteLessonId": "None",
+              "courseSection": {
+                  "term": "Fall",
+                  "day": "Thursday",
+                  "hour": "8:00-9:50",
+                  "semester": 4,
+                  "instructor": "Okan Buruk",
+                  "enrollmentCapacity": 5,
+                  "status": "Active"
+              }
+          },
+            "gradeValue": "BB"
+          },
+          {
+            "course": {
+              "courseId": "TE1001",
+              "courseName": "Introduction to Cryptography",
+              "credit": 4,
+              "prerequisite": false,
+              "prerequisiteLessonId": "None",
+              "courseSection": {
+                  "term": "Fall",
+                  "day": "Thursday",
+                  "hour": "11:00-12:50",
+                  "semester": 4,
+                  "instructor": "Zübeyir Sarı",
                   "enrollmentCapacity": 5,
                   "status": "Active"
               }

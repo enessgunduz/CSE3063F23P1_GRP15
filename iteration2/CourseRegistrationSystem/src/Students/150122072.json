@@ -1,14 +1,14 @@
 {
-    "username": "o150121002",
-    "name": "Zeynep Sude",
-    "surname": "Can",
-    "password": "marmara123002",
-    "studentID": "150121023",
-    "GPA": 3.86,
-    "StSemester" : 3,
+    "username": "o150122072",
+    "name": "Orkun",
+    "surname": "Işıtmak",
+    "password": "marmara122072",
+    "studentID": "150122072",
+    "GPA": 3.41,
+    "StSemester": 3,
     "enrolledCourses": [],
     "requestedCourses": [],
-  "projectAssistant": "",
+    "projectAssistant": "",
     "transcript": {
       "grades": [
         {
@@ -19,16 +19,16 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "Fall",
-                "day": "Tuesday",
-                "hour" : "9:00-11:50",
-                "semester" : 1,
-                "instructor": "Mustafa Ağaoğlu",
-                "enrollmentCapacity": 5,
-                "status": "Active"
+              "term": "Fall",
+              "day": "Tuesday",
+              "hour": "9:00-11:50",
+              "semester": 1,
+              "instructor": "Mustafa Ağaoğlu",
+              "enrollmentCapacity": 5,
+              "status": "Active"
             }
-        },
-          "gradeValue": "BA"
+          },
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -38,16 +38,16 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "Fall",
-                "day": "Thursday",
-                "hour" : "8:00-9:50",
-                "semester" : 1,
-                "instructor": "Aydın Türkan",
-                "enrollmentCapacity": 5,
-                "status": "Active"
+              "term": "Fall",
+              "day": "Thursday",
+              "hour": "8:00-9:50",
+              "semester": 1,
+              "instructor": "Aydın Türkan",
+              "enrollmentCapacity": 5,
+              "status": "Active"
             }
-        },
-          "gradeValue": "AA"
+          },
+          "gradeValue": "BA"
         },
         {
           "course": {
@@ -57,16 +57,16 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "Fall",
-                "day": "Friday",
-                "hour" : "15:00-16:50",
-                "semester" : 3,
-                "instructor": "Ayşe Bengü Özlüsu Hamarat",
-                "enrollmentCapacity": 5,
-                "status": "Active"
+              "term": "Fall",
+              "day": "Friday",
+              "hour": "15:00-16:50",
+              "semester": 3,
+              "instructor": "Ayşe Bengü Özlüsu Hamarat",
+              "enrollmentCapacity": 5,
+              "status": "Active"
             }
-        },
-          "gradeValue": "BB"
+          },
+          "gradeValue": "DD"
         },
         {
           "course": {
@@ -76,12 +76,31 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
+              "term": "Fall",
+              "day": "Monday",
+              "hour": "8:00-9:50",
+              "semester": 1,
+              "instructor": "Beste Turanlı",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+            }
+          },
+          "gradeValue": "BA"
+        },
+        {
+          "course": {
+            "courseId": "NTE1001",
+            "courseName": "Spanish for Beginners",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
                 "term": "Fall",
-                "day": "Monday",
-                "hour" : "8:00-9:50",
-                "semester" : 1,
-                "instructor": "Beste Turanlı",
-                "enrollmentCapacity": 5,
+                "day": "Friday",
+                "hour": "8:00-9:50",
+                "semester": 2,
+                "instructor": "Hector Marίa GONZALEZ LÓPEZ",
+                "enrollmentCapacity": 4,
                 "status": "Active"
             }
         },
@@ -95,16 +114,16 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "Fall",
-                "day": "Tuesday",
-                "hour" : "8:00-9:50",
-                "semester" : 1,
-                "instructor": "Ali Yazgan",
-                "enrollmentCapacity": 5,
-                "status": "Active"
+              "term": "Fall",
+              "day": "Tuesday",
+              "hour": "8:00-9:50",
+              "semester": 1,
+              "instructor": "Ali Yazgan",
+              "enrollmentCapacity": 5,
+              "status": "Active"
             }
-        },
-          "gradeValue": "BA"
+          },
+          "gradeValue": "AA"
         },
         {
           "course": {
@@ -114,15 +133,15 @@
             "prerequisite": false,
             "prerequisiteLessonId": "None",
             "courseSection": {
-                "term": "Fall",
-                "day": "Wednesday",
-                "hour" : "8:00-9:50",
-                "semester" : 1,
-                "instructor": "Ali Yazgan",
-                "enrollmentCapacity": 5,
-                "status": "Active"
+              "term": "Fall",
+              "day": "Wednesday",
+              "hour": "8:00-9:50",
+              "semester": 1,
+              "instructor": "Ali Yazgan",
+              "enrollmentCapacity": 5,
+              "status": "Active"
             }
-        },
+          },
           "gradeValue": "AA"
         },
         {
