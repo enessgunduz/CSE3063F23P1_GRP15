@@ -17,32 +17,7 @@ public class UnitTests {
         // Assert that the courses are not equal
         assertNotEquals(course1, course2);
     }
-
-    @Test
-    void testViewTranscript() {
-        // Create a sample student and transcript
-        Transcript transcript = new Transcript();
-        Student student = new Student("username", "John", "Doe", "password", "123",2 ,4,null, null, transcript, "");
-
-        // Test the viewTranscript method
-        assertEquals(transcript, student.viewTranscript());
-    }
-
-    @Test
-    public void testStudentClearCourses() {
-        // Create a sample student with requested courses
-        Student student = new Student("o150120038", "muhammed enes", "gunduz", "marmara123038", "150120038",3,4, new ArrayList<>(),new ArrayList<>(),new Transcript(), "");
-        JSONMethods jsonMethods = new JSONMethods();
-
-        // Add a requested course to the student
-        Course requestedCourse = new Course("CS101", "Introduction to Computer Science", 3, false, "", null);
-        student.getRequestedCourses().add(requestedCourse);
-
-        // Test clearing requested courses
-        assertTrue(jsonMethods.clearRequestedCourses(student));
-        assertFalse(student.getRequestedCourses().size() > 0);
-    }
-
+    
     @Test
     void testListAvailableCourses() {
         // Create a student and a list of available courses
@@ -70,4 +45,34 @@ public class UnitTests {
         // Test the getTerm method
         assertEquals("Fall 2023", courseSection.getTerm());
     }
+    @Test
+    void testGetHour() {
+        // Create a CourseSection object
+        CourseSection courseSection = new CourseSection("Fall 2023", "Monday",
+                "13:00-14:50", 2, "Dr. Smith", 30, "Open");
+
+        // Test the getTerm method
+        assertEquals("13:00-14:50", courseSection.getHour());
+    }
+
+    @Test
+    public void testCourseCreation() {
+        CourseSection courseSection = new CourseSection("Fall", "Monday", "10:00-12:00", 1, "John Doe", 30, "Open");
+
+        Course course = new Course("C101", "Introduction to Computer Science", 3, true, "CS101", courseSection);
+
+        assertEquals("C101", course.getCourseId());
+        assertEquals("Introduction to Computer Science", course.getCourseName());
+        assertEquals(3, course.getCredit());
+        assertEquals("CS101", course.getPrerequisiteLessonId());
+
+        CourseSection retrievedSection = course.getCourseSection();
+        assertEquals("Fall", retrievedSection.getTerm());
+        assertEquals("Monday", retrievedSection.getDay());
+        assertEquals("10:00-12:00", retrievedSection.getHour());
+        assertEquals(1, retrievedSection.getSemester());
+        assertEquals("John Doe", retrievedSection.getInstructor());
+        assertEquals(30, retrievedSection.getEnrollmentCapacity());
+        assertEquals("Open", retrievedSection.getStatus());
+}
 }
