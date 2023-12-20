@@ -17,7 +17,7 @@ public class UnitTests {
         // Assert that the courses are not equal
         assertNotEquals(course1, course2);
     }
-    
+
     @Test
     void testListAvailableCourses() {
         // Create a student and a list of available courses
