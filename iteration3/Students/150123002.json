@@ -1,0 +1,15 @@
+{
+    "username": "o150123002",
+    "name": "Beren",
+    "surname": "Saat",
+    "password": "marmara123002",
+    "studentID": "150123002",
+    "GPA": 0.0,
+    "StSemester" : 1,
+    "enrolledCourses": [],
+    "requestedCourses": [],
+    "projectAssistant": "",
+    "transcript": {
+      "grades": []
+    }
+  }

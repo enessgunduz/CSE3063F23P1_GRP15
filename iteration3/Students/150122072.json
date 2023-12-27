@@ -1,0 +1,168 @@
+{
+    "username": "o150122072",
+    "name": "Orkun",
+    "surname": "Işıtmak",
+    "password": "marmara122072",
+    "studentID": "150122072",
+    "GPA": 3.41,
+    "StSemester": 3,
+    "enrolledCourses": [],
+    "requestedCourses": [],
+    "projectAssistant": "",
+    "transcript": {
+      "grades": [
+        {
+          "course": {
+            "courseId": "CSE2043",
+            "courseName": "Programming I",
+            "credit": 5,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+              "term": "Fall",
+              "day": "Tuesday",
+              "hour": "9:00-11:50",
+              "semester": 1,
+              "instructor": "Mustafa Ağaoğlu",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+            }
+          },
+          "gradeValue": "AA"
+        },
+        {
+          "course": {
+            "courseId": "CSE1033",
+            "courseName": "Calculus I",
+            "credit": 7,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+              "term": "Fall",
+              "day": "Thursday",
+              "hour": "8:00-9:50",
+              "semester": 1,
+              "instructor": "Aydın Türkan",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+            }
+          },
+          "gradeValue": "BA"
+        },
+        {
+          "course": {
+            "courseId": "CSE2088",
+            "courseName": "Engineering Economy",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+              "term": "Fall",
+              "day": "Friday",
+              "hour": "15:00-16:50",
+              "semester": 3,
+              "instructor": "Ayşe Bengü Özlüsu Hamarat",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+            }
+          },
+          "gradeValue": "DD"
+        },
+        {
+          "course": {
+            "courseId": "CSE1005",
+            "courseName": "Introduction to Modern Biology",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+              "term": "Fall",
+              "day": "Monday",
+              "hour": "8:00-9:50",
+              "semester": 1,
+              "instructor": "Beste Turanlı",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+            }
+          },
+          "gradeValue": "BA"
+        },
+        {
+          "course": {
+            "courseId": "NTE1001",
+            "courseName": "Spanish for Beginners",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "Fall",
+                "day": "Friday",
+                "hour": "8:00-9:50",
+                "semester": 2,
+                "instructor": "Hector Marίa GONZALEZ LÓPEZ",
+                "enrollmentCapacity": 4,
+                "status": "Active"
+            }
+        },
+          "gradeValue": "AA"
+        },
+        {
+          "course": {
+            "courseId": "CSE1012",
+            "courseName": "Türk Dili",
+            "credit": 3,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+              "term": "Fall",
+              "day": "Tuesday",
+              "hour": "8:00-9:50",
+              "semester": 1,
+              "instructor": "Ali Yazgan",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+            }
+          },
+          "gradeValue": "AA"
+        },
+        {
+          "course": {
+            "courseId": "CSE1013",
+            "courseName": "Atatürk İlkeleri ve İnkılap Tarihi",
+            "credit": 3,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+              "term": "Fall",
+              "day": "Wednesday",
+              "hour": "8:00-9:50",
+              "semester": 1,
+              "instructor": "Ali Yazgan",
+              "enrollmentCapacity": 5,
+              "status": "Active"
+            }
+          },
+          "gradeValue": "AA"
+        },
+        {
+          "course": {
+            "courseId": "NTE1005",
+            "courseName": "Strategic Entrepreneurship",
+            "credit": 4,
+            "prerequisite": false,
+            "prerequisiteLessonId": "None",
+            "courseSection": {
+                "term": "Fall",
+                "day": "Thursday",
+                "hour": "15:00-16:50",
+                "semester": 2,
+                "instructor": "Bahar Candan",
+                "enrollmentCapacity": 5,
+                "status": "Active"
+            }
+        },
+          "gradeValue": "BA"
+        }
+      ]
+    }
+  }
