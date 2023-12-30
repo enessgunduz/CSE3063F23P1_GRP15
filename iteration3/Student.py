@@ -1,4 +1,5 @@
 class Student:
+    total_credit = 0
     def __init__(self, username, name, surname, password, studentID, GPA, StSemester, enrolledCourses, requestedCourses, projectAssistant, transcript):
         self.username=username
         self.name=name
@@ -33,4 +34,12 @@ class Student:
         return self.projectAssistant
     def getTranscript(self):
         return self.transcript
+    def calculateTotalCredit(self):
+        global total_credit
+        for course in self.getEnrolledCourses:
+            total_credit += course.credit
+        return total_credit
+    def getTotalCredit():
+        global total_credit
+        return total_credit
         
