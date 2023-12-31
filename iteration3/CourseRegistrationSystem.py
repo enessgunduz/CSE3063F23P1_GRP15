@@ -7,22 +7,21 @@ class CourseRegistrationSystem:
         self.courses=courses
     
     def listAvailableCourses(self):
-        availableCourses=[]
-        coursesTaken=[]
-        takens = self.student.transcript["grades"]
-        for course in takens:
-            courseIds = course["course"]["courseId"]
-            coursesTaken.append(courseIds)
+        availableCourses = []
+        coursesTaken = [course["course"]["courseId"] for course in self.student.transcript["grades"]]
+
         for course in self.courses:
-            if(course not in self.student.getEnrolledCourses()):
-                if(course.courseID not in coursesTaken):
-                    if(not course.prerequisite):
+            if course not in self.student.enrolledCourses:
+                if course.courseID not in coursesTaken:
+                    if not course.prerequisite:
                         availableCourses.append(course)
                     else:
+                        hasPrerequisite = False
                         for c in coursesTaken:
-                            print(c)
-                            if(c==course.courseID):
-                                print("c")
-                                availableCourses.append(course)
+                            if c == course.prerequisiteLessonId:
+                                hasPrerequisite = True
+                                break
+                        if hasPrerequisite:
+                            availableCourses.append(course)
 
         return availableCourses

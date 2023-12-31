@@ -106,6 +106,20 @@ def courseRegistrationScreen(student):
             semester = course.courseSection["semester"]
             print(f"{index}. Course ID: {course_id}, Course Name: {course_name}, Instructor: {instructor}, Day-Time: {day_time}, Semester: {semester}")
             index += 1
+        selection = input("Select the courses want to enroll (with commas between numbers and 0 to go main menu)\n")
+        if(selection=="0"):
+            welcomeStudent()
+        selectList = selection.strip().split(",")
+        for s in selectList:
+            courseIds=[]
+            s= int(s)
+            selectedCourses = availableCourses[s-1]
+            print(type(selectedCourses))
+        student.requestedCourses = selectedCourses
+
+def sendRequestCourses(student, selectedCourses):
+    student.requestedCourses = selectedCourses
+
 
 def requestFinalProject(student):
     if(student.getStSemester()>=7 and student.getTotalCredit() >= 105):
