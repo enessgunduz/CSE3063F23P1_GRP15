@@ -87,7 +87,6 @@ class SystemController:
 
     def find_student(self, username):
         for student in student_list:
-            print(student.username)
             if (student.username == username):
                 return student
         return None

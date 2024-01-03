@@ -13,13 +13,13 @@ class JSONParser:
         return json.loads(json_text, object_hook=lambda d: Student(**d))
 
     def parse_students(self):
-        folder_path = "Students\\"
+        folder_path = "Students//"
 
         student_files = os.listdir(folder_path)
         students = []
         file_path=[]
         for file in student_files:
-            file_path = "Students\\" + file
+            file_path = "Students//" + file
             with open(file_path, "r", encoding="utf-8") as file:
                 data = json.load(file)
 
@@ -87,11 +87,11 @@ class JSONParser:
         return json.loads(json_text, object_hook=lambda d: Advisor(**d))
 
     def parse_advisor(self):
-        folder_path="Advisors\\"
+        folder_path="Advisors//"
         advisor_files = os.listdir(folder_path)
         advisors=[]
         for file in advisor_files:
-            file_path = "Advisors\\" + file
+            file_path = "Advisors//" + file
             with open(file_path, "r", encoding="utf-8") as file:
                 data = json.load(file)
 
