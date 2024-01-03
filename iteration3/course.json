@@ -1,626 +1,626 @@
 [
-  {
-    "courseId": "CSE3045",
-    "courseName": "Digital Logic Design",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Monday",
-      "hour": "13:00-14:50",
-      "semester": 5,
-      "instructor": "Borahan Tümer",
-      "enrollmentCapacity": 4,
-      "status": "Active"
+    {
+        "courseId": "CSE3045",
+        "courseName": "Digital Logic Design",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour": "13:00-14:50",
+            "semester": 5,
+            "instructor": "Borahan T\u00c3\u00bcmer",
+            "enrollmentCapacity": 2,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE2043",
+        "courseName": "Programming I",
+        "credit": 5,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour": "9:00-11:50",
+            "semester": 1,
+            "instructor": "Mustafa A\u00c4\u0178ao\u00c4\u0178lu",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE3043",
+        "courseName": "Programming II",
+        "credit": 5,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE2043",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour": "13:00-15:50",
+            "semester": 3,
+            "instructor": "Mustafa A\u00c4\u0178ao\u00c4\u0178lu",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE2028",
+        "courseName": "Electric Circuits",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour": "10:00-11:50",
+            "semester": 3,
+            "instructor": "Bet\u00c3\u00bcl Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE3028",
+        "courseName": "Electronic Devices",
+        "credit": 6,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE2028",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour": "13:00-14:50",
+            "semester": 5,
+            "instructor": "Bet\u00c3\u00bcl Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE3050",
+        "courseName": "Introduction to Machine Learning",
+        "credit": 8,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE1034",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour": "9:00-10:50",
+            "semester": 5,
+            "instructor": "Borahan T\u00c3\u00bcmer",
+            "enrollmentCapacity": 3,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE4050",
+        "courseName": "AI and Beyond",
+        "credit": 7,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE3050",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Friday",
+            "hour": "9:00-10:50",
+            "semester": 7,
+            "instructor": "Borahan T\u00c3\u00bcmer",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE4017",
+        "courseName": "Computer Systems",
+        "credit": 5,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE3154",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour": "15:00-16:50",
+            "semester": 7,
+            "instructor": "Mustafa A\u00c4\u0178ao\u00c4\u0178lu",
+            "enrollmentCapacity": 4,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE3055",
+        "courseName": "Database Systems",
+        "credit": 4,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE2004",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour": "9:00-10:50",
+            "semester": 5,
+            "instructor": "Bet\u00c3\u00bcl Boz",
+            "enrollmentCapacity": 4,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE3049",
+        "courseName": "Operating Systems",
+        "credit": 6,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE2004",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Friday",
+            "hour": "9:00-10:50",
+            "semester": 5,
+            "instructor": "Bet\u00c3\u00bcl Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE4022",
+        "courseName": "Microservices",
+        "credit": 5,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE4017",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour": "9:00-9:50",
+            "semester": 7,
+            "instructor": "Bet\u00c3\u00bcl Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE1033",
+        "courseName": "Calculus I",
+        "credit": 7,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "8:00-9:50",
+            "semester": 1,
+            "instructor": "Ayd\u00c4\u00b1n T\u00c3\u00bcrkan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE1034",
+        "courseName": "Calculus II",
+        "credit": 5,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE1033",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "10:00-11:50",
+            "semester": 3,
+            "instructor": "Ayd\u00c4\u00b1n T\u00c3\u00bcrkan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE2088",
+        "courseName": "Engineering Economy",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Friday",
+            "hour": "15:00-16:50",
+            "semester": 3,
+            "instructor": "Ay\u00c5\u0178e Beng\u00c3\u00bc \u00c3\u2013zl\u00c3\u00bcsu Hamarat",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE2148",
+        "courseName": "Systems Programming",
+        "credit": 7,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour": "13:00-14:50",
+            "semester": 3,
+            "instructor": "Bet\u00c3\u00bcl Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE2246",
+        "courseName": "Analysis of Algorithms",
+        "credit": 4,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE3055",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "9:00-10:50",
+            "semester": 5,
+            "instructor": "Bet\u00c3\u00bcl Boz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE1005",
+        "courseName": "Introduction to Modern Biology",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour": "8:00-9:50",
+            "semester": 1,
+            "instructor": "Beste Turanl\u00c4\u00b1",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE1012",
+        "courseName": "T\u00c3\u00bcrk Dili",
+        "credit": 3,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour": "8:00-9:50",
+            "semester": 1,
+            "instructor": "Ali Yazgan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE1013",
+        "courseName": "Atat\u00c3\u00bcrk \u00c4\u00b0lkeleri ve \u00c4\u00b0nk\u00c4\u00b1lap Tarihi",
+        "credit": 3,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour": "8:00-9:50",
+            "semester": 1,
+            "instructor": "Ali Yazgan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE2001",
+        "courseName": "Numerical Methods",
+        "credit": 5,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE1033",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour": "14:00-15:50",
+            "semester": 3,
+            "instructor": "\u00c3\u2021i\u00c4\u0178dem Ero\u00c4\u0178lu",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE2004",
+        "courseName": "Data Structures",
+        "credit": 7,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour": "16:00-17:50",
+            "semester": 3,
+            "instructor": "Borahan T\u00c3\u00bcmer",
+            "enrollmentCapacity": 4,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE3154",
+        "courseName": "Modeling and Discrete Simulation",
+        "credit": 4,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE1034",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Tuesday",
+            "hour": "10:00-11:50",
+            "semester": 5,
+            "instructor": "Murat Can Ganiz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "CSE3063",
+        "courseName": "Object-Oriented Software Design",
+        "credit": 5,
+        "prerequisite": true,
+        "prerequisiteLessonId": "CSE3043",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour": "10:00-11:50",
+            "semester": 5,
+            "instructor": "Mustafa A\u00c4\u0178ao\u00c4\u0178lu",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "NTE1001",
+        "courseName": "Spanish for Beginners",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Friday",
+            "hour": "8:00-9:50",
+            "semester": 2,
+            "instructor": "Hector Mar\u00ce\u00afa GONZALEZ L\u00c3\u201cPEZ",
+            "enrollmentCapacity": 4,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "NTE1002",
+        "courseName": "German Communication",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Friday",
+            "hour": "8:00-9:50",
+            "semester": 2,
+            "instructor": "Hans Neimann",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "NTE1003",
+        "courseName": "Positive Thinking",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Friday",
+            "hour": "15:00-16:50",
+            "semester": 2,
+            "instructor": "Larry Weiner",
+            "enrollmentCapacity": 4,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "NTE1004",
+        "courseName": "Brand Creation/Branding",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "13:00-14:50",
+            "semester": 2,
+            "instructor": "Neslihan A\u00c3\u00a7\u00c4\u00b1k",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "NTE1005",
+        "courseName": "Strategic Entrepreneurship",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "15:00-16:50",
+            "semester": 2,
+            "instructor": "Bahar Candan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "FTE1001",
+        "courseName": "Design of Experiments",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "8:00-9:50",
+            "semester": 4,
+            "instructor": "Fatih Terim",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "FTE1002",
+        "courseName": "Project Management for Engineers",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "10:00-11:50",
+            "semester": 4,
+            "instructor": "Arda Kural",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "FTE1003",
+        "courseName": "Introduction to Robotics",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "13:00-14:50",
+            "semester": 4,
+            "instructor": "Burak Y\u00c4\u00b1lmaz",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "TE1001",
+        "courseName": "Introduction to Cryptography",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "11:00-12:50",
+            "semester": 4,
+            "instructor": "Z\u00c3\u00bcbeyir Sar\u00c4\u00b1",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "TE1002",
+        "courseName": "Microprocessors",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "9:00-10:50",
+            "semester": 4,
+            "instructor": "Onur Aydo\u00c4\u0178du",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "TE1003",
+        "courseName": "Information Systems Security",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "8:00-9:50",
+            "semester": 4,
+            "instructor": "G\u00c3\u00b6n\u00c3\u00bcl Acar",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "TE1003",
+        "courseName": "Information Systems Security",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Wednesday",
+            "hour": "8:00-9:50",
+            "semester": 4,
+            "instructor": "G\u00c3\u00b6n\u00c3\u00bcl Acar",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "TE1002",
+        "courseName": "Microprocessors",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "13:00-14:50",
+            "semester": 4,
+            "instructor": "Onur Aydo\u00c4\u0178du",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "FTE1002",
+        "courseName": "Project Management for Engineers",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "15:00-16:50",
+            "semester": 4,
+            "instructor": "Bahar Candan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "FTE1001",
+        "courseName": "Design of Experiments",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Thursday",
+            "hour": "13:00-14:50",
+            "semester": 4,
+            "instructor": "Bahar Candan",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
+    },
+    {
+        "courseId": "NTE1003",
+        "courseName": "Positive Thinking",
+        "credit": 4,
+        "prerequisite": false,
+        "prerequisiteLessonId": "None",
+        "courseSection": {
+            "term": "Fall",
+            "day": "Monday",
+            "hour": "8:00-9:50",
+            "semester": 2,
+            "instructor": "Larry Weiner",
+            "enrollmentCapacity": 5,
+            "status": "Active"
+        }
     }
-  },
-  {
-    "courseId": "CSE2043",
-    "courseName": "Programming I",
-    "credit": 5,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Tuesday",
-      "hour": "9:00-11:50",
-      "semester": 1,
-      "instructor": "Mustafa Ağaoğlu",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE3043",
-    "courseName": "Programming II",
-    "credit": 5,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE2043",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Tuesday",
-      "hour": "13:00-15:50",
-      "semester": 3,
-      "instructor": "Mustafa Ağaoğlu",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE2028",
-    "courseName": "Electric Circuits",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Wednesday",
-      "hour": "10:00-11:50",
-      "semester": 3,
-      "instructor": "Betül Boz",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE3028",
-    "courseName": "Electronic Devices",
-    "credit": 6,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE2028",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Wednesday",
-      "hour": "13:00-14:50",
-      "semester": 5,
-      "instructor": "Betül Boz",
-      "enrollmentCapacity": 3,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE3050",
-    "courseName": "Introduction to Machine Learning",
-    "credit": 8,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE1034",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Monday",
-      "hour": "9:00-10:50",
-      "semester": 5,
-      "instructor": "Borahan Tümer",
-      "enrollmentCapacity": 4,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE4050",
-    "courseName": "AI and Beyond",
-    "credit": 7,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE3050",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Friday",
-      "hour": "9:00-10:50",
-      "semester": 7,
-      "instructor": "Borahan Tümer",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE4017",
-    "courseName": "Computer Systems",
-    "credit": 5,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE3154",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Wednesday",
-      "hour": "15:00-16:50",
-      "semester": 7,
-      "instructor": "Mustafa Ağaoğlu",
-      "enrollmentCapacity": 4,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE3055",
-    "courseName": "Database Systems",
-    "credit": 4,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE2004",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Monday",
-      "hour": "9:00-10:50",
-      "semester": 5,
-      "instructor": "Betül Boz",
-      "enrollmentCapacity": 4,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE3049",
-    "courseName": "Operating Systems",
-    "credit": 6,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE2004",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Friday",
-      "hour": "9:00-10:50",
-      "semester": 5,
-      "instructor": "Betül Boz",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE4022",
-    "courseName": "Microservices",
-    "credit": 5,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE4017",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Wednesday",
-      "hour": "9:00-9:50",
-      "semester": 7,
-      "instructor": "Betül Boz",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE1033",
-    "courseName": "Calculus I",
-    "credit": 7,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "8:00-9:50",
-      "semester": 1,
-      "instructor": "Aydın Türkan",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE1034",
-    "courseName": "Calculus II",
-    "credit": 5,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE1033",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "10:00-11:50",
-      "semester": 3,
-      "instructor": "Aydın Türkan",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE2088",
-    "courseName": "Engineering Economy",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Friday",
-      "hour": "15:00-16:50",
-      "semester": 3,
-      "instructor": "Ayşe Bengü Özlüsu Hamarat",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE2148",
-    "courseName": "Systems Programming",
-    "credit": 7,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Monday",
-      "hour": "13:00-14:50",
-      "semester": 3,
-      "instructor": "Betül Boz",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE2246",
-    "courseName": "Analysis of Algorithms",
-    "credit": 4,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE3055",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "9:00-10:50",
-      "semester": 5,
-      "instructor": "Betül Boz",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE1005",
-    "courseName": "Introduction to Modern Biology",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Monday",
-      "hour": "8:00-9:50",
-      "semester": 1,
-      "instructor": "Beste Turanlı",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE1012",
-    "courseName": "Türk Dili",
-    "credit": 3,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Tuesday",
-      "hour": "8:00-9:50",
-      "semester": 1,
-      "instructor": "Ali Yazgan",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE1013",
-    "courseName": "Atatürk İlkeleri ve İnkılap Tarihi",
-    "credit": 3,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Wednesday",
-      "hour": "8:00-9:50",
-      "semester": 1,
-      "instructor": "Ali Yazgan",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE2001",
-    "courseName": "Numerical Methods",
-    "credit": 5,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE1033",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Monday",
-      "hour": "14:00-15:50",
-      "semester": 3,
-      "instructor": "Çiğdem Eroğlu",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE2004",
-    "courseName": "Data Structures",
-    "credit": 7,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Tuesday",
-      "hour": "16:00-17:50",
-      "semester": 3,
-      "instructor": "Borahan Tümer",
-      "enrollmentCapacity": 4,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE3154",
-    "courseName": "Modeling and Discrete Simulation",
-    "credit": 4,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE1034",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Tuesday",
-      "hour": "10:00-11:50",
-      "semester": 5,
-      "instructor": "Murat Can Ganiz",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "CSE3063",
-    "courseName": "Object-Oriented Software Design",
-    "credit": 5,
-    "prerequisite": true,
-    "prerequisiteLessonId": "CSE3043",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Wednesday",
-      "hour": "10:00-11:50",
-      "semester": 5,
-      "instructor": "Mustafa Ağaoğlu",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "NTE1001",
-    "courseName": "Spanish for Beginners",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Friday",
-      "hour": "8:00-9:50",
-      "semester": 2,
-      "instructor": "Hector Marίa GONZALEZ LÓPEZ",
-      "enrollmentCapacity": 4,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "NTE1002",
-    "courseName": "German Communication",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Friday",
-      "hour": "8:00-9:50",
-      "semester": 2,
-      "instructor": "Hans Neimann",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "NTE1003",
-    "courseName": "Positive Thinking",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Friday",
-      "hour": "15:00-16:50",
-      "semester": 2,
-      "instructor": "Larry Weiner",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "NTE1004",
-    "courseName": "Brand Creation/Branding",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "13:00-14:50",
-      "semester": 2,
-      "instructor": "Neslihan Açık",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "NTE1005",
-    "courseName": "Strategic Entrepreneurship",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "15:00-16:50",
-      "semester": 2,
-      "instructor": "Bahar Candan",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "FTE1001",
-    "courseName": "Design of Experiments",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "8:00-9:50",
-      "semester": 4,
-      "instructor": "Fatih Terim",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "FTE1002",
-    "courseName": "Project Management for Engineers",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "10:00-11:50",
-      "semester": 4,
-      "instructor": "Arda Kural",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "FTE1003",
-    "courseName": "Introduction to Robotics",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "13:00-14:50",
-      "semester": 4,
-      "instructor": "Burak Yılmaz",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "TE1001",
-    "courseName": "Introduction to Cryptography",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "11:00-12:50",
-      "semester": 4,
-      "instructor": "Zübeyir Sarı",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "TE1002",
-    "courseName": "Microprocessors",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "9:00-10:50",
-      "semester": 4,
-      "instructor": "Onur Aydoğdu",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "TE1003",
-    "courseName": "Information Systems Security",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "8:00-9:50",
-      "semester": 4,
-      "instructor": "Gönül Acar",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "TE1003",
-    "courseName": "Information Systems Security",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Wednesday",
-      "hour": "8:00-9:50",
-      "semester": 4,
-      "instructor": "Gönül Acar",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "TE1002",
-    "courseName": "Microprocessors",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "13:00-14:50",
-      "semester": 4,
-      "instructor": "Onur Aydoğdu",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "FTE1002",
-    "courseName": "Project Management for Engineers",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "15:00-16:50",
-      "semester": 4,
-      "instructor": "Bahar Candan",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "FTE1001",
-    "courseName": "Design of Experiments",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Thursday",
-      "hour": "13:00-14:50",
-      "semester": 4,
-      "instructor": "Bahar Candan",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  },
-  {
-    "courseId": "NTE1003",
-    "courseName": "Positive Thinking",
-    "credit": 4,
-    "prerequisite": false,
-    "prerequisiteLessonId": "None",
-    "courseSection": {
-      "term": "Fall",
-      "day": "Monday",
-      "hour": "8:00-9:50",
-      "semester": 2,
-      "instructor": "Larry Weiner",
-      "enrollmentCapacity": 5,
-      "status": "Active"
-    }
-  }
 ]

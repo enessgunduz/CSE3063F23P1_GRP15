@@ -1,9 +1,9 @@
 import json
 
 class JSONMethods:
-    def clear_requested_courses(student):
+    def clear_requested_courses(self, student):
         try:
-            file_path = f"src/Students/{student.get_student_id()}.json"
+            file_path = f"Students/{student.get_student_id()}.json"
             with open(file_path, 'r+') as json_file:
                 data = json.load(json_file)
                 data['requestedCourses'] = []
@@ -16,9 +16,9 @@ class JSONMethods:
             print(e)
             return False
 
-    def add_enrolled_student(student, course):
+    def add_enrolled_student(self, student, course):
         try:
-            file_path = f"src/Students/{student.get_student_id()}.json"
+            file_path = f"Students/{student.get_student_id()}.json"
             with open(file_path, 'r+') as json_file:
                 data = json.load(json_file)
                 enrolled_courses = data.get('enrolledCourses', [])
@@ -49,9 +49,9 @@ class JSONMethods:
             print(e)
             return False
 
-    def add_request_course(course, student):
+    def add_request_course(self, course, student):
         try:
-            file_path = f"src/Students/{student.get_student_id()}.json"
+            file_path = f"Students/{student.get_student_id()}.json"
             with open(file_path, 'r+') as json_file:
                 data = json.load(json_file)
                 requested_courses = data.get('requestedCourses', [])
@@ -80,9 +80,9 @@ class JSONMethods:
         except Exception as e:
             print(e)
 
-    def update_enrollment_capacity(course_id, new_capacity):
+    def update_enrollment_capacity(self, course_id, new_capacity):
         try:
-            file_path = "src/course.json"
+            file_path = "course.json"
             with open(file_path, 'r+') as json_file:
                 data = json.load(json_file)
                 for course in data:
@@ -97,9 +97,9 @@ class JSONMethods:
             print(e)
             return False
 
-    def update_project_assistant(student, project_assistant):
+    def update_project_assistant(self, student, project_assistant):
         try:
-            file_path = f"src/Students/{student.get_student_id()}.json"
+            file_path = f"Students/{student.get_student_id()}.json"
             with open(file_path, 'r+') as json_file:
                 data = json.load(json_file)
                 data['projectAssistant'] = project_assistant

@@ -4,6 +4,9 @@ from typing import List
 from Student import Student
 from Course import Course
 from Advisor import Advisor
+from Transcript import Transcript
+from Grade import Grade
+from CourseSection import CourseSection
 
 class JSONParser:
     def convert_json_to_student(self, json_text: str):
@@ -27,12 +30,36 @@ class JSONParser:
                 studentID = data["studentID"]
                 GPA = data["GPA"]
                 StSemester = data["StSemester"]
-                enrolledCourses = data["enrolledCourses"]
-                requestedCourses = data["requestedCourses"]
+                enrolledCoursesString = data["enrolledCourses"]
+                enrolledCourses = []
+                for course in enrolledCoursesString:
+                    c = Course(course["courseId"], course["courseName"], course["credit"], course["prerequisite"],
+                                     course["prerequisiteLessonId"], CourseSection(course["courseSection"]["term"], course["courseSection"]["day"],
+                                    course["courseSection"]["hour"], course["courseSection"]["semester"], course["courseSection"]["instructor"],
+                                      course["courseSection"]["enrollmentCapacity"],
+                                    course["courseSection"]["status"]))
+                    enrolledCourses.append(c)
+                requestedCoursesString = data["requestedCourses"] 
+                requestedCourses = []
+                for course in requestedCoursesString:
+                    c = Course(course["courseId"], course["courseName"], course["credit"], course["prerequisite"],
+                                     course["prerequisiteLessonId"], CourseSection(course["courseSection"]["term"], course["courseSection"]["day"],
+                                    course["courseSection"]["hour"], course["courseSection"]["semester"], course["courseSection"]["instructor"],
+                                      course["courseSection"]["enrollmentCapacity"],
+                                    course["courseSection"]["status"]))
+                    requestedCourses.append(c)
                 projectAssistant = data["projectAssistant"]
-                transcript = data["transcript"]
+                gradeList=[]
+                for grade in data["transcript"]["grades"]:
+                    g = Grade(Course(grade["course"]["courseId"], grade["course"]["courseName"], grade["course"]["credit"], grade["course"]["prerequisite"],
+                                      grade["course"]["prerequisiteLessonId"], CourseSection(grade["course"]["courseSection"]["term"], grade["course"]["courseSection"]["day"],
+                                    grade["course"]["courseSection"]["hour"], grade["course"]["courseSection"]["semester"], grade["course"]["courseSection"]["instructor"],
+                                      grade["course"]["courseSection"]["enrollmentCapacity"],
+                                    grade["course"]["courseSection"]["status"])), grade["gradeValue"])   
+                    gradeList.append(g)
+                transcript = Transcript(gradeList)
 
-                studentInst = Student(username, name, surname, password, studentID, GPA, StSemester, enrolledCourses, requestedCourses, projectAssistant, transcript)
+                studentInst = Student(username, name, surname, password, studentID, GPA, StSemester, enrolledCourses, requestedCourses, transcript, projectAssistant)
                 students.append(studentInst)
         return students
 
@@ -47,7 +74,11 @@ class JSONParser:
                 credit = course["credit"]
                 prerequisite = course["prerequisite"]
                 prerequisiteLessonId = course["prerequisiteLessonId"]
-                courseSection = course["courseSection"]
+                courseSection = CourseSection(course["courseSection"]["term"],course["courseSection"]["day"],
+                                    course["courseSection"]["hour"],course["courseSection"]["semester"], course["courseSection"]["instructor"],
+                                     course["courseSection"]["enrollmentCapacity"],
+                                    course["courseSection"]["status"])
+
                 courseInst = Course(courseId, courseName, credit, prerequisite, prerequisiteLessonId, courseSection)
                 courses.append(courseInst)
             return courses

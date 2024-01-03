@@ -15,25 +15,26 @@ class Student:
         self.st_semester = st_semester
         self.enrolled_courses = enrolled_courses if enrolled_courses else []
         self.requested_courses = requested_courses if requested_courses else []
-        self.transcript = transcript if transcript else {}  # Assuming Transcript is a dictionary
+        self.transcript = transcript 
         self.project_assistant = project_assistant
         self.total_credits = self.calculate_total_credits()
 
     def calculate_total_credits(self):
         total_credits = 0
-        for course, grade in self.transcript.items():
+        for grade in self.transcript.all_grades():
             if grade != "--":
-                total_credits += course.credit  # Assuming the course object has a 'credit' attribute
+                total_credits += grade.course.credit  # Assuming the course object has a 'credit' attribute
         return total_credits
 
-    # Define other methods as needed
+    def clear_requested_courses(self):
+        self.requested_courses = []
 
     def get_total_credits(self):
         return self.total_credits
 
     def view_transcript(self):
-        print(self.get_student_info())
-        print("-------------------------------------------------------------------")
+        #print(self.get_student_info())
+        #print("-------------------------------------------------------------------")
         return self.transcript
 
     def get_student_id(self):
@@ -53,6 +54,12 @@ class Student:
 
     def get_requested_courses(self):
         return self.requested_courses
+    
+    def get_name(self):
+        return self.name
+    
+    def get_surname(self):
+        return self.surname
 
     def __str__(self):
         student_info = f"{self.get_name():<30} {self.get_surname():<30} {self.get_student_id():<8}"
