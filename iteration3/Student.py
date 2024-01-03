@@ -1,45 +1,64 @@
+from typing import List
+
+from User import User
+from Transcript import Transcript
+
 class Student:
-    total_credit = 0
-    def __init__(self, username, name, surname, password, studentID, GPA, StSemester, enrolledCourses, requestedCourses, projectAssistant, transcript):
-        self.username=username
-        self.name=name
-        self.surname=surname
-        self.password=password
-        self.studentID=studentID
-        self.GPA=GPA
-        self.StSemester=StSemester
-        self.enrolledCourses=enrolledCourses
-        self.requestedCourses=requestedCourses
-        self.projectAssistant=projectAssistant
-        self.transcript=transcript
-    def getUsername(self):
-        return self.username
-    def getName(self):
-        return self.name
-    def getSurname(self):
-        return self.surname
-    def getPassword(self):
-        return self.password
-    def getstudentID(self):
-        return self.studentID
-    def getGPA(self):
-        return self.GPA
-    def getStSemester(self):
-        return self.StSemester
-    def getEnrolledCourses(self):
-        return self.enrolledCourses
-    def getRequestedCourses(self):
-        return self.requestedCourses
-    def getProjectAssistant(self):
-        return self.projectAssistant
-    def getTranscript(self):
+    def __init__(self, username="", name="", surname="", password="", student_id="", gpa=0.0, st_semester=0,
+                 enrolled_courses=None, requested_courses=None, transcript=None, project_assistant=""):
+        self.username = username
+        self.name = name
+        self.surname = surname
+        self.password = password
+        self.student_id = student_id
+        self.gpa = gpa
+        self.st_semester = st_semester
+        self.enrolled_courses = enrolled_courses if enrolled_courses else []
+        self.requested_courses = requested_courses if requested_courses else []
+        self.transcript = transcript if transcript else {}  # Assuming Transcript is a dictionary
+        self.project_assistant = project_assistant
+        self.total_credits = self.calculate_total_credits()
+
+    def calculate_total_credits(self):
+        total_credits = 0
+        for course, grade in self.transcript.items():
+            if grade != "--":
+                total_credits += course.credit  # Assuming the course object has a 'credit' attribute
+        return total_credits
+
+    # Define other methods as needed
+
+    def get_total_credits(self):
+        return self.total_credits
+
+    def view_transcript(self):
+        print(self.get_student_info())
+        print("-------------------------------------------------------------------")
         return self.transcript
-    def calculateTotalCredit(self):
-        global total_credit
-        for course in self.getEnrolledCourses:
-            total_credit += course.credit
-        return total_credit
-    def getTotalCredit():
-        global total_credit
-        return total_credit
-        
+
+    def get_student_id(self):
+        return self.student_id
+
+    def get_project_assistant(self):
+        return self.project_assistant
+
+    def get_gpa(self):
+        return self.gpa
+
+    def get_semester(self):
+        return self.st_semester
+
+    def get_enrolled_courses(self):
+        return self.enrolled_courses
+
+    def get_requested_courses(self):
+        return self.requested_courses
+
+    def __str__(self):
+        student_info = f"{self.get_name():<30} {self.get_surname():<30} {self.get_student_id():<8}"
+        return student_info
+
+    def get_student_info(self):
+        header = f"Name: {self.get_name():<45} GPA: {self.get_gpa():<35}\n"
+        lower_header = f"Surname: {self.get_surname():<45} Completed Credit: {self.get_total_credits():<35}"
+        return header + lower_header
