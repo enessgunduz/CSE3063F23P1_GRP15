@@ -20,7 +20,7 @@ class JSONParser:
         file_path=[]
         for file in student_files:
             file_path = "Students//" + file
-            with open(file_path, "r", encoding="utf-8") as file:
+            with open(file_path, "r", encoding="utf-8-sig") as file:
                 data = json.load(file)
 
                 username = data["username"]
@@ -66,7 +66,7 @@ class JSONParser:
     def parse_courses(self):
         file_path="course.json"
         courses=[]
-        with open(file_path, "r", encoding="utf-8") as file:
+        with open(file_path, "r", encoding="utf-8-sig") as file:
             data = json.load(file)
             for course in data:
                 courseId = course["courseId"]
@@ -92,7 +92,7 @@ class JSONParser:
         advisors=[]
         for file in advisor_files:
             file_path = "Advisors//" + file
-            with open(file_path, "r", encoding="utf-8") as file:
+            with open(file_path, "r", encoding="utf-8-sig") as file:
                 data = json.load(file)
 
                 name = data["name"]

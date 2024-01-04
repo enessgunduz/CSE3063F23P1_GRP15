@@ -359,16 +359,16 @@ class SystemController:
             choice = int(input())
 
             if choice == 1:
-                self.view_student_transcript()
+                self.view_student_transcript(advisor)
             elif choice == 0:
                 print("Logging out...")
                 self.login()
             else:
                 print("Invalid input, try again!")
-                self.welcome_advisor()
+                self.welcome_advisor(advisor)
         except ValueError:
             print("Invalid input, try again!")
-            self.welcome_advisor()
+            self.welcome_advisor(advisor)
 
     def handle_course_requests(self, request_students: List[Student], crg):
         try:
@@ -386,10 +386,10 @@ class SystemController:
                 self.login()
             else:
                 print("Invalid input, try again!")
-                self.welcome_advisor()
+                self.welcome_advisor(advisor)
         except ValueError:
             print("Invalid input, try again!")
-            self.welcome_advisor()
+            self.welcome_advisor(advisor)
 
     def view_and_approve_courses(self, request_students, crg):
         student_index = self.display_requested_students(request_students)
