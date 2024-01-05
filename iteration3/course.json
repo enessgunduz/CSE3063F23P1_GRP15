@@ -10,7 +10,7 @@
             "day": "Monday",
             "hour": "13:00-14:50",
             "semester": 5,
-            "instructor": "Borahan T\u00c3\u00bcmer",
+            "instructor": "Borahan Tümer",
             "enrollmentCapacity": 2,
             "status": "Active"
         }
@@ -26,7 +26,7 @@
             "day": "Tuesday",
             "hour": "9:00-11:50",
             "semester": 1,
-            "instructor": "Mustafa A\u00c4\u0178ao\u00c4\u0178lu",
+            "instructor": "Mustafa Ağaoğlu",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -42,7 +42,7 @@
             "day": "Tuesday",
             "hour": "13:00-15:50",
             "semester": 3,
-            "instructor": "Mustafa A\u00c4\u0178ao\u00c4\u0178lu",
+            "instructor": "Mustafa Ağaoğlu",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -58,7 +58,7 @@
             "day": "Wednesday",
             "hour": "10:00-11:50",
             "semester": 3,
-            "instructor": "Bet\u00c3\u00bcl Boz",
+            "instructor": "Betül Boz",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -74,7 +74,7 @@
             "day": "Wednesday",
             "hour": "13:00-14:50",
             "semester": 5,
-            "instructor": "Bet\u00c3\u00bcl Boz",
+            "instructor": "Betül Boz",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -90,7 +90,7 @@
             "day": "Monday",
             "hour": "9:00-10:50",
             "semester": 5,
-            "instructor": "Borahan T\u00c3\u00bcmer",
+            "instructor": "Borahan Tümer",
             "enrollmentCapacity": 3,
             "status": "Active"
         }
@@ -106,7 +106,7 @@
             "day": "Friday",
             "hour": "9:00-10:50",
             "semester": 7,
-            "instructor": "Borahan T\u00c3\u00bcmer",
+            "instructor": "Borahan Tümer",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -122,7 +122,7 @@
             "day": "Wednesday",
             "hour": "15:00-16:50",
             "semester": 7,
-            "instructor": "Mustafa A\u00c4\u0178ao\u00c4\u0178lu",
+            "instructor": "Mustafa Ağaoğlu",
             "enrollmentCapacity": 4,
             "status": "Active"
         }
@@ -138,7 +138,7 @@
             "day": "Monday",
             "hour": "9:00-10:50",
             "semester": 5,
-            "instructor": "Bet\u00c3\u00bcl Boz",
+            "instructor": "Betül Boz",
             "enrollmentCapacity": 4,
             "status": "Active"
         }
@@ -154,7 +154,7 @@
             "day": "Friday",
             "hour": "9:00-10:50",
             "semester": 5,
-            "instructor": "Bet\u00c3\u00bcl Boz",
+            "instructor": "Betül Boz",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -170,7 +170,7 @@
             "day": "Wednesday",
             "hour": "9:00-9:50",
             "semester": 7,
-            "instructor": "Bet\u00c3\u00bcl Boz",
+            "instructor": "Betül Boz",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -186,7 +186,7 @@
             "day": "Thursday",
             "hour": "8:00-9:50",
             "semester": 1,
-            "instructor": "Ayd\u00c4\u00b1n T\u00c3\u00bcrkan",
+            "instructor": "Aydın Türkan",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -202,7 +202,7 @@
             "day": "Thursday",
             "hour": "10:00-11:50",
             "semester": 3,
-            "instructor": "Ayd\u00c4\u00b1n T\u00c3\u00bcrkan",
+            "instructor": "Aydın Türkan",
             "enrollmentCapacity": 4,
             "status": "Active"
         }
@@ -218,7 +218,7 @@
             "day": "Friday",
             "hour": "15:00-16:50",
             "semester": 3,
-            "instructor": "Ay\u00c5\u0178e Beng\u00c3\u00bc \u00c3\u2013zl\u00c3\u00bcsu Hamarat",
+            "instructor": "Ayşe Bengü özlüsu Hamarat",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -234,7 +234,7 @@
             "day": "Monday",
             "hour": "13:00-14:50",
             "semester": 3,
-            "instructor": "Bet\u00c3\u00bcl Boz",
+            "instructor": "Betül Boz",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -250,7 +250,7 @@
             "day": "Thursday",
             "hour": "9:00-10:50",
             "semester": 5,
-            "instructor": "Bet\u00c3\u00bcl Boz",
+            "instructor": "Betül Boz",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -266,14 +266,14 @@
             "day": "Monday",
             "hour": "8:00-9:50",
             "semester": 1,
-            "instructor": "Beste Turanl\u00c4\u00b1",
+            "instructor": "Beste Turanlı",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
     },
     {
         "courseId": "CSE1012",
-        "courseName": "T\u00c3\u00bcrk Dili",
+        "courseName": "Türk Dili",
         "credit": 3,
         "prerequisite": false,
         "prerequisiteLessonId": "None",
@@ -289,7 +289,7 @@
     },
     {
         "courseId": "CSE1013",
-        "courseName": "Atat\u00c3\u00bcrk \u00c4\u00b0lkeleri ve \u00c4\u00b0nk\u00c4\u00b1lap Tarihi",
+        "courseName": "Atatürk İlkeleri ve İnkılap Tarihi",
         "credit": 3,
         "prerequisite": false,
         "prerequisiteLessonId": "None",
@@ -314,7 +314,7 @@
             "day": "Monday",
             "hour": "14:00-15:50",
             "semester": 3,
-            "instructor": "\u00c3\u2021i\u00c4\u0178dem Ero\u00c4\u0178lu",
+            "instructor": "Çiğdem Eroğlu",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -330,7 +330,7 @@
             "day": "Tuesday",
             "hour": "16:00-17:50",
             "semester": 3,
-            "instructor": "Borahan T\u00c3\u00bcmer",
+            "instructor": "Borahan Tümer",
             "enrollmentCapacity": 4,
             "status": "Active"
         }
@@ -362,7 +362,7 @@
             "day": "Wednesday",
             "hour": "10:00-11:50",
             "semester": 5,
-            "instructor": "Mustafa A\u00c4\u0178ao\u00c4\u0178lu",
+            "instructor": "Mustafa Ağaoğlu",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -378,7 +378,7 @@
             "day": "Friday",
             "hour": "8:00-9:50",
             "semester": 2,
-            "instructor": "Hector Mar\u00ce\u00afa GONZALEZ L\u00c3\u201cPEZ",
+            "instructor": "Hector Maria GONZALEZ LOPEZ",
             "enrollmentCapacity": 4,
             "status": "Active"
         }
@@ -426,7 +426,7 @@
             "day": "Thursday",
             "hour": "13:00-14:50",
             "semester": 2,
-            "instructor": "Neslihan A\u00c3\u00a7\u00c4\u00b1k",
+            "instructor": "Neslihan Açık",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -490,7 +490,7 @@
             "day": "Thursday",
             "hour": "13:00-14:50",
             "semester": 4,
-            "instructor": "Burak Y\u00c4\u00b1lmaz",
+            "instructor": "Burak Yılmaz",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -506,7 +506,7 @@
             "day": "Thursday",
             "hour": "11:00-12:50",
             "semester": 4,
-            "instructor": "Z\u00c3\u00bcbeyir Sar\u00c4\u00b1",
+            "instructor": "Zübeyir Sarı",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -522,7 +522,7 @@
             "day": "Thursday",
             "hour": "9:00-10:50",
             "semester": 4,
-            "instructor": "Onur Aydo\u00c4\u0178du",
+            "instructor": "Onur Aydoğdu",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -538,7 +538,7 @@
             "day": "Thursday",
             "hour": "8:00-9:50",
             "semester": 4,
-            "instructor": "G\u00c3\u00b6n\u00c3\u00bcl Acar",
+            "instructor": "Gönül Acar",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -554,7 +554,7 @@
             "day": "Wednesday",
             "hour": "8:00-9:50",
             "semester": 4,
-            "instructor": "G\u00c3\u00b6n\u00c3\u00bcl Acar",
+            "instructor": "Gönül Acar",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
@@ -570,7 +570,7 @@
             "day": "Thursday",
             "hour": "13:00-14:50",
             "semester": 4,
-            "instructor": "Onur Aydo\u00c4\u0178du",
+            "instructor": "Onur Aydoğdu",
             "enrollmentCapacity": 5,
             "status": "Active"
         }
