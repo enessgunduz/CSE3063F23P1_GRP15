@@ -33,8 +33,8 @@ class Student:
         return self.total_credits
 
     def view_transcript(self):
-        #print(self.get_student_info())
-        #print("-------------------------------------------------------------------")
+        print(self.get_student_info())
+        print("-------------------------------------------------------------------")
         return self.transcript
 
     def get_student_id(self):
