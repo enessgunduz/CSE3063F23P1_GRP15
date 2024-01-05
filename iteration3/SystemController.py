@@ -413,13 +413,10 @@ class SystemController:
                         print("Invalid course number. Returning to the student list.")
                         self.view_and_approve_courses(request_students, crg)
                         return
-                print("surasi")
                 self.approve_selected_courses(selected, current_student, req_courses, crg)
 
-            print("burasi")
             jM = JSONMethods()
             jM.clear_requested_courses(current_student)
-            print("orasi")
             self.welcome_advisor(advisor)
         except ValueError:
             print("Invalid input. Please enter valid course numbers.")
