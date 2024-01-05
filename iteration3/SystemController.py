@@ -119,15 +119,6 @@ class SystemController:
             self.welcome_advisor(advisor)
         else:
             print("Username or password is incorrect!")
-            self.login_as_advisor_input()
-
-    def login_as_advisor_input(self):
-        try:
-            username = input("Username: ")
-            password = input("Password: ")
-            self.login_as_advisor(username, password)
-        except ValueError:
-            print("Username or password is incorrect!")
             self.login_as_advisor()
 
    
@@ -422,12 +413,13 @@ class SystemController:
                         print("Invalid course number. Returning to the student list.")
                         self.view_and_approve_courses(request_students, crg)
                         return
-
+                print("surasi")
                 self.approve_selected_courses(selected, current_student, req_courses, crg)
 
+            print("burasi")
             jM = JSONMethods()
             jM.clear_requested_courses(current_student)
-
+            print("orasi")
             self.welcome_advisor(advisor)
         except ValueError:
             print("Invalid input. Please enter valid course numbers.")
@@ -473,8 +465,8 @@ class SystemController:
         print("All courses are rejected")
 
 
-    def approve_selected_courses(self, selected, current_student, req_courses, crg):
-        dummy_req_courses = req_courses
+    def approve_selected_courses(self,selected, current_student, req_courses, crg):
+        dummy_req_courses = req_courses.copy()
 
         for s in selected:
             course_index = int(s)
@@ -486,7 +478,8 @@ class SystemController:
         for course in current_student.get_requested_courses():
             crg.reject_course(course)
 
-        print("Selected courses are approved, others' rejected")
+        print("Selected courses are approved, others' rejected")    
+
 
         
 
