@@ -9,10 +9,6 @@ from Student import Student
 from JsonMethods import JSONMethods
 
 class SystemController:
-    global assistant_selected
-    assistant_selected = False
-    global selected_assistant
-    selected_assistant=""
     def __init__(self):
         logging.basicConfig(filename='system_controller.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
         self.student = None
@@ -76,10 +72,6 @@ class SystemController:
                 self.course_registration_screen(student, course_list)
                 logging.info("Registration Viewed.")
             elif i == 3:
-                global selected_assistant
-                global assistant_selected
-                assistant_selected = False
-                selected_assistant = ""
                 self.show_final_request(student)
                 logging.info("Final Request Viewed.")
             elif i == 4:
@@ -294,6 +286,11 @@ class SystemController:
                     logging.warning("Enter valid numbers.")
                     self.welcome_student()
                     return
+                if  selected.count(s) > 1:
+                    print("Invalid input, no duplicate values")
+                    logging.warning("Enter valid numbers.")
+                    self.welcome_student()
+                    return
 
             if len(student.get_enrolled_courses()) + len(selected) > 8:
                 print(f"You have already enrolled {len(student.get_enrolled_courses())} courses, "
@@ -335,27 +332,21 @@ class SystemController:
         try:
             if student.get_project_assistant()=="":
                 if student.get_total_credits() >= 105 and student.get_semester() >= 7:
-                    global assistant_selected
-                    if not assistant_selected:
                         print("Select your project assistant:\n1: Betül Boz\n2: Borahan Tümer\n3: Beste Turanlı\n4: Çiğdem Eroğlu")
                         selected_ass = int(input())
                         json_methods = JSONMethods()
                         if 1 <= selected_ass <= 4:
                             assistants = ["Betül Boz", "Borahan Tümer", "Beste Turanlı", "Çiğdem Eroğlu"]
-                            global selected_assistant
                             selected_assistant = assistants[selected_ass - 1]
                             print(f"You now have taken the project\nProject Assistant: {selected_assistant}")
                             logging.info(f"Taken project from Project Assistant: {selected_assistant}")
-                            assistant_selected=True
+                            student.project_assistant=selected_assistant
                             json_methods.update_project_assistant(student, selected_assistant)
+                            self.welcome_student()
                         else:
                             print("Invalid index. Please enter a valid assistant number.")
                             logging.error("Invalid index!")
                             self.show_final_request(student)
-                    else:
-                        print(f"You already selected your project assistant\nYour project assistant is {selected_assistant}")
-                        logging.info(f"Already taken the project from Project Assistant is {student.get_project_assistant()}")
-                    self.welcome_student()
                 else:
                     print("You cannot take the final project because your credits or semester do not satisfy our department rules")
                     logging.warning("Do not take the final project.")
@@ -490,7 +481,7 @@ class SystemController:
                 for s in selected:
                     try:
                         course_index = int(s)
-                        if course_index <= 0 or course_index > len(req_courses):
+                        if course_index <= 0 or course_index > len(req_courses) or selected.count(s) > 1:
                             raise ValueError
                     except ValueError:
                         print("Invalid course number. Returning to the student list.")
@@ -524,9 +515,9 @@ class SystemController:
             logging.info("Selected student")
             return student_index if 0 < student_index <= len(request_students) else -1
         except ValueError:
-            input("Invalid input. Please enter a valid number.")
+            print("Invalid input. Please enter a valid number.")
             logging.error("Invalid input!")
-            return -1
+            return self.display_requested_students(request_students)
 
 
     def display_requested_courses(self, req_courses):

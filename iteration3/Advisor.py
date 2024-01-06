@@ -11,6 +11,7 @@ class Advisor(User):
         self.advised_students = []
 
     def set_advised_students_init(self, students):
+        self.advised_students.clear()
         for s in students:
             for ss in self.advised_student_ids:
                 if s.username == ss:
