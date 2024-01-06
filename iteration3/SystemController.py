@@ -361,7 +361,38 @@ class SystemController:
             self.show_final_request(student)
 
 
-    
+    def show_student_schedule(self, student):
+        try:
+            enrolled_courses = student.get_enrolled_courses()
+            days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+            for day in days:
+                print(f"{day}:")
+                hours = self.get_hour_from_course_sections(day, student)
+                hours.sort()
+                print("|     Time      | Course ID |               Course Name                |          Instructor        |")
+                print("|---------------|-----------|------------------------------------------|----------------------------|")
+
+                for hour in hours:
+                    for course in enrolled_courses:
+                        course_section = course.get_course_section()
+                        if course_section.get_day().lower() == day.lower() and course_section.get_hour() == hour:
+                            print(f"| {hour:<13} | {course.get_course_id():<9} | {course.get_course_name():<40} | {course_section.get_instructor():<27}|")
+
+                print()
+            logging.info(f"Student {student.get_name() + ' ' + student.get_surname()} 's course sections listed.")
+            print("0: Back to the main menu")
+            choice = int(input())
+            if choice == 0:
+                logging.info("Back to the main menu")
+                self.welcome_student()
+            else:
+                print("Invalid Input, returning to the main menu..")
+                logging.warning("Invalid Input, returning to the main menu.")
+                self.welcome_student()
+        except ValueError:
+            print("Invalid Input, returning to the main menu..")
+            logging.error("Invalid Input!")
+            self.welcome_student()
 
     def get_hour_from_course_sections(self, day: str, student) -> List[str]:
         course_sections = self.get_course_sections_for_day(day, student)
