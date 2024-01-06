@@ -9,6 +9,10 @@ from Student import Student
 from JsonMethods import JSONMethods
 
 class SystemController:
+    global assistant_selected
+    assistant_selected = False
+    global selected_assistant
+    selected_assistant=""
     def __init__(self):
         logging.basicConfig(filename='system_controller.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
         self.student = None
@@ -58,7 +62,7 @@ class SystemController:
     def welcome_student(self):
         try:
             print("Please choose what you want to do:\n1: View transcript\n2: Course Registration\n3: Request Final Project\n4: View course schedule\n0: Log out")
-            logging.info(f"Student {self.student.get_name() +" "+ self.student.get_surname()} logged in.")
+            logging.info(f"Student {self.student.get_name() +' '+ self.student.get_surname()} logged in.")
             i = int(input())
             if i < 0 or i > 4:
                 print("Invalid input, try again!")
@@ -72,6 +76,10 @@ class SystemController:
                 self.course_registration_screen(student, course_list)
                 logging.info("Registration Viewed.")
             elif i == 3:
+                global selected_assistant
+                global assistant_selected
+                assistant_selected = False
+                selected_assistant = ""
                 self.show_final_request(student)
                 logging.info("Final Request Viewed.")
             elif i == 4:
@@ -79,7 +87,7 @@ class SystemController:
                 logging.info("Schedule Viewed.")
             else:
                 print("Logging out...")
-                logging.info(f"Student {self.student.get_name() +" "+ self.student.get_surname()} logged out.")
+                logging.info(f"Student {self.student.get_name() +' '+ self.student.get_surname()} logged out.")
                 self.login()
                 return
         except ValueError:
@@ -95,7 +103,7 @@ class SystemController:
         if student is not None and student.password == password:
             self.student = student
             print("Welcome", student.name)
-            logging.info(f"Student {student.get_name() + " " + student.get_surname()} is logged in.")
+            logging.info(f"Student {student.get_name() + ' ' + student.get_surname()} is logged in.")
             self.welcome_student()
         else:
             print("Username or password is incorrect!")
@@ -115,17 +123,17 @@ class SystemController:
         return None
     
     def welcome_advisor(self, advisor) -> None:
-        logging.info(f"Advisor {advisor.get_name() + " " + advisor.get_surname()} logged in.")
+        logging.info(f"Advisor {advisor.get_name() + ' ' + advisor.get_surname()} logged in.")
         global student_list
         advisor.set_advised_students_init(student_list)
         request_students = advisor.list_requested_students()
         crg = CourseRegistrationSystem()
 
         if not request_students:
-            logging.info(f"No course requests found for advisor {advisor.get_name() + " " + advisor.get_surname()}.")
+            logging.info(f"No course requests found for advisor {advisor.get_name() + ' ' + advisor.get_surname()}.")
             self.handle_no_course_requests()
         else:
-            logging.info(f"Handling course requests for advisor {advisor.get_name() + " " + advisor.get_surname()}.")
+            logging.info(f"Handling course requests for advisor {advisor.get_name() + ' ' + advisor.get_surname()}.")
             self.handle_course_requests(request_students, crg)
     
     def login_as_advisor(self, username="", password=""):
@@ -134,7 +142,7 @@ class SystemController:
         global advisor
         advisor = self.find_advisor(username)
         if advisor and advisor.get_password() == password:
-            logging.info(f"Advisor {advisor.get_name() + " " + advisor.get_surname()} is logged in.")
+            logging.info(f"Advisor {advisor.get_name() + ' ' + advisor.get_surname()} is logged in.")
             print(f"Welcome {advisor.get_name()}")
             self.welcome_advisor(advisor)
         else:
@@ -155,7 +163,7 @@ class SystemController:
             advised_students = advisor.get_advised_students()
             if 0 < student_index <= len(advised_students):
                 selected_student = advised_students[student_index - 1]
-                logging.info(f"Viewing transcript of student {selected_student.get_name() + " " + selected_student.get_surname()}.")
+                logging.info(f"Viewing transcript of student {selected_student.get_name() + ' ' + selected_student.get_surname()}.")
                 print(f"Student ID: {selected_student.get_student_id()}\nGPA: {selected_student.get_gpa()}\nTranscript of the selected student: \n{selected_student.view_transcript()}")
                 self.handle_back_option(advisor)
             elif student_index == 0:
@@ -192,11 +200,11 @@ class SystemController:
 
     def show_schedule_screen(self, student):
         if student.get_enrolled_courses():
-            logging.info(f"Student {student.get_name() + " " + student.get_surname()} enrolled courses")
+            logging.info(f"Student {student.get_name() + ' ' + student.get_surname()} enrolled courses")
             self.show_student_schedule(student)
         else:
             print("Your course schedule cannot be viewed because you are not registered for the courses. Return main menu...")
-            logging.info(f"Student {student.get_name() + " " + student.get_surname()} enrolled courses is not registered")
+            logging.info(f"Student {student.get_name() + ' ' + student.get_surname()} enrolled courses is not registered")
             self.welcome_student()
             
     def show_transcript_screen(self, student):
@@ -325,28 +333,36 @@ class SystemController:
 
     def show_final_request(self, student):
         try:
-            if student.get_total_credits() >= 105 and student.get_semester() >= 7:
-                if student.get_project_assistant()==None:
-                    print("Select your project assistant:\n1: Betül Boz\n2: Borahan Tümer\n3: Beste Turanlı\n4: Çiğdem Eroğlu")
-                    selected_ass = int(input())
-                    json_methods = JSONMethods()
-                    if 1 <= selected_ass <= 4:
-                        assistants = ["Betül Boz", "Borahan Tümer", "Beste Turanlı", "Çiğdem Eroğlu"]
-                        selected_assistant = assistants[selected_ass - 1]
-                        print(f"You now have taken the project\nProject Assistant: {selected_assistant}")
-                        logging.info(f"Taken project from Project Assistant: {selected_assistant}")
-                        json_methods.update_project_assistant(student, selected_assistant)
+            if student.get_project_assistant()=="":
+                if student.get_total_credits() >= 105 and student.get_semester() >= 7:
+                    global assistant_selected
+                    if not assistant_selected:
+                        print("Select your project assistant:\n1: Betül Boz\n2: Borahan Tümer\n3: Beste Turanlı\n4: Çiğdem Eroğlu")
+                        selected_ass = int(input())
+                        json_methods = JSONMethods()
+                        if 1 <= selected_ass <= 4:
+                            assistants = ["Betül Boz", "Borahan Tümer", "Beste Turanlı", "Çiğdem Eroğlu"]
+                            global selected_assistant
+                            selected_assistant = assistants[selected_ass - 1]
+                            print(f"You now have taken the project\nProject Assistant: {selected_assistant}")
+                            logging.info(f"Taken project from Project Assistant: {selected_assistant}")
+                            assistant_selected=True
+                            json_methods.update_project_assistant(student, selected_assistant)
+                        else:
+                            print("Invalid index. Please enter a valid assistant number.")
+                            logging.error("Invalid index!")
+                            self.show_final_request(student)
                     else:
-                        print("Invalid index. Please enter a valid assistant number.")
-                        logging.error("Invalid index!")
-                        self.show_final_request(student)
+                        print(f"You already selected your project assistant\nYour project assistant is {selected_assistant}")
+                        logging.info(f"Already taken the project from Project Assistant is {student.get_project_assistant()}")
+                    self.welcome_student()
                 else:
-                    print(f"You already selected your project assistant\nYour project assistant is {student.get_project_assistant()}")
-                    logging.info(f"Already taken the project from Project Assistant is {student.get_project_assistant()}")
-                self.welcome_student()
+                    print("You cannot take the final project because your credits or semester do not satisfy our department rules")
+                    logging.warning("Do not take the final project.")
+                    self.welcome_student()
             else:
-                print("You cannot take the final project because your credits or semester do not satisfy our department rules")
-                logging.warning("Do not take the final project.")
+                print(f"You already selected your project assistant\nYour project assistant is {student.get_project_assistant()}")
+                logging.info(f"Already taken the project from Project Assistant is {student.get_project_assistant()}")
                 self.welcome_student()
         except ValueError:
             print("Invalid input. Please enter a number.")
@@ -372,7 +388,7 @@ class SystemController:
                             print(f"| {hour:<13} | {course.get_course_id():<9} | {course.get_course_name():<40} | {course_section.get_instructor():<27}|")
 
                 print()
-            logging.info(f"Student {student.get_name() + " " + student.get_surname()} 's course sections listed.")
+            logging.info(f"Student {student.get_name() + ' ' + student.get_surname()} 's course sections listed.")
             print("0: Back to the main menu")
             choice = int(input())
             if choice == 0:
@@ -406,7 +422,7 @@ class SystemController:
             choice = int(input())
 
             if choice == 1:
-                logging.info(f"viewing advised students for advisor {advisor.get_name() + " " + advisor.get_surname()}")
+                logging.info(f"viewing advised students for advisor {advisor.get_name() + ' ' + advisor.get_surname()}")
                 self.view_student_transcript(advisor)
             elif choice == 0:
                 print("Logging out...")
@@ -429,10 +445,10 @@ class SystemController:
             choice = int(input())
 
             if choice == 1:
-                logging.info(f"viewing advised students for advisor {advisor.get_name() + " " + advisor.get_surname()}")
+                logging.info(f"viewing advised students for advisor {advisor.get_name() + ' ' + advisor.get_surname()}")
                 self.view_student_transcript(advisor)
             elif choice == 2:
-                logging.info(f"Show advised students who want to enroll for advisor {advisor.get_name() + " " + advisor.get_surname()}")
+                logging.info(f"Show advised students who want to enroll for advisor {advisor.get_name() + ' ' + advisor.get_surname()}")
                 self.view_and_approve_courses(request_students, crg)
             elif choice == 0:
                 print("Logging out...")
