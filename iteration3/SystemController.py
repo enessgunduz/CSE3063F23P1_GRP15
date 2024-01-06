@@ -454,49 +454,7 @@ class SystemController:
             logging.error("Invalid input!")
             self.welcome_advisor(advisor)
 
-    def view_and_approve_courses(self, request_students, crg):
-        student_index = self.display_requested_students(request_students)
-
-        if student_index == -1:
-            print("Invalid input, returning to the main menu")
-            logging.warning("Invalid input.")
-            self.welcome_advisor(advisor)
-            return
-
-        current_student = request_students[student_index - 1]
-        req_courses = current_student.get_requested_courses()
-
-        self.display_requested_courses(req_courses)
-
-        try:
-            print("Please write the number of the courses you want to approve, with commas (Others will be rejected)\n(For reject all, write 0)")
-            user_input = input().strip()
-
-            if user_input == "0":
-                logging.info("Rejecting all courses")
-                self.reject_all_courses(req_courses, crg)
-            else:
-                selected = user_input.split(",")
-
-                for s in selected:
-                    try:
-                        course_index = int(s)
-                        if course_index <= 0 or course_index > len(req_courses) or selected.count(s) > 1:
-                            raise ValueError
-                    except ValueError:
-                        print("Invalid course number. Returning to the student list.")
-                        logging.error("Invalid course number!")
-                        self.view_and_approve_courses(request_students, crg)
-                        return
-                self.approve_selected_courses(selected, current_student, req_courses, crg)
-
-            jM = JSONMethods()
-            jM.clear_requested_courses(current_student)
-            self.welcome_advisor(advisor)
-        except ValueError:
-            print("Invalid input. Please enter valid course numbers.")
-            logging.error("Invalid input!")
-            self.view_and_approve_courses(request_students, crg)
+    
 
 
     def display_requested_students(self, request_students):
