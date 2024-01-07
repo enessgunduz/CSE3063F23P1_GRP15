@@ -82,20 +82,6 @@ class UnitTests(unittest.TestCase):
         self.assertEqual(1, retrieved_section.get_enrollment_capacity())
         self.assertEqual("Active", retrieved_section.get_status())
 
-    def welcome_advisor(self, advisor) -> None:
-        logging.info(f"Advisor {advisor.get_name() + ' ' + advisor.get_surname()} logged in.")
-        global student_list
-        advisor.set_advised_students_init(student_list)
-        request_students = advisor.list_requested_students()
-        crg = CourseRegistrationSystem()
-
-        if not request_students:
-            logging.info(f"No course requests found for advisor {advisor.get_name() + ' ' + advisor.get_surname()}.")
-            self.handle_no_course_requests()
-        else:
-            logging.info(f"Handling course requests for advisor {advisor.get_name() + ' ' + advisor.get_surname()}.")
-            self.handle_course_requests(request_students, crg)
-            
     def test_students_to_string_with_advised_students(self):
             self.advisor.set_advised_students_init([self.student])
             result = self.advisor.students_to_string()
