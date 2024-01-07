@@ -4,11 +4,11 @@ class JSONMethods:
     def clear_requested_courses(self, student):
         try:
             file_path = f"Students/{student.get_student_id()}.json"
-            with open(file_path, 'r+') as json_file:
+            with open(file_path, 'r+', encoding='utf-8') as json_file:
                 data = json.load(json_file)
                 data['requestedCourses'] = []
                 json_file.seek(0)
-                json.dump(data, json_file, indent=4)
+                json.dump(data, json_file, indent=4, ensure_ascii=False)
                 json_file.truncate()
             student.clear_requested_courses()
             return True
@@ -19,7 +19,7 @@ class JSONMethods:
     def add_enrolled_student(self, student, course):
         try:
             file_path = f"Students/{student.get_student_id()}.json"
-            with open(file_path, 'r+') as json_file:
+            with open(file_path, 'r+', encoding='utf-8') as json_file:
                 data = json.load(json_file)
                 enrolled_courses = data.get('enrolledCourses', [])
                 new_course = {
@@ -42,7 +42,7 @@ class JSONMethods:
                 enrolled_courses.append(new_course)
                 data['enrolledCourses'] = enrolled_courses
                 json_file.seek(0)
-                json.dump(data, json_file, indent=4)
+                json.dump(data, json_file, indent=4, ensure_ascii=False)
                 json_file.truncate()
             return True
         except Exception as e:
@@ -52,7 +52,7 @@ class JSONMethods:
     def add_request_course(self, course, student):
         try:
             file_path = f"Students/{student.get_student_id()}.json"
-            with open(file_path, 'r+') as json_file:
+            with open(file_path, 'r+', encoding='utf-8') as json_file:
                 data = json.load(json_file)
                 requested_courses = data.get('requestedCourses', [])
                 new_course = {
@@ -75,7 +75,7 @@ class JSONMethods:
                 requested_courses.append(new_course)
                 data['requestedCourses'] = requested_courses
                 json_file.seek(0)
-                json.dump(data, json_file, indent=4)
+                json.dump(data, json_file, indent=4, ensure_ascii=False)
                 json_file.truncate()
         except Exception as e:
             print(e)
@@ -83,13 +83,13 @@ class JSONMethods:
     def update_enrollment_capacity(self, course_id, new_capacity):
         try:
             file_path = "course.json"
-            with open(file_path, 'r+') as json_file:
+            with open(file_path, 'r+', encoding='utf-8') as json_file:
                 data = json.load(json_file)
                 for course in data:
                     if course['courseId'] == course_id:
                         course['courseSection']['enrollmentCapacity'] = new_capacity
                         json_file.seek(0)
-                        json.dump(data, json_file, indent=4)
+                        json.dump(data, json_file, indent=4, ensure_ascii=False)
                         json_file.truncate()
                         return True
                 return False
@@ -100,11 +100,11 @@ class JSONMethods:
     def update_project_assistant(self, student, project_assistant):
         try:
             file_path = f"Students/{student.get_student_id()}.json"
-            with open(file_path, 'r+') as json_file:
+            with open(file_path, 'r+', encoding='utf-8') as json_file:
                 data = json.load(json_file)
                 data['projectAssistant'] = project_assistant
                 json_file.seek(0)
-                json.dump(data, json_file, indent=4)
+                json.dump(data, json_file, indent=4, ensure_ascii=False)
                 json_file.truncate()
         except Exception as e:
             print(e)

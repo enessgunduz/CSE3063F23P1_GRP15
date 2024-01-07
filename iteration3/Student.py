@@ -23,7 +23,7 @@ class Student:
         total_credits = 0
         for grade in self.transcript.all_grades():
             if grade != "--":
-                total_credits += grade.course.credit  # Assuming the course object has a 'credit' attribute
+                total_credits += grade.course.credit  
         return total_credits
 
     def clear_requested_courses(self):

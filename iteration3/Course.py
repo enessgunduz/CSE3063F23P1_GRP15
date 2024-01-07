@@ -11,7 +11,7 @@ class Course:
         self.course_section = course_section
 
     def add_enrolled_student(self, student, course):
-        # Assuming JSONMethods is handling the enrollment process
+        
         jM = JSONMethods()
         return jM.add_enrolled_student(student, course)
 

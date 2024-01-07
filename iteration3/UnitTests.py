@@ -10,7 +10,7 @@ from CourseRegistrationSystem import CourseRegistrationSystem
 
 class UnitTests(unittest.TestCase):
     def setUp(self):
-        # Önce test verilerini hazırlayalım
+       
         self.student_data = {
             "username": "o150120025",
             "name": "Murat",
