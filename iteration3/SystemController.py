@@ -156,7 +156,7 @@ class SystemController:
             if 0 < student_index <= len(advised_students):
                 selected_student = advised_students[student_index - 1]
                 logging.info(f"Viewing transcript of student {selected_student.get_name() + ' ' + selected_student.get_surname()}.")
-                print(f"Student ID: {selected_student.get_student_id()}\nGPA: {selected_student.get_gpa()}\nTranscript of the selected student: \n{selected_student.view_transcript()}")
+                print(f"{selected_student.view_transcript()}")
                 self.handle_back_option(advisor)
             elif student_index == 0:
                 logging.info("Going back to the main menu.")
@@ -201,11 +201,11 @@ class SystemController:
             
     def show_transcript_screen(self, student):
         try:
-            print(student.view_transcript().__str__())
+            print(student.view_transcript().__str__(), end="")
             for c in student.get_enrolled_courses():
                 g = Grade(c, "--")
-                print(g.__str__())
-            
+                print(g.__str__(), end="")
+
             print("\n1: Go back to main menu")
             l = int(input())
             if l != 1:
